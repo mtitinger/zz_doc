@@ -38,3 +38,24 @@ This is detailed in u-boot sources, in the `./board/ti/am65x/README` (there's no
 That's the reason why we define the am64xx-tlgate MACHINE in the meta-tlgate-bsp layer, but also the am64xx-tlgate-k3r5 secondary machine.
 
 [Back](toc.md)
+
+## Tips and Tricks
+
+### About using devtool
+
+I am finding that "devtool modify" can be broken because of the create_scripk errors.
+Since we are not using ipk we ca just remove this do_create_srcipk task, by commenting in file:
+
+```patch
+diff --git a/meta-arago-distro/recipes-kernel/linux/copy-defconfig.inc b/meta-arago-distro/recipes-kernel/linux/copy-defconfig.inc
+index 10ecf8ea..73b14430 100644
+--- a/meta-arago-distro/recipes-kernel/linux/copy-defconfig.inc
++++ b/meta-arago-distro/recipes-kernel/linux/copy-defconfig.inc
+@@ -19,4 +19,4 @@ do_configure_append() {
+
+ # Move create_srcipk task so that the release defconfig is included.
+ deltask do_create_srcipk
+-addtask create_srcipk after do_configure before do_compile
++#addtask create_srcipk after do_configure before do_compile
+```
+
