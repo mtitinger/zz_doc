@@ -5,6 +5,7 @@ This is the entry point for the project. It may contain links to other repositor
 There are two documentation directories here:
 - [Internal documentation](internal/toc.md)
 	- [Yocto build](internal/yocto.md)
+	- [Development guidelines](internal/development.md)
 	- [Logs](internal/SEPASSRFNT-6-syslog.md)
 	- [End-of-line flashing and testing](internal/SEPASSRFNT-87-flashing.md)
 	- [Time management](internal/SEPASSRFNT-76-time.md)

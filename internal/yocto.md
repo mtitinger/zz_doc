@@ -1,6 +1,45 @@
 # Building the Yocto project from sources
 
-How to build is documented in the [main Yocto repository](https://gitlab.boost.open.global/schneider-electric/passerelle_refonte/Software/bsp/opengrp-gateway-sdk).
+Main "top" directory is based on Yocto Dunfell for TI AM64x SoC. It is a fork from git://arago-project.org/git/projects/oe-layersetup.git
+
+## Pre-requisites
+(copy/pasted from https://software-dl.ti.com/processor-sdk-linux/esd/AM64X/07_03_00_02/exports/docs/linux/Overview_Building_the_SDK.html)
+
+```
+$ sudo apt-get install build-essential autoconf automake bison flex libssl-dev bc u-boot-tools python diffstat texinfo gawk chrpath dos2unix wget unzip socat doxygen libc6:i386 libncurses5:i386 libstdc++6:i386 libz1:i386 g++-multilib
+$ sudo dpkg-reconfigure dash
+
+$ wget https://developer.arm.com/-/media/Files/downloads/gnu-a/9.2-2019.12/binrel/gcc-arm-9.2-2019.12-x86_64-arm-none-linux-gnueabihf.tar.xz
+$ sudo tar -Jxvf gcc-arm-9.2-2019.12-x86_64-arm-none-linux-gnueabihf.tar.xz -C /opt
+$ wget https://developer.arm.com/-/media/Files/downloads/gnu-a/9.2-2019.12/binrel/gcc-arm-9.2-2019.12-x86_64-aarch64-none-linux-gnu.tar.xz
+$ sudo tar -Jxvf gcc-arm-9.2-2019.12-x86_64-aarch64-none-linux-gnu.tar.xz -C /opt
+```
+
+## Bootstraping for OpenGroupe
+
+* A build server is setup here: 10.20.3.10 (within the Opengroupe VPN)
+* Every developer has to create his own build directory in `/opt/build/{trigram}`
+
+For your comfort, the following git parameters can be set:
+* preferably use vim over nano : sudo update-alternatives --config editor
+* git config --global alias.st status
+* git config --global alias.ci commit
+* git config --global alias.br branch
+* git config --global alias.co checkout
+
+## Install sources
+```
+./oe-layertool-setup.sh -f configs/opengrp-gateway-sdk.txt
+cd build
+. conf/setenv
+bitbake opengrp-gateway-img-release
+```
+
+**Note:**
+For installing a given version:
+```
+ ./oe-layertool-setup.sh -f configs/opengrp-gateway-vMM.nn.bb.txt
+```
 
 ## Layers
 There are 3 layers specific to the project:
@@ -8,10 +47,12 @@ There are 3 layers specific to the project:
 - [meta-tlgate](https://gitlab.boost.open.global/schneider-electric/passerelle_refonte/Software/bsp/meta-tlgate): motherboard layer containing the DISTRO and images definition, and all mandatory tools
 - [meta-sisgateway](https://gitlab.boost.open.global/schneider-electric/passerelle_refonte/Software/bsp/meta-sisgateway): customer customization (config files, ...)
 
-## Images
+## Images and packages
 The available images are the following. Those images are defined in the meta-tlgate layer.
-- `opengrp-gateway-img-release`: production image
-- `opengrp-gateway-img-dev`: same as opengrp-gateway-img-release with the addition of debug tools, no root password, ...
+- `bitbake opengrp-gateway-img-release`: production image
+- `bitbake opengrp-gateway-img-dev`: same as opengrp-gateway-img-release with the addition of debug tools, no root password, ...
+- `bitbake tlgate`: build a given package (only, but including its dependencies)
+- `devtool modify tlgate`: checkout a package to make changes
 
 ## The am64xx-tlgate MACHINE
 
@@ -37,8 +78,6 @@ This is detailed in u-boot sources, in the `./board/ti/am65x/README` (there's no
 
 That's the reason why we define the am64xx-tlgate MACHINE in the meta-tlgate-bsp layer, but also the am64xx-tlgate-k3r5 secondary machine.
 
-[Back](toc.md)
-
 ## Tips and Tricks
 
 ### About using devtool
@@ -59,3 +98,35 @@ index 10ecf8ea..73b14430 100644
 +#addtask create_srcipk after do_configure before do_compile
 ```
 
+### Create a bootable SD-card
+```json
+cd build/arago-tmp-external-arm-glibc/deploy/images/am64xx-tlgate
+sudo umount /dev/mmcblk0p?
+sudo dd bs=4M if=opengrp-gateway-img-release-am64xx-tlgate.wic of=/dev/mmcblk0 status=progress && sync
+OR:
+sudo bmaptool copy opengrp-gateway-img-release-am64xx-tlgate.wic /dev/mmcblk0 && sync
+```
+
+### Building a custom Linux kernel
+There are different ways to do this, here is at least one solution:
+1) clone the Kernel repository (https://gitlab.boost.open.global/schneider-electric/passerelle_refonte/Software/bsp/ti-linux-kernel, use the tlgate-5.4 branch)
+2) make your changes, and **commit them**
+3) In Yocto sources tree, patch the kernel recipe (`sources/meta-tlgate-bsp/recipes-kernel/linux/linux-ti-staging_%.bbappend`) this way:
+```
+@@ -7,6 +7,6 @@
+ SRCREV = "${AUTOREV}"
+ 
+ # Note: defconfig is here just to point kernel config to the in-repo config file
+ SRC_URI = " \
+-       git://git@git.boost.open.global:443/schneider-electric/passerelle_refonte/Software/bsp/ti-linux-kernel.git;protocol=ssh;branch=${BRANCH} \
++       git://<path to your kernel clone: absolute path including leading />;protocol=file;branch=${BRANCH} \
+        file://defconfig \
+```
+4) Rebuild Kernel: the command to rebuild the whole recipe (including device tree) is `bitbake -c cleanall linux-ti-staging && bitbake linux-ti-staging`.
+5) You can get resulting files in `build/arago-tmp-external-arm-glibc/work/am64xx_tlgate-linux/linux-ti-staging/5.4.106+gitAUTOINC+XXXXX-r0a.arago5_psdkla_8/image`.
+
+**Notes:**
+- The kernel config is `arch/arm64/configs/tisdk_am64xx-tlgate_defconfig`
+- The device tree is `arch/arm64/boot/dts/ti/k3-am642-tlgate.dts`
+
+[Back](toc.md)
