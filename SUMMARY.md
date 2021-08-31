@@ -14,7 +14,7 @@ There are two documentation directories here:
 	- [Cybersecurity](internal/SEPASSRFNT-46-security.md)
 	- [GPIOs](internal/SEPASSRFNT-45-gpio.md)
 	- [Network](internal/SEPASSRFNT-44-network.md)
-	- [Testbench](internal/SEPASSRFNT-42-testbench.md)
+	- [Testbench](internal/SEPASSRFNT-41-testbench.md)
 	- [Continuous Integration](internal/SEPASSRFNT-41-ci.md)
 	- [SW update](internal/SEPASSRFNT-18-update.md)
 - [Customer documentation](customer/toc.md)
