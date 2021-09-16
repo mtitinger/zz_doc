@@ -6,7 +6,7 @@ Main "top" directory is based on Yocto Dunfell for TI AM64x SoC. It is a fork fr
 (copy/pasted from https://software-dl.ti.com/processor-sdk-linux/esd/AM64X/07_03_00_02/exports/docs/linux/Overview_Building_the_SDK.html)
 
 ```
-$ sudo apt-get install build-essential autoconf automake bison flex libssl-dev bc u-boot-tools python diffstat texinfo gawk chrpath dos2unix wget unzip socat doxygen libc6:i386 libncurses5:i386 libstdc++6:i386 libz1:i386 g++-multilib
+$ sudo apt-get install build-essential autoconf automake bison flex libssl-dev bc u-boot-tools python diffstat texinfo gawk chrpath dos2unix wget unzip socat doxygen libc6:i386 libncurses5:i386 libstdc++6:i386 libz1:i386 g++-multilib python3-distutils
 $ sudo dpkg-reconfigure dash
 
 $ wget https://developer.arm.com/-/media/Files/downloads/gnu-a/9.2-2019.12/binrel/gcc-arm-9.2-2019.12-x86_64-arm-none-linux-gnueabihf.tar.xz
@@ -22,10 +22,36 @@ $ sudo tar -Jxvf gcc-arm-9.2-2019.12-x86_64-aarch64-none-linux-gnu.tar.xz -C /op
 
 For your comfort, the following git parameters can be set:
 * preferably use vim over nano : sudo update-alternatives --config editor
-* git config --global alias.st status
-* git config --global alias.ci commit
-* git config --global alias.br branch
-* git config --global alias.co checkout
+
+### git aliases and user config (for sign-off)
+
+Adapt the following to your case, in ~/.gitconfig
+
+```
+[alias]
+        st = status
+        ci = commit
+        br = branch
+        co = checkout
+[user]
+        name = Marc Titinger
+        email = marc.titinger@open-groupe.com
+```
+
+### Dealing with git protocol restrictions (WIP)
+
+You can use the following substitutions in ~/.gitconfig
+
+```
+[url "https://git.yoctoproject.org/git"]
+        insteadOf = git://git.yoctoproject.org
+
+[url "http://git.ti.com/git"]
+        insteadOf = git://git.ti.com
+
+[url "http://"]
+        insteadOf = git://
+```
 
 ## Install sources
 ```
