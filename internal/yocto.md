@@ -157,4 +157,25 @@ There are different ways to do this, here is at least one solution:
 - The kernel config is `arch/arm64/configs/tisdk_am64xx-tlgate_defconfig`
 - The device tree is `arch/arm64/boot/dts/ti/k3-am642-tlgate.dts`
 
+### using SSHFS
+
+In your client VM, you need to install sshfs
+
+```
+sudo apt install sshfs
+```
+in /etc/fstab, add an entry, I recommend you use the same path than on the build server
+so that any path sensitive script you make will also work.
+
+```
+mti20447@10.20.3.10:/opt/build/mti20447  /opt/build/mti20447  fuse.sshfs  port=22,user,noatime,reconnect,_netdev,allow_other  0  0
+```
+
+Make sure to generate an rsa key (w/o password) and copy your key to your user on the build server:
+
+```
+ssh-keygen ...
+ssh-copy-id -i ~/.ssh/id_rsa.pub yourtrigram@10.20.3.10
+```
+
 [Back](toc.md)
