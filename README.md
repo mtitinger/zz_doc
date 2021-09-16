@@ -1,3 +1,15 @@
-# Documentation for the SIS Gateway project
+# Documentation for the SISGateway (Schneider Electric) project
 
-This documentation is generated with GitBook. Select a chapter to start with !
+## Welcome
+This documentation is generated with the gitlab pipeliine for GitBook. Select a chapter to start with in the frame on the left.
+
+If you are new to the project, reading starts with:
+
+* the 'Yocto build' chapter for practical hints on getting set up
+* the 'Developement Guidelines' for mandatory rules to contribute and release this software
+
+## Documentation rules
+
+This documentation is written as part of the developement process : a matching .md file is required for each HLF (high level feature, a.k.a Epics) upon delivery to MG60 (Maturity Grade 60) 
+
+The developement process is described in 'Developement Guidelines'

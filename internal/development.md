@@ -1,5 +1,30 @@
 # Development guidelines
 
+## Development process
+
+### General Quality and Progress Management Culture
+The Software developement process is a simple and losely based on the Agile processes, but officially advertised as a V-cycle, meaning that: 
+
+* we losely define a sprint as being one week, with a weekly backlog meeting.
+* we define Releases matching macroscopic technical milestones, in order to prioritize tasks
+* High-level features (HLF), meaning thoses features that are the technical breakout of the System Requirements (SRS) are managed as Epics. HLF are tracked in their status using a Maturity Grade (MG) criteria.
+* HLF are analyzed so as to break them into Low-Level Features (LLF), tracked as Sub-tasks (stories as per Scrum, sub-tasks as per JIRA)
+
+### Software Developement Process Activities
+
+* Architecture : we write Architecture and High-LEvel specification in the HLF Jira Ticket
+* Detailed Specification : detailed implementation notes, usage and testing note in the LLF tickets
+* Code writing : see Coding rules chapter
+* Code contribution : see COmmitting rules
+* Code Review and Static Analysis : see Committing rules
+* Test construction and testing : See Test Strategy
+* Validation and Qualification : See Test Strategy
+* Realease of Deliverables and Branching : See Realase Strategy
+* Maintenance and Fixes : See Realase and Maintenance Strategy
+
+
+## Coding Rules
+
 ## Regles de commit
 
 Les regles ci-dessous devront ^tre formalisees dans le plan de dev, mais on rappelle l'essentiel ici:

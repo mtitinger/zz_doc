@@ -125,6 +125,8 @@ index 10ecf8ea..73b14430 100644
 ```
 
 ### Create a bootable SD-card
+First identify your block device using lsblk for instance, to prevent to alter the wrong filesystem.
+
 ```json
 cd build/arago-tmp-external-arm-glibc/deploy/images/am64xx-tlgate
 sudo umount /dev/mmcblk0p?
