@@ -30,6 +30,7 @@ RHOST_1=... RHOST_2=... /opt/ltp/testscripts/network.sh -B
 Where RHOST_1 and RHOST_2 are environment variables which should contain IP adresses of 2 hosts on 2 different sub-networks, running iperf3 server (with `iperf3 -s`).
 
 #### Serial connections
+Read [Configuration for quad-uarts chips](SEPASSRFNT-64-uarts.md) for details about the rs485-test program.
 
 #### Logging
 

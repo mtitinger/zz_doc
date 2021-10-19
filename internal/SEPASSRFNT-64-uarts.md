@@ -54,4 +54,20 @@ if (ioctl (fd, TIOCSRS485, &rs485conf) < 0) {
 	fprintf( stderr, "Error sending ioctl port (%d): %s\n",  errno, strerror( errno ));
 }
 ```
+
+We have a test program available in the Yocto recipes, which sends random characters to a tty device. It has to be built with the typical command `bitbake rs485-test`.
+```
+root@am64xx-tlgate:~# rs485-test
+Please provide a device path
+Usage: rs485-test [option ...]
+RS485 test program.
+
+  -h, --help          display this help and exit.
+  -d, --device        path to RS485 device.
+  -n, --number        number of iterations.
+  -b, --baudrate      Baudrate in bits/s (optional: default 115200).
+
+root@am64xx-tlgate:~# rs485-test -d /dev/ttyMAX0 -n 10 -b 115200
+Wrote 10 bytes.
+```
 [Back](toc.md)
