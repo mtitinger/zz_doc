@@ -1,6 +1,6 @@
 # Building the Yocto project from sources
 
-Main "top" directory is based on Yocto Dunfell for TI AM64x SoC. It is a fork from git://arago-project.org/git/projects/oe-layersetup.git
+Main "top" directory is based on Yocto Dunfell for TI AM64x SoC. It is a fork from [git://arago-project.org/git/projects/oe-layersetup.git](git://arago-project.org/git/projects/oe-layersetup.git).
 
 ## Pre-requisites
 (copy/pasted from https://software-dl.ti.com/processor-sdk-linux/esd/AM64X/07_03_00_02/exports/docs/linux/Overview_Building_the_SDK.html)
@@ -82,7 +82,11 @@ The available images are the following. Those images are defined in the meta-tlg
 
 ## The am64xx-tlgate MACHINE
 
-The machine used for the project is "forked" from am64xx-evm.
+The machine used for the project is "forked" from am64xx-evm. Both MACHINEs can be built, one should build with `MACHINE=am64xx-evm` for running on the evaluation board, and `MACHINE=am64xx-tlgate` for running on the tlgate board.
+Since the device tree for tlgate has no support for sd-card, you won't be able to boot the tlgate software on the evaluation board.
+
+You can switch machines in conf/local.conf, any time: some parts of the build are common, some are specific. In any case, you will get build artifacts either in
+`build/arago-tmp-external-arm-glibc/deploy/images/am64xx-tlgate` or `build/arago-tmp-external-arm-glibc/deploy/images/am64xx-evm`.
 
 ### The need for overrides for u-boot and ti-sci-fw
 We have .bbappend files for those recipes, which are just copy-pasted from the TI recipes in order to provide the variables and functions with the proper machine override (i.e. the _am64xx-tlgate suffix).
