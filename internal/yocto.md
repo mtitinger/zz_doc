@@ -82,11 +82,17 @@ The available images are the following. Those images are defined in the meta-tlg
 
 ## The am64xx-tlgate MACHINE
 
-The machine used for the project is "forked" from am64xx-evm. Both MACHINEs can be built, one should build with `MACHINE=am64xx-evm` for running on the evaluation board, and `MACHINE=am64xx-tlgate` for running on the tlgate board.
+The machine used for the project is "forked" from am64xx-evm. Both MACHINEs can be built, one should:
+
+* build with `MACHINE=am64xx-evm` for running on the *evaluation board*
+* build with `MACHINE=am64xx-tlgate` for running on the *tlgate board* a.k.a RUN1 and later RUN2.
+
 Since the device tree for tlgate has no support for sd-card, you won't be able to boot the tlgate software on the evaluation board.
 
 You can switch machines in conf/local.conf, any time: some parts of the build are common, some are specific. In any case, you will get build artifacts either in
-`build/arago-tmp-external-arm-glibc/deploy/images/am64xx-tlgate` or `build/arago-tmp-external-arm-glibc/deploy/images/am64xx-evm`.
+
+* `build/arago-tmp-external-arm-glibc/deploy/images/am64xx-evm`		for devkit flashing procedure, is dd'ing to and external SDCard.
+* `build/arago-tmp-external-arm-glibc/deploy/images/am64xx-tlgate`	for RUNx (flashing procedure To Be Documented)
 
 ### The need for overrides for u-boot and ti-sci-fw
 We have .bbappend files for those recipes, which are just copy-pasted from the TI recipes in order to provide the variables and functions with the proper machine override (i.e. the _am64xx-tlgate suffix).
