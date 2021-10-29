@@ -119,8 +119,7 @@ That's the reason why we define the am64xx-tlgate MACHINE in the meta-tlgate-bsp
 ### About using devtool
 
 I am finding that "devtool modify" can be broken because of the create_scripk errors.
-Since we are not using ipk we ca just remove this do_create_srcipk task, by commenting in file:
-
+Since we are not using ipk we ca just remove this do_create_srcipk task, by commenting in file in *the meta-arago* layer:
 ```patch
 diff --git a/meta-arago-distro/recipes-kernel/linux/copy-defconfig.inc b/meta-arago-distro/recipes-kernel/linux/copy-defconfig.inc
 index 10ecf8ea..73b14430 100644
