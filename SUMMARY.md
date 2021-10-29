@@ -7,7 +7,7 @@ There are two documentation directories here:
 	- [Yocto build](internal/yocto.md)
 	- [Development guidelines](internal/development.md)
 	- [Logs](internal/SEPASSRFNT-6-syslog.md)
-	- [End-of-line flashing and testing](internal/SEPASSRFNT-87-flashing.md)
+	- [End-of-line flashing and testing](internal/SEPASSRFNT-61-flashing.md)
 	- [Time management](internal/SEPASSRFNT-76-time.md)
 	- [Diag & Rescue shell](internal/SEPASSRFNT-69-rescue.md)
 	- [Windows Config App](internal/SEPASSRFNT-58-win-config.md)
