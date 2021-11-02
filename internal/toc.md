@@ -10,7 +10,7 @@
 - [GPIOs, LEDs](SEPASSRFNT-45-gpio.md)
 - [UARTs](SEPASSRFNT-64-uarts.md)
 - [Network](SEPASSRFNT-44-network.md)
-- [Testbench](SEPASSRFNT-42-testbench.md)
+- [Testbench](SEPASSRFNT-41-testbench.md)
 - [Continuous Integration](SEPASSRFNT-41-ci.md)
 - [SW update](SEPASSRFNT-18-update.md)
 
