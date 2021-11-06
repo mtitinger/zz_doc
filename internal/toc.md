@@ -1,5 +1,6 @@
 # Internal documentation
 
+- [Yocto Onetime Setup](yocto-onetime-setup.md)
 - [Yocto build](yocto.md)
 - [Logs](SEPASSRFNT-6-syslog.md)
 - [End-of-line flashing and testing](SEPASSRFNT-87-flashing.md)

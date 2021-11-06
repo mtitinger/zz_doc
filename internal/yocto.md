@@ -1,84 +1,73 @@
-# Building the Yocto project from sources
-
-Main "top" directory is based on Yocto Dunfell for TI AM64x SoC. It is a fork from [git://arago-project.org/git/projects/oe-layersetup.git](git://arago-project.org/git/projects/oe-layersetup.git).
-
-## Pre-requisites
-(copy/pasted from https://software-dl.ti.com/processor-sdk-linux/esd/AM64X/07_03_00_02/exports/docs/linux/Overview_Building_the_SDK.html)
-
-```
-$ sudo apt-get install build-essential autoconf automake bison flex libssl-dev bc u-boot-tools python diffstat texinfo gawk chrpath dos2unix wget unzip socat doxygen libc6:i386 libncurses5:i386 libstdc++6:i386 libz1:i386 g++-multilib python3-distutils
-$ sudo dpkg-reconfigure dash
-
-$ wget https://developer.arm.com/-/media/Files/downloads/gnu-a/9.2-2019.12/binrel/gcc-arm-9.2-2019.12-x86_64-arm-none-linux-gnueabihf.tar.xz
-$ sudo tar -Jxvf gcc-arm-9.2-2019.12-x86_64-arm-none-linux-gnueabihf.tar.xz -C /opt
-$ wget https://developer.arm.com/-/media/Files/downloads/gnu-a/9.2-2019.12/binrel/gcc-arm-9.2-2019.12-x86_64-aarch64-none-linux-gnu.tar.xz
-$ sudo tar -Jxvf gcc-arm-9.2-2019.12-x86_64-aarch64-none-linux-gnu.tar.xz -C /opt
-```
-
-## Bootstraping for OpenGroupe
-
-* A build server is setup here: 10.20.3.10 (within the Opengroupe VPN)
-* Every developer has to create his own build directory in `/opt/build/{trigram}`
-
-For your comfort, the following git parameters can be set:
-* preferably use vim over nano : sudo update-alternatives --config editor
-
-### git aliases and user config (for sign-off)
-
-Adapt the following to your case, in ~/.gitconfig
-
-```
-[alias]
-        st = status
-        ci = commit
-        br = branch
-        co = checkout
-[user]
-        name = Marc Titinger
-        email = marc.titinger@open-groupe.com
-```
-
-### Dealing with git protocol restrictions (WIP)
-
-You can use the following substitutions in ~/.gitconfig
-
-```
-[url "https://git.yoctoproject.org/git"]
-        insteadOf = git://git.yoctoproject.org
-
-[url "http://git.ti.com/git"]
-        insteadOf = git://git.ti.com
-
-[url "http://"]
-        insteadOf = git://
-```
+# TLGATE Yocto : build setup, and image creation
 
 ## Install sources
+
+### Developement Image
+
 ```
-./oe-layertool-setup.sh -f configs/opengrp-gateway-sdk.txt
+./oe-layertool-setup.sh -f configs/opengrp-gateway-DEV.txt
 cd build
 . conf/setenv
-bitbake opengrp-gateway-img-release
+bitbake opengrp-gateway-img-dev
 ```
 
-**Note:**
-For installing a given version:
+### Building a release
+
+Realeases will be build by checking out a tagged version for all repositories,
+this is done as follows:
+
 ```
  ./oe-layertool-setup.sh -f configs/opengrp-gateway-vMM.nn.bb.txt
+
+ bitbake opengrp-gateway-img-release
 ```
 
-## Layers
+## Yocto meta-layers
 There are 3 layers specific to the project:
 - [meta-tlgate-bsp](https://gitlab.boost.open.global/schneider-electric/passerelle_refonte/Software/bsp/meta-tlgate-bsp): BSP layer, containing kernel customizations for the hardware
 - [meta-tlgate](https://gitlab.boost.open.global/schneider-electric/passerelle_refonte/Software/bsp/meta-tlgate): motherboard layer containing the DISTRO and images definition, and all mandatory tools
 - [meta-sisgateway](https://gitlab.boost.open.global/schneider-electric/passerelle_refonte/Software/bsp/meta-sisgateway): customer customization (config files, ...)
 
 ## Images and packages
+
+### main images
 The available images are the following. Those images are defined in the meta-tlgate layer.
 - `bitbake opengrp-gateway-img-release`: production image
 - `bitbake opengrp-gateway-img-dev`: same as opengrp-gateway-img-release with the addition of debug tools, no root password, ...
+
+### production and maintenance iùmage (TODO)
+
+### main Open-groupe packages
+
+The application package is called "tlgate-app"
+
 - `bitbake tlgate`: build a given package (only, but including its dependencies)
 - `devtool modify tlgate`: checkout a package to make changes
+
+It is integrated through a packagegroup file, located in: 
+
+*meta-tlgate/recipes-core/packagegroups/packagegroup-open-gateway.bb*
+
+tlgate-app has the following recipes layourt in meta-tlgate/recipes-modbus:
+
+```
+.
+├── tlgate-app
+│   ├── tlgate-agn_git.bb
+│   ├── tlgate-app
+│   │   └── tlgate.service
+│   ├── tlgate-app_git.bb
+│   ├── tlgate-iec10x.bb
+│   └── tlgate-repo.inc
+├── tmwscl
+│   └── tmwscl_git.bb
+└── tmwscl104
+    └── tmwscl104_git.bb
+```
+
+* tmwscl* ar ethe Triangle Microworks libraries in 2004 (iec101) and 2008 (iec104) versions
+* tlgate-agn is a common library, for things ike logs, and parsing the config
+* tlgate-iec10* is the public library, for client apps that are launched by tlgate-app. Those client apps implement modbus masters or slaves. 
 
 ## The am64xx-tlgate MACHINE
 
@@ -165,26 +154,5 @@ There are different ways to do this, here is at least one solution:
 **Notes:**
 - The kernel config is `arch/arm64/configs/tisdk_am64xx-tlgate_defconfig`
 - The device tree is `arch/arm64/boot/dts/ti/k3-am642-tlgate.dts`
-
-### using SSHFS
-
-In your client VM, you need to install sshfs
-
-```
-sudo apt install sshfs
-```
-in /etc/fstab, add an entry, I recommend you use the same path than on the build server
-so that any path sensitive script you make will also work.
-
-```
-mti20447@10.20.3.10:/opt/build/mti20447  /opt/build/mti20447  fuse.sshfs  port=22,user,noatime,reconnect,_netdev,allow_other  0  0
-```
-
-Make sure to generate an rsa key (w/o password) and copy your key to your user on the build server:
-
-```
-ssh-keygen ...
-ssh-copy-id -i ~/.ssh/id_rsa.pub yourtrigram@10.20.3.10
-```
 
 [Back](toc.md)
