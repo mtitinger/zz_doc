@@ -61,6 +61,9 @@ It will create some aliases, and setup substitutions to circumvent ports restric
 
 [url "http://"]
         insteadOf = git://
+
+[pull]
+        ff = only
 ```
 ### using SSHFS (for YOU)
 

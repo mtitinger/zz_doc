@@ -22,11 +22,13 @@ RDEPENDS_packagegroup-core-standalone-sdk-target_remove = "libatomic-dev"
 ## SDK installation and usage
 
 * The SDK installer is generated as *build/arago-tmp-external-arm-glibc/deploy/sdk/tlgate-sdk-5.10-zeus-toolchain-5.10-zeus.sh*
-* it default installation location is */usr/local/tlgate-sdk-x86_64*, but I recommend installing it under */opt/tlgate-sdk-x86_64*
+* its default installation location is */usr/local/tlgate-sdk-x86_64*, but I recommend installing it under */opt/tlgate-sdk-x86_64*
 * once installed you can source the dev environment with:
 
 ```
 source /opt/tlgate-sdk-x86_64/environment-setup-aarch64-linux
 ```
+
+Note: in case cross-canadian-gdb build fail, just repeat the bitbake command, second build is ok.
 
 [Back](toc.md)
