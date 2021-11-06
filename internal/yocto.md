@@ -35,7 +35,8 @@ The available images are the following. Those images are defined in the meta-tlg
 - `bitbake opengrp-gateway-img-release`: production image
 - `bitbake opengrp-gateway-img-dev`: same as opengrp-gateway-img-release with the addition of debug tools, no root password, ...
 
-### production and maintenance iùmage (TODO)
+### production and maintenance image (TODO)
+
 
 ### main Open-groupe packages
 
