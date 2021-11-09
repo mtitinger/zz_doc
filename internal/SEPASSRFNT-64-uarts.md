@@ -57,8 +57,7 @@ if (ioctl (fd, TIOCSRS485, &rs485conf) < 0) {
 
 We have a test program available in the Yocto recipes, which sends random characters to a tty device. It has to be built with the typical command `bitbake rs485-test`.
 ```
-root@am64xx-tlgate:~# rs485-test
-Please provide a device path
+root@am64xx-tlgate:~# rs485-test -h
 Usage: rs485-test [option ...]
 RS485 test program.
 
@@ -70,4 +69,21 @@ RS485 test program.
 root@am64xx-tlgate:~# rs485-test -d /dev/ttyMAX0 -n 10 -b 115200
 Wrote 10 bytes.
 ```
+
+Another test program is part of the Linux Test Project test suite. If the ltp package is installed, you can find the binary in `/opt/ltp/testcases/bin`:
+```
+/opt/ltp/testcases/bin# ./serial-loops -h
+Usage: ./serial-loops [option ...]
+Serial devices test program.
+
+  -h, --help          display this help and exit.
+  -p, --path          path to serial devices as a prefix, final number will be appended to this.
+  -n, --number        number of tty devices to exercise (must be even).
+  -b, --baudrate      Baudrate in bits/s (optional: default 115200).
+  -r, --rs485         Enable RS485 (optional: default disabled).
+  -s, --seed          Random seed (optional).
+```
+This program is meant to send packets to a serial port, and expect them to be received on the next one (relative to the devices numbering: ttyMAX0 sends to ttyMAX1, ttyMAX2 to ttyMAX3, etc.).
+First the program sends from 0 to 1 then reverses the consumers and producers (1 sends to 0). The number of port couples can be configured on the command line.
+
 [Back](toc.md)

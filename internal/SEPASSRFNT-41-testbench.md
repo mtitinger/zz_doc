@@ -45,7 +45,7 @@ cd /opt/ltp
 ./runltp -f bsp.uarts
 ```
 
-Also read [Configuration for quad-uarts chips](SEPASSRFNT-64-uarts.md) for details about the rs485-test program.
+Also read [Configuration for quad-uarts chips](SEPASSRFNT-64-uarts.md) for details about the rs485-test and serial-loops program.
 
 #### Logging
 ```
