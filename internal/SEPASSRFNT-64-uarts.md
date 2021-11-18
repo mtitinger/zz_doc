@@ -86,4 +86,52 @@ Serial devices test program.
 This program is meant to send packets to a serial port, and expect them to be received on the next one (relative to the devices numbering: ttyMAX0 sends to ttyMAX1, ttyMAX2 to ttyMAX3, etc.).
 First the program sends from 0 to 1 then reverses the consumers and producers (1 sends to 0). The number of port couples can be configured on the command line.
 
-[Back](toc.md)
+# Native Simulation stub configuration
+
+## Building and Installing
+
+The projet "tty0tty" provides means to simulate TTY loopback test in the native PC environment.
+
+In order to build this moduels, you need the kernel headers packages to be installed, which is usuallythe case, if you installed the virtualbox guest extensions. 
+
+* Clone from : ssh://git@git.boost.open.global:443/schneider-electric/passerelle_refonte/Software/tools/tty0tty.git
+* Build the module with : cd module; make
+
+```
+marc@marc-virtualbox:~/tty0tty/module$ make 
+make -C /lib/modules/5.11.0-40-generic/build M=/home/marc/tty0tty/module modules
+make[1]: Entering directory '/usr/src/linux-headers-5.11.0-40-generic'
+  CC [M]  /home/marc/tty0tty/module/tty0tty.o
+  MODPOST /home/marc/tty0tty/module/Module.symvers
+  CC [M]  /home/marc/tty0tty/module/tty0tty.mod.o
+  LD [M]  /home/marc/tty0tty/module/tty0tty.ko
+  BTF [M] /home/marc/tty0tty/module/tty0tty.ko
+Skipping BTF generation for /home/marc/tty0tty/module/tty0tty.ko due to unavailability of vmlinux
+make[1]: Leaving directory '/usr/src/linux-headers-5.11.0-40-generic'
+```
+
+* install with : sudo make modules_install (ssl erros may occur, but ignore it)
+
+```
+install -m 644 50-tty0tty.rules /etc/udev/rules.d
+
+marc@marc-virtualbox:~/tty0tty/module$ sudo find /lib/modules/5.11.0-40-generic/ -name "tty*"
+/lib/modules/5.11.0-40-generic/kernel/drivers/tty
+/lib/modules/5.11.0-40-generic/kernel/drivers/tty/ttynull.ko
+/lib/modules/5.11.0-40-generic/extra/tty0tty.ko
+```
+
+* run sudo depmod
+
+## Loading and using
+
+* add tty0tty.ko to the modules to load upon boot, by adding it to file /etc/modules
+* sudo modprobe tty0tty
+* add yourself to the dialout group (this requires relogging)
+
+```
+sudo usermod  -a -G dialout ${USER}
+```
+
+
+-[Back](toc.md)
