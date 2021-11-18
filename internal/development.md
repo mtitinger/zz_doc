@@ -25,6 +25,49 @@ The Software developement process is a simple and losely based on the Agile proc
 
 ## Coding Rules
 
+### Vital rules
+
+* R0: .h files are headers, APIs exports (extern...) are defines in headers, not in C files
+* R1: .c files are modules, where the function bodies are located, don't code non trivial/inline functions in .h files, if you do so, stop it.
+* R2: function shared by multiples apps should go to a library
+* R3: globals should not be used, and confined to the main modules/application, and not in libraries, unless the intent was to have shared memory, in which case, you are most of the time just missing the use of an IPC of some sort.
+
+### Elementary coding rules
+
+* R10 : return values of function calls must be tested versus error cases
+* R11 : NO EXIT() amidst libaries, or as stray exit in function calls
+* R12 : an application has only one exit point, assuming R0 and R1 are applied. Upon failure, a readable message is output using a standard output, like stdout, or syslog.
+* R13 : Under Linux, by convention, APIs return: ZERO (0) upon success, non-ZERO, preferably negative, upon failure
+* R14 : function calls have only one exit point, NO MULTIPE RETURNS, no longjumps, no atexit etc...
+* R15 : immediate values use a define that provides some meaning and reference for that value:
+```
+#define DEFAULT_REG1	0x356
+
+...
+myvar = DEFAULT_REG1;
+```
+instead of: 
+```
+myvar = 0x356 /* send me 500$ if you want to know why this value */
+```
+
+* R16: defines are in FULLUPPERCASE, variables are NEVER in full-uppercase.
+
+As a reference, you may also read https://github.com/torvalds/linux/blob/master/Documentation/process/coding-style.rst
+
+### Project specific coding rules
+
+* R100: use yoda-code style for conditional statements: 
+```
+ if (MYVAL == myvar)
+```
+which prevent against unwanted assignement (if using '=' rather than '=='), instead of: 
+
+```
+ if (myvar == MYVAL)
+```
+
+
 ## Regles de commit
 
 Les regles ci-dessous devront ^tre formalisees dans le plan de dev, mais on rappelle l'essentiel ici:

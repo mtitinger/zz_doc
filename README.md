@@ -1,12 +1,14 @@
-# Documentation for the SISGateway (Schneider Electric) project
+# Documentation for the SISGateway
+
+SISGateway is a Schneider Electric project rework from v5 (2004/2008) to v6 (2021)
 
 ## Welcome
-This documentation is generated with the gitlab pipeliine for GitBook. Select a chapter to start with in the frame on the left.
+This documentation is generated with the gitlab pipeline for GitBook. Select a chapter to start with in the frame on the left.
 
 If you are new to the project, reading starts with:
 
 * the 'Yocto build' chapter for practical hints on getting set up
-* the 'Developement Guidelines' for mandatory rules to contribute and release this software
+* the various 'Developement Guidelines' for mandatory rules to contribute and release this software
 
 ## Documentation rules
 

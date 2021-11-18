@@ -1,6 +1,6 @@
 # TLGATE Yocto : build setup, and image creation
 
-## Install sources
+## Sources Setup
 
 ### Developement Image
 
@@ -27,6 +27,9 @@ There are 3 layers specific to the project:
 - [meta-tlgate-bsp](https://gitlab.boost.open.global/schneider-electric/passerelle_refonte/Software/bsp/meta-tlgate-bsp): BSP layer, containing kernel customizations for the hardware
 - [meta-tlgate](https://gitlab.boost.open.global/schneider-electric/passerelle_refonte/Software/bsp/meta-tlgate): motherboard layer containing the DISTRO and images definition, and all mandatory tools
 - [meta-sisgateway](https://gitlab.boost.open.global/schneider-electric/passerelle_refonte/Software/bsp/meta-sisgateway): customer customization (config files, ...)
+
+NOTE: synchronise your repositories regularily, doing a rebase if necessary.
+NOTE: the script **sync-tlgate** will try to pull from the origin repository for the project specific meta-layers
 
 ## Images and packages
 
