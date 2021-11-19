@@ -12,7 +12,7 @@ There are two documentation directories here:
 	- [Windows Config App](internal/SEPASSRFNT-58-win-config.md)
 	- [Cybersecurity](internal/SEPASSRFNT-46-security.md)
 	- [GPIOs](internal/SEPASSRFNT-45-gpio.md)
-	- [UARTs](SEPASSRFNT-64-uarts.md)
+	- [UARTs](internal/SEPASSRFNT-64-uarts.md)
 	- [Network](internal/SEPASSRFNT-44-network.md)
 	- [Testbench](internal/SEPASSRFNT-41-testbench.md)
 	- [Continuous Integration](internal/SEPASSRFNT-41-ci.md)
