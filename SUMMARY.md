@@ -20,5 +20,6 @@ There are two documentation directories here:
 	- [Yocto Onetime Setup](internal/yocto-onetime-setup.md)
 	- [Yocto build](internal/yocto.md)
 	- [Yocto building the SDK](internal/yocto-SDK.md)
+	- [PMIC Config and Power Management](SEPASSRFNT-99-power.md)
 - [Customer documentation](customer/toc.md)
 

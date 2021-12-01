@@ -16,6 +16,7 @@
 - [Yocto Onetime Setup](yocto-onetime-setup.md)
 - [Yocto build](yocto.md)
 - [Yocto building the SDK](yocto-SDK.md)
+- [PMIC Config and Power Management](SEPASSRFNT-99-power.md)
 
 ----
 [Back to main page](../README.md)
