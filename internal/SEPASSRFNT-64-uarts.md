@@ -12,24 +12,26 @@ They can be traced if you know the interrupt number, which is displayed at drive
 
 ```
 dmesg | grep ttyMAX
-[    2.499473] spi1.0: ttyMAX0 at I/O 0x0 (irq = 372, base_baud = 2764800) is a MAX14830
-[    2.507885] spi1.0: ttyMAX1 at I/O 0x20 (irq = 372, base_baud = 2764800) is a MAX14830
-[    2.516235] spi1.0: ttyMAX2 at I/O 0x40 (irq = 372, base_baud = 2764800) is a MAX14830
-[    2.524547] spi1.0: ttyMAX3 at I/O 0x60 (irq = 372, base_baud = 2764800) is a MAX14830
+...
+[    2.499473] spi1.0: ttyMAX4 at I/O 0x0 (irq = 481, base_baud = 2764800) is a MAX14830
+[    2.507885] spi1.0: ttyMAX5 at I/O 0x20 (irq = 481, base_baud = 2764800) is a MAX14830
+[    2.516235] spi1.0: ttyMAX6 at I/O 0x40 (irq = 481, base_baud = 2764800) is a MAX14830
+[    2.524547] spi1.0: ttyMAX7 at I/O 0x60 (irq = 481, base_baud = 2764800) is a MAX14830
+...
 ```
 
-So interrupt number is 372 (for this MAX14830 at least), then you can watch interrupts counter:
+So interrupt number is 481 (for this MAX14830 at least), then you can watch interrupts counter:
 
 ```
 cat /proc/interrupts
           CPU0       CPU1
  11:       4080       3899     GICv3  30 Level     arch_timer
 ...
-372:          0          0      GPIO  38 Edge    -davinci_gpio  spi1.0
+481:          0          0      GPIO  38 Edge    -davinci_gpio  spi1.0
 ...
 ```
 
-* Each chip is clocked with an external crystal, which oscillation frequency is 3.686400 MHz.
+* Each chip is clocked with an external oscillator, which oscillation frequency is 3.686400 MHz.
 * This is configured in the device tree, in the `spi_uart_clk` node.
 * Also, for each SPI bus we configure the maximum SPI bus frequency.
 * As of today it is set to 20MHz with the `spi-max-frequency` property.
@@ -152,5 +154,10 @@ marc@marc-virtualbox:~/tty0tty/module$ sudo find /lib/modules/5.11.0-40-generic/
 ```
 sudo usermod  -a -G dialout ${USER}
 ```
+
+## Hardware implantation
+
+The 4 chips are ordered on the board, from left to right, so that the tty devices correspond to this:
+![uarts-implantation](uarts-implantation.png)
 
 [Back](toc.md)
