@@ -11,12 +11,9 @@ recommended preliminary reading:
 
 Upon first poweron, the board is configured by resistors, so that
 
-* the ROM code first attempts to boot from Ethernet0 using BOOTP.
-* if BOOTP fails, the ROM code boot the eMMC.
+* the ROM code first attempts to boot eMMC
+* if eMMC boot fails, backup on production mode (BOOTP or DFU)
 
-With this config, the Production config is the default, allowing to flash the eMMC, once the eMMC is flashed, the board boots on it.
-
-*Question*: if BOOTP has a long timeout, chose DFU as primary for prod, but this is more difficult to automate.
 *Question*: once the software is stable, the eMMC can be pre-flashed, but this creates a delivery process with the contractor, that must be managed. Is it worth the cost, since we will probably update the board on EndOfLine anyways ?
 
 ## Production boot and flashing sequence
