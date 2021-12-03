@@ -15,11 +15,12 @@ There are two documentation directories here:
 	- [Network](internal/SEPASSRFNT-44-network.md)
 	- [Continuous Integration](internal/SEPASSRFNT-41-ci.md)
 	- [BSP and EMC Testsuite](internal/SEPASSRFNT-36-BSP-testsuite.md)
-	- [End-of-line flashing and testing](internal/SEPASSRFNT-61-flashing.md)
 	- [SW update](internal/SEPASSRFNT-18-update.md)
 	- [Yocto Onetime Setup](internal/yocto-onetime-setup.md)
 	- [Yocto build](internal/yocto.md)
 	- [Yocto building the SDK](internal/yocto-SDK.md)
 	- [PMIC Config and Power Management](SEPASSRFNT-99-power.md)
+	- [Bootmodes and JTAG debug setup](SEPASSRFNT-63-JTAG-debug-setup-and-bootmodes.md)
+	- [Flashing using DFU](SEPASSRFNT-61-DFU-flashing.md)
 - [Customer documentation](customer/toc.md)
 

@@ -1,6 +1,4 @@
-# Flashing ([SEPASSRFNT-61](https://jira.open-groupe.com/browse/SEPASSRFNT-61))
-
-(Also read [SEPASSRFNT-87](https://jira.open-groupe.com/browse/SEPASSRFNT-87) )
+# Flashing using DFU ([SEPASSRFNT-61](https://jira.open-groupe.com/browse/SEPASSRFNT-61))
 
 Flashing is done through the USB port on the board. It allows loading all successive software parts: SPL, u-boot, then directly write to the eMMC.
 

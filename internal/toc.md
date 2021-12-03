@@ -11,12 +11,12 @@
 - [Network](SEPASSRFNT-44-network.md)
 - [Continuous Integration](SEPASSRFNT-41-ci.md)
 - [BSP and EMC Testsuite](SEPASSRFNT-36-BSP-testsuite.md)
-- [End-of-line flashing and testing](SEPASSRFNT-61-flashing.md)
 - [SW update](SEPASSRFNT-18-update.md)
 - [Yocto Onetime Setup](yocto-onetime-setup.md)
 - [Yocto build](yocto.md)
 - [Yocto building the SDK](yocto-SDK.md)
 - [PMIC Config and Power Management](SEPASSRFNT-99-power.md)
-
+- [Bootmodes and JTAG debug setup](SEPASSRFNT-63-JTAG-debug-setup-and-bootmodes.md)
+- [Flashing using DFU](SEPASSRFNT-61-DFU-flashing.md)
 ----
 [Back to main page](../README.md)
