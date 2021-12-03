@@ -1,8 +1,9 @@
 # Flashing using DFU ([SEPASSRFNT-61](https://jira.open-groupe.com/browse/SEPASSRFNT-61))
 
+# Using Device Firmware Upload (DFU)
 Flashing is done through the USB port on the board. It allows loading all successive software parts: SPL, u-boot, then directly write to the eMMC.
 
-Also see the [reference TI document](https://software-dl.ti.com/processor-sdk-linux/esd/AM64X/08_00_00_21/exports/docs/linux/Foundational_Components/U-Boot/UG-Memory.html)
+Also see the [reference TI document](https://software-dl.ti.com/processor-sdk-linux/esd/AM64X/08_00_00_21/exports/docs/linux/Foundational_Components/U-Boot/UG-Memory.html).
 Be careful with the SDK version which implies some important changes (need for sysfw.itb file or not, for example).
 
 ## Requirements on development machine
@@ -11,11 +12,17 @@ If not, you can get it built by Yocto with the command `bitbake dfu-util-native`
 
 ## Manual flashing
 
-First, configure the boot mode. On the evaluation board, toggle SW2-5:
+First, configure the boot mode. On the evaluation board, toggle SW2:
 
 |SDCARD|USB|eMMC|
 |:----:|:-:|:--:|
-|![sdcard](sdcard.png)|![USB](usb.png)|![eMMC](emmc.png)|
+|![sdcard](sdcard.png)|![USB-DFU](usb.png)|![eMMC](emmc.png)|
+
+On the TLGATE board:
+
+|USB-Storage|USB-DFU|eMMC|
+|:---------:|:-----:|:--:|
+|![storage](bootmode-storage.png)|![dfu](bootmode-dfu.png)|![eMMC](bootmode-emmc.png)|
 
 Now when powering up the board, it enumerates on the USB bus.
 
@@ -63,7 +70,7 @@ This command should list different IDs and devices depending on the step (ROM bo
 
 If you messed up u-boot environment, you can restore default with `env -f -a`.
 
-## Differences between sd-card and eMMC
+# Differences between sd-card and eMMC
 The wic image for sd-card is intended to be booted on the EVM only. It contains bootloader files in the /boot partition.
 
 The wic image for eMMC is intended to be booted from eMMC, so it contains the kernel and device tree in the /boot partition, since the bootloader files are directly written to the mmcboot0 partition.
