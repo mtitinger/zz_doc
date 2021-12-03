@@ -22,5 +22,6 @@ There are two documentation directories here:
 	- [PMIC Config and Power Management](SEPASSRFNT-99-power.md)
 	- [Bootmodes and JTAG debug setup](SEPASSRFNT-63-JTAG-debug-setup-and-bootmodes.md)
 	- [Flashing using DFU](SEPASSRFNT-61-DFU-flashing.md)
+	- [Flashing for PROD and testing](SEPASSRFNT-87-End-Of-Line-flashing-and-testing.md)
 - [Customer documentation](customer/toc.md)
 
