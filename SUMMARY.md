@@ -19,9 +19,9 @@ There are two documentation directories here:
 	- [Yocto Onetime Setup](internal/yocto-onetime-setup.md)
 	- [Yocto build](internal/yocto.md)
 	- [Yocto building the SDK](internal/yocto-SDK.md)
-	- [PMIC Config and Power Management](SEPASSRFNT-99-power.md)
-	- [Bootmodes and JTAG debug setup](SEPASSRFNT-63-JTAG-debug-setup-and-bootmodes.md)
-	- [Flashing using DFU](SEPASSRFNT-61-DFU-flashing.md)
-	- [Flashing for PROD and testing](SEPASSRFNT-87-End-Of-Line-flashing-and-testing.md)
+	- [PMIC Config and Power Management](internal/SEPASSRFNT-99-power.md)
+	- [Bootmodes and JTAG debug setup](internal/SEPASSRFNT-63-JTAG-debug-setup-and-bootmodes.md)
+	- [Flashing using DFU](internal/SEPASSRFNT-61-DFU-flashing.md)
+	- [Flashing for PROD and testing](internal/SEPASSRFNT-87-End-Of-Line-flashing-and-testing.md)
 - [Customer documentation](customer/toc.md)
 
