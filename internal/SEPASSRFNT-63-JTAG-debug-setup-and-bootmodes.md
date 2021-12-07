@@ -1,6 +1,8 @@
 Bootmodes
 ==========
 
+NOTE: For further design details, please also refer to [SEPASSRFNT-63](https://jira.open-groupe.com/browse/SEPASSRFNT-63)
+
 ## On EVM and RUN1
 
 EVM and RUN1 support full bootmodes selection, using DIP switches.
@@ -95,7 +97,7 @@ BL2 TF-A stages.
 * build with "make  PLAT=k3 TARGET_BOARD=generic SPD=opteed" (aarch64 bare toolchain)
 * load address might not be a big deal, because of PIE build (start address is 0), so wee need to pick one that matches r5 spl, since this goes to SDRAM.
 * load image at 0x701a0000
-*  [^marc-0x701a0000-bl31.elf] is a rebased version of the elf, so that symols can be used
+*  [^marc-0x701a0000-bl31.elf] is a rebased version of the elf, so that symbols can be used
 
 Conclusion on JTAG boot
 ========================

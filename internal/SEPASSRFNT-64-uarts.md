@@ -1,5 +1,7 @@
 # Configuration for quad-uarts chips
 
+NOTE: For further design details, please also refer to [SEPASSRFNT-64](https://jira.open-groupe.com/browse/SEPASSRFNT-64)
+
 ## Kernel configuration
 
 * We have 4 MAX14830 chips on the board, allowing to drive 16 UARTs total.

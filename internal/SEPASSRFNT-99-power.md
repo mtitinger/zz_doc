@@ -1,4 +1,6 @@
-# Power Management and PMIC Config ([SEPASSRFNT-99](https://jira.open-groupe.com/browse/SEPASSRFNT-99))
+# Power Management and PMIC Config
+
+NOTE: For further design details, please also refer to [SEPASSRFNT-99](https://jira.open-groupe.com/browse/SEPASSRFNT-99)
 
 ## Requirements
 

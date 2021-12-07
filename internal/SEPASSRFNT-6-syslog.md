@@ -1,4 +1,6 @@
-# Logging with syslog ([SEPASSRFNT-6](https://jira.open-groupe.com/browse/SEPASSRFNT-6))
+# Logging with syslog
+
+NOTE: For further design details, please also refer to [SEPASSRFNT-6](https://jira.open-groupe.com/browse/SEPASSRFNT-6)
 
 The system is configured to be a syslog *client*, pushing logs to a syslog *server*.
 

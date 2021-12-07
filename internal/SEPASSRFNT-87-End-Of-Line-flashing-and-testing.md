@@ -1,5 +1,7 @@
-End Of Line Flashing and Testing process ([SEPASSRFNT-87](https://jira.open-groupe.com/browse/SEPASSRFNT-87))
+End Of Line Flashing and Testing process
 ======================================================
+
+NOTE: For further design details, please also refer to [SEPASSRFNT-87](https://jira.open-groupe.com/browse/SEPASSRFNT-87)
 
 This is a draft only, this feature is released in v1.10, this only gives the principles for now.
 

@@ -1,4 +1,6 @@
-# Flashing using DFU ([SEPASSRFNT-61](https://jira.open-groupe.com/browse/SEPASSRFNT-61))
+# Flashing using DFU
+
+NOTE: For further design details, please also refer to [SEPASSRFNT-61](https://jira.open-groupe.com/browse/SEPASSRFNT-61)
 
 # Using Device Firmware Upload (DFU)
 Flashing is done through the USB port on the board. It allows loading all successive software parts: SPL, u-boot, then directly write to the eMMC.

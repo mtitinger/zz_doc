@@ -1,4 +1,6 @@
-# BSP Testsuite : ([SEPASSRFNT-36](https://jira.open-groupe.com/browse/SEPASSRFNT-36))
+# BSP Testsuite
+
+NOTE: For further design details, please also refer to [SEPASSRFNT-36](https://jira.open-groupe.com/browse/SEPASSRFNT-36)
 
 
 Based on Linux Test Project (LTP)

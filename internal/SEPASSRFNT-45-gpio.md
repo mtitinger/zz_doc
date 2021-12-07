@@ -1,4 +1,6 @@
-# GPIOs and LEDs ([SEPASSRFNT-45](https://jira.open-groupe.com/browse/SEPASSRFNT-45))
+# GPIOs and LEDs
+
+NOTE: For further design details, please also refer to [SEPASSRFNT-45](https://jira.open-groupe.com/browse/SEPASSRFNT-45)
 
 ## LEDs
 The indicators on tlgate board are configured with the gpio-leds driver, so that userspace doesn't need to mess with `/sys/class/gpio`, and doesn't need to know which gpio a LED is connected to.

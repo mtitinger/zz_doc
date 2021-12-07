@@ -1,4 +1,6 @@
-# Time-keeping ([SEPASSRFNT-6](https://jira.open-groupe.com/browse/SEPASSRFNT-76))
+# Time-keeping
+
+NOTE: For further design details, please also refer to [SEPASSRFNT-76](https://jira.open-groupe.com/browse/SEPASSRFNT-76)
 
 The system uses NTP to sync time with external servers, through systemd-timesyncd daemon.
 
