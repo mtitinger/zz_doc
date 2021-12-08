@@ -164,7 +164,9 @@ There are different ways to do this, here is at least one solution:
 Because of the multiple UBOOT_MACHINES, rebuilding the R5 software requires to invoke the proper config:
 
 ```
-bitbake -c cleanall u-boot multiconfig:k3r5:u-boot
+bitbake -c cleansstate u-boot-ti-staging multiconfig:k3r5:u-boot
+bitbake  u-boot-ti-staging multiconfig:k3r5:u-boot
+bitbake opengrp-gateway-img-dev
 ```
 
 [Back](toc.md)
