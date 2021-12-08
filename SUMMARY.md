@@ -23,5 +23,6 @@ There are two documentation directories here:
 	- [Bootmodes and JTAG debug setup](internal/SEPASSRFNT-63-JTAG-debug-setup-and-bootmodes.md)
 	- [Flashing using DFU](internal/SEPASSRFNT-61-DFU-flashing.md)
 	- [Flashing for PROD and testing](internal/SEPASSRFNT-87-End-Of-Line-flashing-and-testing.md)
+	- [Notes on using BOOTP for boot](internal/bootp-ethernet-boot.md)
 - [Customer documentation](customer/toc.md)
 

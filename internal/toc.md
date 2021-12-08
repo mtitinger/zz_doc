@@ -19,5 +19,6 @@
 - [Bootmodes and JTAG debug setup](SEPASSRFNT-63-JTAG-debug-setup-and-bootmodes.md)
 - [Flashing using DFU](SEPASSRFNT-61-DFU-flashing.md)
 - [Flashing for PROD and testing](SEPASSRFNT-87-End-Of-Line-flashing-and-testing.md)
+- [Notes on using BOOTP for boot](bootp-ethernet-boot.md)
 ----
 [Back to main page](../README.md)

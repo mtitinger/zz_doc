@@ -159,4 +159,12 @@ There are different ways to do this, here is at least one solution:
 - The kernel config is `arch/arm64/configs/tisdk_am64xx-tlgate_defconfig`
 - The device tree is `arch/arm64/boot/dts/ti/k3-am642-tlgate.dts`
 
+### Building the CortexR5 SPL and U-boot
+
+Because of the multiple UBOOT_MACHINES, rebuilding the R5 software requires to invoke the proper config:
+
+```
+bitbake -c cleanall u-boot multiconfig:k3r5:u-boot
+```
+
 [Back](toc.md)
