@@ -14,13 +14,13 @@ recommended preliminary reading:
 Upon first poweron, the board is configured by resistors, so that
 
 * the ROM code first attempts to boot eMMC
-* if eMMC boot fails, backup on production mode (BOOTP or DFU)
+* if eMMC boot fails, backup on production mode (DFU)
 
 *Question*: once the software is stable, the eMMC can be pre-flashed, but this creates a delivery process with the contractor, that must be managed. Is it worth the cost, since we will probably update the board on EndOfLine anyways ?
 
 ## Production boot and flashing sequence
 
-* step1) premiere sortie de reset : le boot eMMC échoue, la ROM bascule sur le backup (DFU ou encore mieux sur BOOTP)
+* step1) premiere sortie de reset : le boot eMMC échoue, la ROM bascule sur le backup (DFU)
 * step2) le uboot "servi" déroule le flashing de l'eMMC puis le POST (test DDR et eMMC, et surtout UART2 par réponse du PC de prod), active la partition "recue/maintenance"  ("boot-b") et reboot si le POST est OK 
 * step3) deuxieme sortie de reset : le boot eMMC sur la partition de maintenance se fait
 * step4) le PC host de prod attend le prompt sur la console de debug (UART2) et execute la testsuite du BSP (/opt/ltp) , puis ecrit le rapport de test en EEPROM
@@ -33,11 +33,11 @@ Il y a quelques briques techno à choisir pour la gestion du valid/invalid des p
 
 ## Testing
 
-TODO: writ ethe test strategy document, that should fully define the terminology and process for testing.
+TODO: write the test strategy document, that should fully define the terminology and process for testing.
 
 ### Power On Self Test (POST)
 
-Performed by u-boot in production staged only (specific PROD u-boot, loaded via DFU or BOOTP)
+Performed by u-boot in production staged only (specific PROD u-boot, loaded via DFU)
 
 POST goal is to insure that:
 * DRR is fine
@@ -47,7 +47,7 @@ POST goal is to insure that:
 
 ### BSP Testsuite and VPD/EEPROM data
 
-* Upon booting from the "maintenance"  partition, LTP is run, a repport is generated, and stored to the EEPROM.
+* Upon booting from the "maintenance"  partition, LTP is run, a report is generated, and stored to the EEPROM.
 
 IF THE RESULT IS FINE, the following is assigned, and stored to EEPROM;
 * SERNUM can be assigned
@@ -56,10 +56,12 @@ IF THE RESULT IS FINE, the following is assigned, and stored to EEPROM;
 * PRODUCT TYPE AND REVISION is assigned
 * PRODUCTION DATE (if not in SERNUM)
 
+The EEPROM mapping, and management application and API are covered in [EEPROM Management](SEPASSRFNT-14-EEPROM-Management.md)
+
 ### Functionnal Loopback test
 
 * The hardware is connected to the same loopback test harness than for CI
 * the default Application configuration, is the IEC101-loopback test and a IEC104 slave
-* An operator, or automated test scripts from CI are run ansd check that the loopback application works, and IEC104 is polled OK using default IPv4 addresses.
+* An operator, or automated test scripts from CI are run and check that the loopback application works, and IEC104 is polled OK using default IPv4 addresses.
 
 
