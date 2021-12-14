@@ -9,6 +9,7 @@
 - [GPIOs](SEPASSRFNT-45-gpio.md)
 - [UARTs](SEPASSRFNT-64-uarts.md)
 - [Network](SEPASSRFNT-44-network.md)
+- [EEPROM and VPD](SEPASSRFNT-14-EEPROM-Management.md)
 - [Continuous Integration](SEPASSRFNT-41-ci.md)
 - [BSP and EMC Testsuite](SEPASSRFNT-36-BSP-testsuite.md)
 - [SW update](SEPASSRFNT-18-update.md)
@@ -22,3 +23,4 @@
 - [Notes on using BOOTP for boot](bootp-ethernet-boot.md)
 ----
 [Back to main page](../README.md)
+

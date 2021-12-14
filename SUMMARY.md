@@ -13,6 +13,7 @@ There are two documentation directories here:
 	- [GPIOs](internal/SEPASSRFNT-45-gpio.md)
 	- [UARTs](internal/SEPASSRFNT-64-uarts.md)
 	- [Network](internal/SEPASSRFNT-44-network.md)
+	- [EEPROM and VPD](internal/SEPASSRFNT-14-EEPROM-Management.md)
 	- [Continuous Integration](internal/SEPASSRFNT-41-ci.md)
 	- [BSP and EMC Testsuite](internal/SEPASSRFNT-36-BSP-testsuite.md)
 	- [SW update](internal/SEPASSRFNT-18-update.md)
