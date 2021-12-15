@@ -22,6 +22,10 @@ If you are new to the project, reading starts with:
 
 ![Hardware Overview](images/hardware-overview.png)
 
+### Software
+
+![Sotfware Overview](images/software-arch-overview.png)
+
 ## Documentation rules
 
 * This documentation is generated with the gitlab pipeline for GitBook. Select a chapter to start with in the frame on the left.
