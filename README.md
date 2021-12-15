@@ -1,3 +1,4 @@
+![bandeau SE](images/Schneider_Electric_2000x600px_connectivity.jpg)
 # Documentation for the SISGateway
 
 **SISGateway is a Schneider Electric project rework from v5 (2004/2008) to v6 (2021)**
