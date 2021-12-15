@@ -40,7 +40,7 @@ installed MCU SDK from https://www.ti.com/tool/download/MCU-PLUS-SDK-AM64X
 * Click View -> Target Configurations
 * select configuration, right-cliock and launch
 
- !(CSS launch target)[CSS-launch-target.png] 
+ !(CSS launch target)[../images/CSS-launch-target.png] 
 
 * At this point,  the probe firmware could get updated 
 
