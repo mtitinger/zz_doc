@@ -1,6 +1,4 @@
 
-![Open Logo](images/Logo_groupe_open.jpg)
-
 # Documentation for the SIS Gateway project
 
 This is the entry point for the project. It may contain links to other repositories.
