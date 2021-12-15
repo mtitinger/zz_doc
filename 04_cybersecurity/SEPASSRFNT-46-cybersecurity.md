@@ -1,3 +1,6 @@
+.book .book-body .page-wrapper .page-inner {
+  max-width: 90%;
+}
 # Cyber Security Requirements
 
 NOTE: For further design details, please also refer to [SEPASSRFNT-46](https://jira.open-groupe.com/browse/SEPASSRFNT-46)
@@ -50,25 +53,44 @@ we try to map threats as follows
 | **D**enial of Service | failure to protect against exploits and spamming of interfaces and protocols, leading to lack of availability of some service | Ethernet protocols, UART-console |
 | **E**levation of privilege | failure to prevent to gain Privileged Access through Credential exploitation, Vulnerabilities, Misconfiguration, Malware, Social engineering | all of the above |
 
+#### Attacks on SISGateway
+
+Based on STRIDE, we identify the following attacks. Note that we do not address Attacks that involve tempering with the hardware (unsolder parts, connect a JTAG probes etc...).
+
+| Attack ID | Description |
+| --- | --- |
+| CYBER_ATK1 | logging as ROOT in rootfs |
+| CYBER_ATK2 | logging as ROOT in maintenance |
+| CYBER_ATK3 | HTTP attack, random program execution via CGI |
+| CYBER_ATK4 | HTTP DoS requests spamming |
+| CYBER_ATK5 | IEC104 exploits | TBD |
+| CYBER_ATK6 | IEC101 exploits | TBD |
+| CYBER_ATK7 | Modbus RS exploits | TBD |
+| CYBER_ATK8 | Intruding in u-boot |
+| CYBER_ATK9 | USB mass storage mounting with harmful software |
+| CYBER_ATK10 | Tempering with bootmodes |
+| CYBER_ATK11 | Tempering with firmware-update bundles |
+| CYBER_ATK12 | Loss of connectivity (DoS) through misconfiguration of the Network settings |
+
 #### Ranking (DREAD)
 
 * For simplicity, we assume users and groups are enforced, as in section "Users and Groups", we also assume that unused network protocols are filtered out using netfilter/iptables.
-* We do not address Attacks that involve tempering with the hardware (unsolder parts, connect a JTAG probes etc...)
 
-| Attack ID | Description | **D**amage potential | **R**eproducibility | **E**xploitation (skill needed) | **A**ffected user | **D**iscoverability |
-| --- | --- | --- | --- | --- | --- | --- |
-| CYBER_ATK1 | logging as ROOT in rootfs | this device: rootfs no longer bootable, total loss of functionality | easy | easy (social engineering) | OPERATOR (End-user), CONFIGURATOR | immediate |
-| CYBER_ATK2 | logging as ROOT in maintenance | this device: total loss of functionality, device identity, and on-site recovery  | easy | easy (social engineering) | OPERATOR (End-user), CONFIGURATOR | immediate |
-| CYBER_ATK3 | HTTP attack, random program execution via CGI | loss of web interface, misconfiguration | medium | medium | OPERATOR, CONFIGURATOR | variable |
-| CYBER_ATK4 | HTTP DoS requests spamming | loss of web interface reactivity, misconfiguration | easy | easy | OPERATOR, CONFIGURATOR, L3SUPPORT | variable |
-| CYBER_ATK5 | IEC104 exploits | TBD | hard | high (specific) | OPERATOR (TDB) | TBD |
-| CYBER_ATK6 | IEC101 exploits | TBD | hard | high (specific) | OPERATOR (TDB) | TBD |
-| CYBER_ATK7 | Modbus RS exploits | TBD | hard | high (specific) | OPERATOR (TDB) | TBD |
-| CYBER_ATK8 | Intruding in u-boot | this device: total loss of functionality, device identity, and on-site recovery | medium | medium | All Users | variable |
-| CYBER_ATK9 | USB mass storage mounting with harmful software | this device: rootfs no longer bootable, total loss of functionality | medium | high (combine with other attacks to get privilege | OPERATOR, CONFIGURATOR | variable |
-| CYBER_ATK10 | Tempering with bootmodes | this device: total loss of functionality, device identity, and on-site recovery | medium | medium (specific knowledge of the platform h/w and s/w) | All users | variable |
-| CYBER_ATK11 | Tempering with firmware-update bundles | this device: total loss of functionality | medium | medium (specific knowledge of the platform h/w and s/w) | All users | variable |
-| CYBER_ATK12 | Loss of connectivity (DoS) through misconfiguration of the Network settings | this device: total loss of functionality | easy | easy | OPERATOR | immediate |
+
+| Attack ID | **D**amage potential | **R**eproducibility | **E**xploitation (skill needed) | **A**ffected user | **D**iscoverability |
+| --- | --- | --- | --- | --- | --- |
+| CYBER_ATK1 | this device: rootfs no longer bootable, total loss of functionality | easy | easy (social engineering) | OPERATOR (End-user), CONFIGURATOR | immediate |
+| CYBER_ATK2 | this device: total loss of functionality, device identity, and on-site recovery  | easy | easy (social engineering) | OPERATOR (End-user), CONFIGURATOR | immediate |
+| CYBER_ATK3 | this device: loss of web interface, misconfiguration | medium | medium | OPERATOR, CONFIGURATOR | variable |
+| CYBER_ATK4 | this device: loss of web interface reactivity, misconfiguration | easy | easy | OPERATOR, CONFIGURATOR, L3SUPPORT | variable |
+| CYBER_ATK5 | TBD | hard | high (specific) | OPERATOR (TDB) | TBD |
+| CYBER_ATK6 | TBD | hard | high (specific) | OPERATOR (TDB) | TBD |
+| CYBER_ATK7 | TBD | hard | high (specific) | OPERATOR (TDB) | TBD |
+| CYBER_ATK8 | this device: total loss of functionality, device identity, and on-site recovery | medium | medium | All Users | variable |
+| CYBER_ATK9 | this device: rootfs no longer bootable, total loss of functionality | medium | high (combine with other attacks to get privilege | OPERATOR, CONFIGURATOR | variable |
+| CYBER_ATK10 | this device: total loss of functionality, device identity, and on-site recovery | medium | medium (specific knowledge of the platform h/w and s/w) | All users | variable |
+| CYBER_ATK11 | this device: total loss of functionality | medium | medium (specific knowledge of the platform h/w and s/w) | All users | variable |
+| CYBER_ATK12 | this device: total loss of functionality | easy | easy | OPERATOR | immediate |
 
 ### Applicable Normative Requirements
 
