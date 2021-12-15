@@ -7,12 +7,13 @@ The product features are modelled and categorized as follows:
 
 | Requirements | Description |
 | --- | --- |
-| Product Requirements (PRS)|expressions of the required product features and properties, as required by the customer and end-users in their field of application|
-| System Requirements (SRS) |translation of the product features in Functional and non-functional system blocs and constraints|
+| Product Requirements (**PRS**)|expressions of the required product features and properties, as required by the customer and end-users in their field of application|
+| System Requirements (**SRS**) |translation of the product features in Functional and non-functional system blocs and constraints|
 
 | Testable Features | Description | JIRA Ticket Type |
-| High-level Features (HLF) |  translation of the SRS into a high level work breakout item, that undergo Functional Testing (FT) and Qualification Testing (QT)  as per Test Strategy and Release Strategy| EPICS |
-| Low-level Features (LLF) | breakout of HLF into development items that undergo Unit Testing (UT), and FT as per Test Strategy| Sub-task of an EPIC |
+| --- | --- |
+| High-level Features (**HLF**) |  translation of the SRS into a high level work breakout item, that undergo Functional Testing (FT) and Qualification Testing (QT)  as per Test Strategy and Release Strategy| EPICS |
+| Low-level Features (**LLF**) | breakout of HLF into development items that undergo Unit Testing (UT), and FT as per Test Strategy| Sub-task of an EPIC |
 
 ### Maturity Grades
 
