@@ -18,13 +18,13 @@ First, configure the boot mode. On the evaluation board, toggle SW2:
 
 |SDCARD|USB|eMMC|
 |:----:|:-:|:--:|
-|![sdcard](sdcard.png)|![USB-DFU](usb.png)|![eMMC](emmc.png)|
+|![sdcard](../images/sdcard.png)|![USB-DFU](../images/usb.png)|![eMMC](../images/emmc.png)|
 
 On the TLGATE board:
 
 |USB-Storage|USB-DFU|eMMC|
 |:---------:|:-----:|:--:|
-|![storage](bootmode-storage.png)|![dfu](bootmode-dfu.png)|![eMMC](bootmode-emmc.png)|
+|![storage](../images/bootmode-storage.png)|![dfu](../images/bootmode-dfu.png)|![eMMC](../images/bootmode-emmc.png)|
 
 Now when powering up the board, it enumerates on the USB bus.
 

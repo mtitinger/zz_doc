@@ -48,7 +48,7 @@ installed MCU SDK from https://www.ti.com/tool/download/MCU-PLUS-SDK-AM64X
 
 The image based boot process is as such : 
 
- ![Initial boot sequence 1/2](AM64-boot-sequence-1in2.png) 
+ ![Initial boot sequence 1/2](../images/AM64-boot-sequence-1in2.png) 
 
 Step 1 to 7 can be achieved using the javascript script: 
 
@@ -62,7 +62,7 @@ However, this does not load the R5 SPL that will load tispl.bin based on the Boo
 
 Hence, we need to manually install ATF/OPTEE and A53SPL as in tispl.bin, and start them.
 
- ![Initial boot sequence 2/2](AM64-boot-sequence-2in2.png) 
+ ![Initial boot sequence 2/2](../images/AM64-boot-sequence-2in2.png) 
 
 ## loading the A53 images or binaries
 
