@@ -1,6 +1,3 @@
-.book .book-body .page-wrapper .page-inner {
-  max-width: 90%;
-}
 # Cyber Security Requirements
 
 NOTE: For further design details, please also refer to [SEPASSRFNT-46](https://jira.open-groupe.com/browse/SEPASSRFNT-46)
@@ -63,9 +60,9 @@ Based on STRIDE, we identify the following attacks. Note that we do not address 
 | CYBER_ATK2 | logging as ROOT in maintenance |
 | CYBER_ATK3 | HTTP attack, random program execution via CGI |
 | CYBER_ATK4 | HTTP DoS requests spamming |
-| CYBER_ATK5 | IEC104 exploits | TBD |
-| CYBER_ATK6 | IEC101 exploits | TBD |
-| CYBER_ATK7 | Modbus RS exploits | TBD |
+| CYBER_ATK5 | IEC104 exploits | 
+| CYBER_ATK6 | IEC101 exploits |
+| CYBER_ATK7 | Modbus RS exploits |
 | CYBER_ATK8 | Intruding in u-boot |
 | CYBER_ATK9 | USB mass storage mounting with harmful software |
 | CYBER_ATK10 | Tempering with bootmodes |
@@ -77,20 +74,20 @@ Based on STRIDE, we identify the following attacks. Note that we do not address 
 * For simplicity, we assume users and groups are enforced, as in section "Users and Groups", we also assume that unused network protocols are filtered out using netfilter/iptables.
 
 
-| Attack ID | **D**amage potential | **R**eproducibility | **E**xploitation (skill needed) | **A**ffected user | **D**iscoverability |
-| --- | --- | --- | --- | --- | --- |
-| CYBER_ATK1 | this device: rootfs no longer bootable, total loss of functionality | easy | easy (social engineering) | OPERATOR (End-user), CONFIGURATOR | immediate |
-| CYBER_ATK2 | this device: total loss of functionality, device identity, and on-site recovery  | easy | easy (social engineering) | OPERATOR (End-user), CONFIGURATOR | immediate |
-| CYBER_ATK3 | this device: loss of web interface, misconfiguration | medium | medium | OPERATOR, CONFIGURATOR | variable |
-| CYBER_ATK4 | this device: loss of web interface reactivity, misconfiguration | easy | easy | OPERATOR, CONFIGURATOR, L3SUPPORT | variable |
-| CYBER_ATK5 | TBD | hard | high (specific) | OPERATOR (TDB) | TBD |
-| CYBER_ATK6 | TBD | hard | high (specific) | OPERATOR (TDB) | TBD |
-| CYBER_ATK7 | TBD | hard | high (specific) | OPERATOR (TDB) | TBD |
-| CYBER_ATK8 | this device: total loss of functionality, device identity, and on-site recovery | medium | medium | All Users | variable |
-| CYBER_ATK9 | this device: rootfs no longer bootable, total loss of functionality | medium | high (combine with other attacks to get privilege | OPERATOR, CONFIGURATOR | variable |
-| CYBER_ATK10 | this device: total loss of functionality, device identity, and on-site recovery | medium | medium (specific knowledge of the platform h/w and s/w) | All users | variable |
-| CYBER_ATK11 | this device: total loss of functionality | medium | medium (specific knowledge of the platform h/w and s/w) | All users | variable |
-| CYBER_ATK12 | this device: total loss of functionality | easy | easy | OPERATOR | immediate |
+| Attack ID | **D**amage potential | **R**eproducibility | **E**xploitation (skill needed) | **A**ffected user | **D**iscoverability | |
+| --- | ---------- | --- | ------ | ---------- | --- | --- |
+| CYBER_ATK1 | this device: rootfs no longer bootable, total loss of functionality | easy | easy (social engineering) | OPERATOR (End-user), CONFIGURATOR | immediate | |
+| CYBER_ATK2 | this device: total loss of functionality, device identity, and on-site recovery  | easy | easy (social engineering) | OPERATOR (End-user), CONFIGURATOR | immediate | |
+| CYBER_ATK3 | this device: loss of web interface, misconfiguration | medium | medium | OPERATOR, CONFIGURATOR | variable | |
+| CYBER_ATK4 | this device: loss of web interface reactivity, misconfiguration | easy | easy | OPERATOR, CONFIGURATOR, L3SUPPORT | variable | |
+| CYBER_ATK5 | TBD | hard | high (specific) | OPERATOR (TDB) | TBD | |
+| CYBER_ATK6 | TBD | hard | high (specific) | OPERATOR (TDB) | TBD | |
+| CYBER_ATK7 | TBD | hard | high (specific) | OPERATOR (TDB) | TBD | |
+| CYBER_ATK8 | this device: total loss of functionality, device identity, and on-site recovery | medium | medium | All Users | variable | |
+| CYBER_ATK9 | this device: rootfs no longer bootable, total loss of functionality | medium | high (combine with other attacks to get privilege | OPERATOR, CONFIGURATOR | variable | |
+| CYBER_ATK10 | this device: total loss of functionality, device identity, and on-site recovery | medium | medium (specific knowledge of the platform h/w and s/w) | All users | variable | |
+| CYBER_ATK11 | this device: total loss of functionality | medium | medium (specific knowledge of the platform h/w and s/w) | All users | variable | |
+| CYBER_ATK12 | this device: total loss of functionality | easy | easy | OPERATOR | immediate | |
 
 ### Applicable Normative Requirements
 
