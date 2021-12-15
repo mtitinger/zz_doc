@@ -27,9 +27,15 @@ In the context of this project, because we are upgrading a former existing proje
 
 We do not plan specific reviews, and do not appoint any project referent, other than those already part of Open-Groups internal CySec Management Plan (RED?)
 
+### CySec Updates and Threat Monitoring (CVE)
+
+
+This process is not supported with SL1.
+
 ### Threat Model for SISGAteway
 
-Based on Microsoft Model
+
+Based on the Microsoft Model:
 
 #### Identification (STRIDE)
 
@@ -49,19 +55,20 @@ we try to map threats as follows
 * For simplicity, we assume users and groups are enforced, as in section "Users and Groups", we also assume that unused network protocols are filtered out using netfilter/iptables.
 * We do not address Attacks that involve tempering with the hardware (unsolder parts, connect a JTAG probes etc...)
 
-| Attack | **D**amage potential | **R**eproducibility | **E**xploitation (skill needed) | **A**ffected user | **D**iscoverability |
-| --- | --- | --- | --- | --- | --- |
-| logging as "root" in rootfs | this device: rootfs no longer bootable, total loss of functionality | easy | easy (social engineering) | OPERATOR (End-user), CONFIGURATOR | immediate |
-| logging as "root" in maintenance | this device: total loss of functionality, device identity, and on-site recovery  | easy | easy (social engineering) | OPERATOR (End-user), CONFIGURATOR | immediate |
-| HTTP attack, random program execution via CGI | loss of web interface, misconfiguration | medium | medium | OPERATOR, CONFIGURATOR | variable |
-| HTTP DoS requests spamming | loss of web interface reactivity, misconfiguration | easy | easy | OPERATOR, CONFIGURATOR, L3SUPPORT | variable |
-| IEC104 exploits | TBD | hard | high (specific) | OPERATOR (TDB) | TBD |
-| IEC101 exploits | TBD | hard | high (specific) | OPERATOR (TDB) | TBD |
-| Modbus RS exploits | TBD | hard | high (specific) | OPERATOR (TDB) | TBD |
-| Intruding in u-boot | this device: total loss of functionality, device identity, and on-site recovery | medium | medium | All Users | variable |
-| USB mass storage mounting with harmful software | this device: rootfs no longer bootable, total loss of functionality | medium | high (combine with other attacks to get privilege | OPERATOR, CONFIGURATOR | variable |
-| Tempering with bootmodes | this device: total loss of functionality, device identity, and on-site recovery | medium | medium (specific knowledge of the platform h/w and s/w) | All users | variable |
-| Tempering with firmware-update bundles | this device: total loss of functionality | medium | medium (specific knowledge of the platform h/w and s/w) | All users | variable |
+| Attack ID | Description | **D**amage potential | **R**eproducibility | **E**xploitation (skill needed) | **A**ffected user | **D**iscoverability |
+| --- | --- | --- | --- | --- | --- | --- |
+| CYBER_ATK1 | logging as ROOT in rootfs | this device: rootfs no longer bootable, total loss of functionality | easy | easy (social engineering) | OPERATOR (End-user), CONFIGURATOR | immediate |
+| CYBER_ATK2 | logging as ROOT in maintenance | this device: total loss of functionality, device identity, and on-site recovery  | easy | easy (social engineering) | OPERATOR (End-user), CONFIGURATOR | immediate |
+| CYBER_ATK3 | HTTP attack, random program execution via CGI | loss of web interface, misconfiguration | medium | medium | OPERATOR, CONFIGURATOR | variable |
+| CYBER_ATK4 | HTTP DoS requests spamming | loss of web interface reactivity, misconfiguration | easy | easy | OPERATOR, CONFIGURATOR, L3SUPPORT | variable |
+| CYBER_ATK5 | IEC104 exploits | TBD | hard | high (specific) | OPERATOR (TDB) | TBD |
+| CYBER_ATK6 | IEC101 exploits | TBD | hard | high (specific) | OPERATOR (TDB) | TBD |
+| CYBER_ATK7 | Modbus RS exploits | TBD | hard | high (specific) | OPERATOR (TDB) | TBD |
+| CYBER_ATK8 | Intruding in u-boot | this device: total loss of functionality, device identity, and on-site recovery | medium | medium | All Users | variable |
+| CYBER_ATK9 | USB mass storage mounting with harmful software | this device: rootfs no longer bootable, total loss of functionality | medium | high (combine with other attacks to get privilege | OPERATOR, CONFIGURATOR | variable |
+| CYBER_ATK10 | Tempering with bootmodes | this device: total loss of functionality, device identity, and on-site recovery | medium | medium (specific knowledge of the platform h/w and s/w) | All users | variable |
+| CYBER_ATK11 | Tempering with firmware-update bundles | this device: total loss of functionality | medium | medium (specific knowledge of the platform h/w and s/w) | All users | variable |
+| CYBER_ATK12 | Loss of connectivity (DoS) through misconfiguration of the Network settings | this device: total loss of functionality | easy | easy | OPERATOR | immediate |
 
 ### Applicable Normative Requirements
 
@@ -81,31 +88,64 @@ The required mitigations are listed here:
 
 ## SISGateway Mitigation Specification
 
-### Users and Groups management
+### Mitigation Matrix
+
+| Attack ID | Mitigation ID(s) | Comment |
+| --- | --- | --- |
+| CYBER_ATK1 | CYBER_MGN1x | root is not a supported user |
+| CYBER_ATK2 | CYBER_MGN1x, CYBER_MGN6x | User ROOT is not a supported user, u-boot access is protected |
+| CYBER_ATK3 | CYBER_MGN5x | port 80 is no longer used, basic non default port mapping is done |
+| CYBER_ATK4 | CYBER_MGN5x | - |
+| CYBER_ATK5 | CYBER_MGN1.5 | TLGATE user will have restricted privileges |
+| CYBER_ATK6 | CYBER_MGN1.5 | TLGATE user will have restricted privileges |
+| CYBER_ATK7 | CYBER_MGN1.5 | TLGATE user will have restricted privileges |
+| CYBER_ATK8 | CYBER_MGN6x | u-boot prompt is hidden and password protected. |
+| CYBER_ATK11 | CYBER_MGN7x| bundles are checked for integrity |
+| CYBER_ATK12 | CYBER_MGN8x | TODO : website can be password protected |
+
+### Mitigation CYBER_MGN1x : Users and Groups management
 
 Users to Create: 
 
-| User Name |  Type | Description |
-| --- | --- | --- |
-| OPERATOR | Human | Someone on-site, an Integrator, or a End-User |
-| PRODUCTION | Non-Human |  Production PC user : Production Test Scripts, run by the production PC on End-Of-Line, or by the CI  |
-| L3SUPPORT | Human | A developer, such as a tlgate project engineer or prodict owner, providing support or someone acting   |
-| CONFIGURATOR | Non-Human |  User used by the COnfiguration Application  |
-
-### Firewall (iptables) rules
-
-TODO
-
-### Dbus allow/deny rules
+| Mitigation ID| User Name |  Type | Description |
+| ---| --- | --- | --- |
+| CYBER_MGN1.1 | OPERATOR | Human | Someone on-site, an Integrator, or a End-User |
+| CYBER_MGN1.2 | PRODUCTION | Non-Human |  Production PC user : Production Test Scripts, run by the production PC on End-Of-Line, or by the CI  |
+| CYBER_MGN1.3 | L3SUPPORT | Human | A developer, such as a tlgate project engineer or prodict owner, providing support or someone acting   |
+| CYBER_MGN1.4 | CONFIGURATOR | Non-Human |  User used by the COnfiguration Application  |
+| CYBER_MGN1.5 | TLGATE | Non-Human |  User running the tlgate, IEC10x and sisgateway applications  |
+### Mitigation CYBER_MGN2x : Firewall Rules
 
 TODO
 
-### Rescue Console Environment Specification
+### Mitigation CYBER_MGN3x : DBUS allow/deny rules
+
+TODO
+
+### Mitigation CYBER_MGN4x : Rescue Console Environment Specification
 
 see SEPASSRFNT-70 :  diag or rescue user can interact in front panel UART, but cannot be root and do anything
-### HTTP server configuration
+### Mitigation CYBER_MGN5x : HTTP Server Configuration
 
 TODO
+
+ * port 80 is no longer used, basic non default port mapping is done
+ 
+ NOTE : SSL is not enforced, this is not part of IED-62443/SL1, we do not store certificates, CMS, privates keys, and do not need secure storage. However, should we need all this in the future, and in another product reusing this design, secure storage can be achieved using OP-TEE tursted apps and a dedicated eMMC partition. No secure element (dedicated hardware) is required.
+
+### Mitigation CYBER_MGN6x : U-boot Console Access Configuration
+
+TODO
+
+### Mitigation CYBER_MGN7x : Firmware Update Bundles Athenticity and Integrity Checks
+
+See [Firmware Update](../03_application_layer/SEPASSRFNT-18-update.md) in related section
+
+Factory Reset allows to wipe any misconfiguration, and reinstate factory default, however, OPERATOR will be requiered to import and apply a valid configuration using Tlgate.exe. 
+
+### Mitigation CYBER_MGN8x : WebSite/Configuration Protection
+
+TODO ! do the basics first: prevent hacking the configuration using the setup inteface in the product!
 ### Modbus  and IEC10x Security Features
 
 Not supported with SL1, would required to buy an update from Triangle Microworks, for about 40k$.
