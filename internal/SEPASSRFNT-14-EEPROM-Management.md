@@ -38,7 +38,7 @@ NOTE: It is very important, that in case of changes, you also change the MAGIC v
 	"vpd_mac_eth1_lsw": "0x33445561",
 	"vpd_hostname": "sisgateway",
 	"vpd_boot_cnt0": 3,
-	"vpd_boot_pti0": 0,
+	"vpd_boot_pri0": 0,
 	"vpd_boot_cnt1": 3,
 	"vpd_boot_pri1": 1,
 	"vpd_bsp_test_report": "Test Start Time: Thu Jan 30 11:06:37 2003
@@ -62,7 +62,7 @@ NOTE: It is very important, that in case of changes, you also change the MAGIC v
 
 In runtime, this app allows to: 
 
-* dump the eeprom contents as a binary file, with **-d**, this is done at startup, and used by the library, for other apps to read the contents
+* dump the eeprom contents as a binary file, with **-d**, this is done at startup, and used by the library for other apps to read the contents.
 
 This will create both:
 
@@ -72,7 +72,7 @@ This will create both:
 ## Systemd and Yocto Integration
 
 This app is started using a oneshot service, so it can create the read-only image used by the API.
-Arguably, this could be done with a udev rule on /sys/class/i2c-dev/i2c-1/device/1-0050/eeprom, but we need more control anyways. The used rule allows us to check for the EEPROM driver readiness, prior to launching the app.
+Arguably, this could be done with a udev rule on /sys/class/i2c-dev/i2c-1/device/1-0050/eeprom, but we need more control anyways. The used rule allows us to check for the EEPROM driver readiness prior to launching the app.
 
 Yocto integation looks like this:
 
@@ -96,7 +96,7 @@ Yocto integation looks like this:
 ## Building 
 
 Build library first, so it is part of the sysroot.
-On a native host PC, builmd typically with:
+On a native host PC, build typically with:
 
 ```
 cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=/usr .
@@ -105,13 +105,13 @@ cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=/usr .
 ## Testing 
 ### On PC
 
-first, create a fake image, using the template: 
+* first, create a fake image using the template: 
 
 ```
 tlgate-eeprom -J res/dummy.json
 ```
 
-this creates a file /tmp/eeprom.bin, that you can check versus the template: 
+* this creates a file /tmp/eeprom.bin that you can check versus the template: 
 
 ```
 marc@marc-virtualbox:~/tlgate-eeprom/lib$ od -x /tmp/eeprom.bin 
@@ -121,13 +121,13 @@ marc@marc-virtualbox:~/tlgate-eeprom/lib$ od -x /tmp/eeprom.bin
 0004000
 ```
 
-Then use this file as fake eeprom image, to test dumping:
+* Then use this file as fake eeprom image, to test dumping:
 
 ```
 tlgate-eeprom -d
 ```
 
-Will rewrite this same file, but also parse the binary, and write a json version:
+This command will rewrite this same file in this 'simulated' case but also parse the binary, and write a json version:
 
 ```
 marc@marc-virtualbox:~/tlgate-eeprom/lib$ cat /tmp/eeprom.json 
@@ -150,9 +150,14 @@ marc@marc-virtualbox:~/tlgate-eeprom/lib$ cat /tmp/eeprom.json
 # Tlgate-vpd Library
 ## API
 
-We prodivide a trivial API to access the EEPROM in read-only, under runtime.
+We provide a trivial API to access the EEPROM in read-only, under runtime.
+
+### Library Init and Exit
 
 * *tlgate_vpd_init*, *tlgate_vpd_exit* 	allocate and release API resources.
+
+### Accessors (read only) for the stored data
+
 * *tlgate_vpd_get_serial_number*		get the serial number
 * *tlgate_vpd_get_product_type*		get the coded product type
 * *tlgate_vpd_get_hostname*		get the default hostname, based on the MAC address
@@ -160,8 +165,7 @@ We prodivide a trivial API to access the EEPROM in read-only, under runtime.
 
 ## EEPROM Layout 
 
-It is a 24LC16 Microchip I2C 16kbits EEPROM, i.e. 2KiB, byte addresses range from 0x000 to 0x7FF
-This is mapped over 8 addresses, from 0x50 to 0x57, i.e. 8 pages of 256 Bytes.
+It is a 24LC16 Microchip I2C 16kbits EEPROM, i.e. 2KiB, byte addresses range from 0x000 to 0x7FF, mapped over 8 I2C addresses ranging from 0x50 to 0x57, i.e. 8 pages of 256 Bytes.
 
 ```
 root@am64xx-tlgate:~# i2cdetect -y 1 
@@ -176,7 +180,7 @@ root@am64xx-tlgate:~# i2cdetect -y 1
 70:
 ```
 
-However, the eeprom support in the kernel allows us to access the full 2kiB as a single pseudo file under 
+However, the eeprom support in the kernel allows us to access the full 2kiB as a single pseudo file under:
 
 ```
 /sys/class/i2c-dev/i2c-1/device/1-0050/eeprom
