@@ -6,6 +6,7 @@
 The product features are modelled and categorized as follows:
 
 | Requirements | Description |
+| --- | --- |
 | Product Requirements (PRS)|expressions of the required product features and properties, as required by the customer and end-users in their field of application|
 | System Requirements (SRS) |translation of the product features in Functional and non-functional system blocs and constraints|
 
@@ -18,6 +19,7 @@ The product features are modelled and categorized as follows:
 This project defines a very simplified set of QA Gates, called Maturity Grades (MG)
 
 | MG | Name | Description |
+| --- | --- |
 |0|Concept|Product level modelling and conceptual design leading to "GO", done in v5, not addressed here|
 |10|PRS defined|PRS are written and reviewed, product is defined for this PRS, done in v5, not addressed here|
 |20|SRS defined|System Architecture is defined, SRS are written and reviewed, system constraints and Functional blocs (FB) are defined, done in v5, not addressed here|

@@ -24,7 +24,7 @@ There are two documentation directories here:
 	- [Windows Config App](03_application_layer/SEPASSRFNT-58-win-config.md)
 	- [SW update](03_application_layer/SEPASSRFNT-18-update.md)
 - [04 Cybersecurity](04_cybersecurity/toc.md)
-	- [Cybersecurity](04_cybersecurity/SEPASSRFNT-46-security.md)
+	- [Cybersecurity](04_cybersecurity/SEPASSRFNT-46-cybersecurity.md)
 	- [Diag & Rescue shell](04_cybersecurity/SEPASSRFNT-69-rescue.md)
 - [10_Production Methods](10_production_methods/toc.md)
 	- [Continuous Integration](10_production_methods/SEPASSRFNT-41-ci.md)
