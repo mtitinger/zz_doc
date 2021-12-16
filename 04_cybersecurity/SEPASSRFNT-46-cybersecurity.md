@@ -2,9 +2,9 @@
 
 NOTE: For further design details, please also refer to [SEPASSRFNT-46](https://jira.open-groupe.com/browse/SEPASSRFNT-46)
 
-**This product will undergo Schneider Electric cysec acceptance review, and must be ready to comply to IEC62443 Securiy Level 1 (SL1)**
+**This product will undergo Schneider Electric CySec acceptance review, and must be ready to comply to IEC62443 Securiy Level 1 (SL1)**
 
-## Cyser Security Management Plan
+## CySec Management Plan
 
 ### CySec Governance Overview
 
@@ -14,20 +14,20 @@ In the context of this project, because we are upgrading a former existing proje
 
 1. Implement all common-sense features that are standard in any state-of-the-art low-security embedded product:
 	* Users and Groups
-	* firewall rules
-	* dbus (IPCs) interfaces allow/deny rules
-	* removal of all ports, protocol, interfaces that are not used
+	* Firewall rules
+	* DBUS (IPCs) interfaces allow/deny rules
+	* removal of all ports, protocols, interfaces that are not used
 
 2. Insure that the Hardware and the Software do not prevent to achieve IEC-62443/SL1 compliance, if/when required by the customer, while we don't certify the product for this standard for now.
 	* list and understand the practical requirements of the Standard
 	* when possible implement them
-	* if a substantial amount of development time is required for a given requirement, don't implement it, but clearly state how this could be done (not blocking points)
+	* if a substantial amount of development time is required for a given requirement, don't implement it, but clearly state how this could be done (no blocking points)
 
 ### CySec Reviews and Referents 
 
-We do not plan specific reviews, and do not appoint any project referent, other than those already part of Open-Groups internal CySec Management Plan (RED?)
+We do not plan specific reviews, and do not appoint any project referent, other than those already part of Open-Groupe internal CySec Management Plan (RED?)
 
-### CySec Updates and Threat Monitoring (CVE)
+### CySec Firmware Updates and Threat Monitoring (CVE)
 
 
 This process is not supported with SL1.
@@ -35,7 +35,7 @@ This process is not supported with SL1.
 ### Threat Model for SISGAteway
 
 
-Based on the Microsoft Model:
+Based on the Microsoft Methodology:
 
 #### Identification (STRIDE)
 
@@ -71,7 +71,9 @@ Based on STRIDE, we identify the following attacks. Note that we do not address 
 
 #### Ranking (DREAD)
 
-* For simplicity, we assume users and groups are enforced, as in section "Users and Groups", we also assume that unused network protocols are filtered out using netfilter/iptables.
+For simplicity, we assume the following mitigations are already taken into account:
+* Users and Groups are enforced, as in section "Users and Groups"
+* Network protocols are filtered out using netfilter/iptables, blocking unused ones.
 
 
 | Attack ID | **D**amage potential | **R**eproducibility | **E**xploitation (skill needed) | **A**ffected user | **D**iscoverability | |
@@ -95,7 +97,7 @@ We only address Threads Ranked as **easy to reproduce, and requiring low skills*
 
 ### SL1 Definition
 
-SL1 matches involuntary attacks, performed by accident by an person not skilled in system hacking.
+SL1 matches **involuntary attacks, performed by accident by an person not skilled in system hacking**.
 
 ![Cysec Security Levels](../images/cysec-security-levels.png) 
 
@@ -114,7 +116,7 @@ The required mitigations are listed here:
 | CYBER_ATK1 | CYBER_MGN1x | root is not a supported user |
 | CYBER_ATK2 | CYBER_MGN1x, CYBER_MGN6x | User ROOT is not a supported user, u-boot access is protected |
 | CYBER_ATK3 | CYBER_MGN5x | port 80 is no longer used, basic non default port mapping is done |
-| CYBER_ATK4 | CYBER_MGN5x | - |
+| CYBER_ATK4 | CYBER_MGN5x, CYBER_MGN2x | mitigation through firewall rules mainly |
 | CYBER_ATK5 | CYBER_MGN1.5 | TLGATE user will have restricted privileges |
 | CYBER_ATK6 | CYBER_MGN1.5 | TLGATE user will have restricted privileges |
 | CYBER_ATK7 | CYBER_MGN1.5 | TLGATE user will have restricted privileges |
@@ -133,35 +135,54 @@ Users to Create:
 | CYBER_MGN1.3 | L3SUPPORT | Human | A developer, such as a tlgate project engineer or prodict owner, providing support or someone acting   |
 | CYBER_MGN1.4 | CONFIGURATOR | Non-Human |  User used by the COnfiguration Application  |
 | CYBER_MGN1.5 | TLGATE | Non-Human |  User running the tlgate, IEC10x and sisgateway applications  |
+
 ### Mitigation CYBER_MGN2x : Firewall Rules
 
-TODO
+#### Production Image
+
+| Application | Protocol | Port | rule | Reference |
+| --- | --- | --- | --- | --- |
+| http | tcp | 8080  | --- | allow in, allow out |
+| ssh | tcp | 8022  | --- | allow in, allow out |
+| IEC-60870-5-104 | tcp, udp | 2404  | --- | allow in, allow out | [IEC104 ](https://www.fit.vut.cz/research/publication-file/11570/TR-IEC104.pdf) |
+| rsyslog | tcp, udp | 504  | --- | allow out | [IEC104 ](https://www.fit.vut.cz/research/publication-file/11570/TR-IEC104.pdf) |
+| zeroconf | tcp, udp | 5353 | --- | allow in, allow out | [rfc6763](https://datatracker.ietf.org/doc/html/rfc6763) |
+
+also see https://support.apple.com/en-us/HT202944 as an example if other protocols are needed (snmp?)
+
+#### Developement Image
+
+Additional or alternative ports for developement mode:
+
+| Application | Protocol | Port | rule | Reference |
+| --- | --- | --- | --- | --- |
+| gdbserver | tcp | 1234  | --- | allow in, allow out |
+
 
 ### Mitigation CYBER_MGN3x : DBUS allow/deny rules
 
-TODO
+None of the tlgate application use DBUS IP. Default config might be ok.
 
 ### Mitigation CYBER_MGN4x : Rescue Console Environment Specification
 
 see SEPASSRFNT-70 :  diag or rescue user can interact in front panel UART, but cannot be root and do anything
 ### Mitigation CYBER_MGN5x : HTTP Server Configuration
 
-TODO
-
- * port 80 is no longer used, basic non default port mapping is done
+* port 80 is no longer used, basic non default port mapping is done to 8080.
+* TODO : https with self-certification .
+* TODO : need for a reverse proxy http => https ? 
  
  NOTE : SSL is not enforced, this is not part of IED-62443/SL1, we do not store certificates, CMS, privates keys, and do not need secure storage. However, should we need all this in the future, and in another product reusing this design, secure storage can be achieved using OP-TEE tursted apps and a dedicated eMMC partition. No secure element (dedicated hardware) is required.
 
 ### Mitigation CYBER_MGN6x : U-boot Console Access Configuration
 
-TODO
-
+* prompt hidden, key 'q' to interrupt
+* password protected logging, provided by user L3SUPPORT.
 ### Mitigation CYBER_MGN7x : Firmware Update Bundles Athenticity and Integrity Checks
 
 See [Firmware Update](../03_application_layer/SEPASSRFNT-18-update.md) in related section
 
-Factory Reset allows to wipe any misconfiguration, and reinstate factory default, however, OPERATOR will be requiered to import and apply a valid configuration using Tlgate.exe. 
-
+Factory Reset allows to wipe any misconfiguration, and reinstate factory default, however, OPERATOR will be requiered to import and apply a valid configuration using Tlgate.exe.
 ### Mitigation CYBER_MGN8x : WebSite/Configuration Protection
 
 TODO ! do the basics first: prevent hacking the configuration using the setup inteface in the product!
