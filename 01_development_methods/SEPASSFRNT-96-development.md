@@ -1,8 +1,10 @@
 # Development guidelines
 
-## Feature and Maturity Grades
+NOTE: Software management reports must be maintained in [SEPASSRFNT-96](https://jira.open-groupe.com/browse/SEPASSRFNT-96)
+## Definition of "Features" and "Maturity Grades (MG)"
 
 ### Features and Requirements
+
 The product features are modelled and categorized as follows:
 
 | Requirements | Description |
@@ -17,20 +19,20 @@ The product features are modelled and categorized as follows:
 
 ### Maturity Grades
 
-This project defines a very simplified set of QA Gates, called Maturity Grades (MG)
+* This project defines a very simplified set of QA Gates, called Maturity Grades (MG)
+* Gates are quality checking points, in this simplified process, the software project manager is responsible for checking that each feature can pass either gate, and update its MAtugity Grade.
 
 | MG | Name | Description |
 | --- | --- |
-|0|Concept|Product level modelling and conceptual design leading to "GO", done in v5, not addressed here|
-|10|PRS defined|PRS are written and reviewed, product is defined for this PRS, done in v5, not addressed here|
-|20|SRS defined|System Architecture is defined, SRS are written and reviewed, system constraints and Functional blocs (FB) are defined, done in v5, not addressed here|
-|30|Software or Hardware Architecture|SW/HW Architecture is defined and reviewed for a FB, done in v5, updated in "SFD" delivered to customer|
-|40|Software detailed design (HLF)|HLF are defined and documented for breakout (EPIC in JIRA)|
-|60|Low Level Feature is Implemented and Validated (UT/FT)|LLF that realize the HLF is Implemented, has a testsuite and FT/UT reports are provided|
-|70|HLF is implemented|HLF is documented in [internal project doc](https://schneider-electric.pages.boost.open.global/passerelle_refonte/Software/bsp/sisgateway-internal-documentation/) and FT/UT report is available |
-|79|HLF is qualified|HLF has a QT report, traceability matrix proves that LLF/TestCase/TestReport-OK can be provided.|
-|80|HLF is release|HLF is part of a documented release, as per Release Strategy, with a complete matching entry in the Release Note.|
-
+|0| **Concept** |Product level modelling and conceptual design leading to "GO", done in v5, not addressed here|
+|10| **PRS defined** |PRS are written and reviewed, product is defined for this PRS, done in v5, not addressed here|
+|20| **SRS defined** |System Architecture is defined, SRS are written and reviewed, system constraints and Functional blocs (FB) are defined, done in v5, not addressed here|
+|30| **Software or Hardware Architecture defined** |SW/HW Architecture is defined and reviewed for a FB, done in v5, updated in "SFD" delivered to customer|
+|40| **Software detailed design (HLF)** |HLF are defined and documented for breakout (EPIC in JIRA)|
+|60| **Low Level Feature is Implemented and Validated (UT/FT)** |LLF that realize the HLF is Implemented, has a testsuite and FT/UT reports are provided|
+|70| **HLF is implemented** |HLF is documented in [internal project doc](https://schneider-electric.pages.boost.open.global/passerelle_refonte/Software/bsp/sisgateway-internal-documentation/) and FT/UT report is available |
+|79| **HLF is qualified** |HLF has a QT report, traceability matrix proves that LLF/TestCase/TestReport-OK can be provided.|
+|80| **HLF is release** |HLF is part of a documented release, as per Release Strategy, with a complete matching entry in the Release Note.|
 
 NOTE : As a developer contributing to a HLF/LLF, you should at least check that MG60 and MG70 gates pass, meaning that you can proof you have FT test items, and the delivered HLF is documented and tested.
 
@@ -49,13 +51,12 @@ The Software development process is a simple and loosely based on the Agile proc
 * Architecture : we write Architecture and High-LEvel specification in the HLF Jira Ticket
 * Detailed Specification : detailed implementation notes, usage and testing note in the LLF tickets
 * Code writing : see Coding rules chapter
-* Code contribution : see COmmitting rules
+* Code contribution : see Committing rules
 * Code Review and Static Analysis : see Committing rules
 * Test construction and testing : See Test Strategy
 * Validation and Qualification : See Test Strategy
 * Release of Deliverables and Branching : See Release Strategy
 * Maintenance and Fixes : See Release and Maintenance Strategy
-
 
 ## Coding Rules
 

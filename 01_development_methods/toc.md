@@ -1,6 +1,6 @@
 # Development Methods, Guidelines and Technical Notes
 
-- [Development guidelines](development.md)
+- [Development guidelines](SEPASSFRNT-96-development.md)
 - [Continuous Integration](../10_Production Methods/SEPASSRFNT-41-ci.md)
 - [Yocto Onetime Setup](yocto-onetime-setup.md)
 - [Yocto build](yocto.md)

@@ -1,6 +1,38 @@
-# GPIOs and LEDs
+# HMI GPIOs and LEDs
 
-NOTE: For further design details, please also refer to [SEPASSRFNT-45](https://jira.open-groupe.com/browse/SEPASSRFNT-45)
+## Feature Status and References
+
+| Technical Notes and Specification | Current [Maturity Grade](../01_developement_methods/SEPASSRFNT-96-developement.md#Maturity Grades)| Comments |
+| :---: | :---: | --- |
+|[SEPASSRFNT-45](https://jira.open-groupe.com/browse/SEPASSRFNT-45) | MG40 (18/12/21) | development complete for BSP part and EMC testing, but tlgate-app must still be cabled to using those GPIOs |
+
+## Feature Description
+
+### The LEDS related to the HMI
+
+* In an early stage, until the application tlgate starts, leds are setup using an init script to make then blink, so that in case of misconfiguration or failure of tlgate blinking remains.
+
+* once tlgate has started, the leds are managed by the application.
+
+### The GPIO Expander, that is used to manage redundency
+
+For testing, the GPIO Chip can be identified with:
+
+```
+root@am64xx-tlgate:/sys/class/gpio/gpiochip329# gpiodetect
+gpiochip0 [600000.gpio] (87 lines)
+gpiochip1 [601000.gpio] (88 lines)
+gpiochip2 [pcf8574] (8 lines)
+gpiochip3 [MAX14830] (16 lines)
+gpiochip4 [MAX14830] (16 lines)
+gpiochip5 [MAX14830] (16 lines)
+gpiochip6 [MAX14830] (16 lines)
+```
+
+Note: tlgate-app must be adapted, to bind those gpio, using the file API with sysfs (for the leds), or libgpio (for the reduncency GPIOs).
+
+* specified in SEPASSRFNT-79
+* coded in SEPASSRFNT-80
 
 ## LEDs
 The indicators on tlgate board are configured with the gpio-leds driver, so that userspace doesn't need to mess with `/sys/class/gpio`, and doesn't need to know which gpio a LED is connected to.
@@ -23,38 +55,15 @@ echo 255 > /sys/class/leds/status1/brightness
 Blinking can be achieved automatically (the kernel takes care of the timing) with:
 ```json
 echo timer > /sys/class/leds/status1/trigger
-echo 500 > /sys/class/leds/status1/delay_on
-echo 100 > /sys/class/leds/status1/delay_off
 ```
 
-## GPIOs
-In addition to the pinmux in device tree, GPIOs can be declared with names in the `gpio-line-names` array. It allows switching on/off based on names rather than ID. This is typically useful for the libgpio library.
-By default, a few tools are installed in the distribution, allowing to trigger GPIOs:
-
+Assigning to the 'panic' state:
 ```json
-# gpioinfo
-gpiochip0 - 24 lines:
-        line   0: "GPIO_eMMC_RSTn" unused input active-high
-        line   1: "CAN_MUX_SEL" unused input active-high
-        line   2: "GPIO_CPSW1_RST" unused input active-high
-        line   3: "GPIO_RGMII1_RST" unused input active-high
-...
-gpiochip2 - 88 lines:
-        line   0:      unnamed    "sys-err"  output  active-high [used]
-        line   1:      unnamed       unused   input  active-high
-        line   2:      unnamed "test-voyants" output active-high [used]
-        line   3: "GPIO_EMMC_RSTn" unused input active-high
-...
+echo panic > /sys/class/leds/sys-err/trigger
 ```
 
-One can notice the LEDs also appear in the GPIO list.
+## Testing
 
-Then you can switch GPIO on or off:
-```json
-gpioset `gpiofind GPIO_EMMC_RSTn`=1
-```
-
-Read the help message for gpioset to discover all the options. For example it's able to maintain a GPIO on or off for a given amount of time. **Though, be careful with the fact that
-libgpiod uses file descriptors to access gpios and once the file descriptor is closed the GPIO returns to its default case. This is typically the case when gpioset exits.**
+BSP level tests are available from the BSP test-suite, or from the EMC test-suite, see related documentation.
 
 [Back](toc.md)

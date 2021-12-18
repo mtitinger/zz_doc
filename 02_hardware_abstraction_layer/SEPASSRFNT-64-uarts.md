@@ -1,6 +1,12 @@
 # Configuration for quad-uarts chips
 
-NOTE: For further design details, please also refer to [SEPASSRFNT-64](https://jira.open-groupe.com/browse/SEPASSRFNT-64)
+## Feature Status and References
+
+| Technical Notes and Specification | Current [Maturity Grade](../01_developement_methods/SEPASSRFNT-96-developement.md#Maturity Grades)| Comments |
+| :---: | :---: | --- |
+|[SEPASSRFNT-64](https://jira.open-groupe.com/browse/SEPASSRFNT-64) | MG70 (18/12/21) | development complete for BSP part and EMC testing, CI integration todo. |
+
+## Feature Description
 
 ## Kernel configuration
 

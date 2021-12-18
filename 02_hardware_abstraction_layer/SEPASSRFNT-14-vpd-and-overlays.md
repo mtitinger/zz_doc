@@ -1,17 +1,30 @@
-# EEPROM and Vital Product Data Management
+# EEPROM and Vital Product Data Management and Overlays
 
-NOTE: For further design details, please also refer to [SEPASSRFNT-14](https://jira.open-groupe.com/browse/SEPASSRFNT-14)
+## Feature Status and References
 
-## Introduction
+| Technical Notes and Specification | Current [Maturity Grade](../01_developement_methods/SEPASSRFNT-96-developement.md#Maturity Grades)| Comments |
+| :---: | :---: | --- |
+|[SEPASSRFNT-14](https://jira.open-groupe.com/browse/SEPASSRFNT-14) | MG40 (18/12/21) | development started, client API (tlgate-vpd) to complete, Overlays to implement |
+
+## Feature Description
+
+### EEPROM Management (Vital Product Data)
 
 The system features a 2 kiB EEPROM described herein.
 Applications, that need to access VPD data stored in the EEPROM (also called NVRAM) will do so by linking and using the tlgate-vpd API described below (WIP).
 
 the API reads an image of the EEPROM (read only) that is created upon system boot by the management application "tlgate-eeprom". During production phase, tlgate-eeprom is also used, to write the initial VPD, for data like serial number, MAC addresses, product type etc...
 
-## tlgate-eeprom Application Usage
+### Overlays (COnfiguration and Runtime Data)
 
-### Usage in PRODUCTION 
+Overlays are used, so that configuration and runtime data can be wipped during "factory-reset" whithout remounting the rootfs in rw.
+The rootfs shall always remain RO.
+
+## EEPROM and VPD Details
+
+### tlgate-eeprom Application Usage
+
+#### Usage in PRODUCTION 
 
 In production, this app is **run from the maintenance image**, and allows to initialize the EEPROM with the provided data.
 iIt will also allow to store the BSP test report.
@@ -58,7 +71,7 @@ NOTE: It is very important, that in case of changes, you also change the MAGIC v
 }
 ```
 
-### Usage in RUNTIME
+#### Usage in RUNTIME
 
 In runtime, this app allows to: 
 
@@ -69,7 +82,7 @@ This will create both:
 * **/var/run/eeprom.bin**
 * **/var/run/eeprom.json**
 
-## Systemd and Yocto Integration
+### Systemd and Yocto Integration
 
 This app is started using a oneshot service, so it can create the read-only image used by the API.
 Arguably, this could be done with a udev rule on /sys/class/i2c-dev/i2c-1/device/1-0050/eeprom, but we need more control anyways. The used rule allows us to check for the EEPROM driver readiness prior to launching the app.
@@ -93,7 +106,7 @@ Yocto integation looks like this:
 │           └── tlgate-eeprom
 ```
 
-## Building 
+### Building 
 
 Build library first, so it is part of the sysroot.
 On a native host PC, build typically with:
@@ -102,8 +115,8 @@ On a native host PC, build typically with:
 cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=/usr .
 ```
 
-## Testing 
-### On PC
+### Testing 
+#### On PC
 
 * first, create a fake image using the template: 
 
@@ -147,23 +160,23 @@ marc@marc-virtualbox:~/tlgate-eeprom/lib$ cat /tmp/eeprom.json
 	"vpd_boot_pri1" : "0x00000000",
 }
 ```
-# Tlgate-vpd Library
-## API
+## Tlgate-vpd Library
+### API
 
 We provide a trivial API to access the EEPROM in read-only, under runtime.
 
-### Library Init and Exit
+#### Library Init and Exit
 
 * *tlgate_vpd_init*, *tlgate_vpd_exit* 	allocate and release API resources.
 
-### Accessors (read only) for the stored data
+#### Accessors (read only) for the stored data
 
 * *tlgate_vpd_get_serial_number*		get the serial number
 * *tlgate_vpd_get_product_type*		get the coded product type
 * *tlgate_vpd_get_hostname*		get the default hostname, based on the MAC address
 * *tlgate_vpd_get_mac_address*		get the Hardware/MAC address for a given Ethernet Adapter.
 
-## EEPROM Layout 
+### EEPROM Layout 
 
 It is a 24LC16 Microchip I2C 16kbits EEPROM, i.e. 2KiB, byte addresses range from 0x000 to 0x7FF, mapped over 8 I2C addresses ranging from 0x50 to 0x57, i.e. 8 pages of 256 Bytes.
 
@@ -222,7 +235,7 @@ typedef union _p
     } options;
 } tlgate_product_type_t;
 ```
-## Library Integration
+### VPD Library Integration
 
 This is built with recipe "tlgate-vpd" and will deploy as:
 
@@ -245,5 +258,14 @@ This is built with recipe "tlgate-vpd" and will deploy as:
 │               └── tlgate-vpd.pc
 ```
 
+## Overlays and Runtime/Configuration Data Management
 
+### Data partition folders and mounting
 
+See specification in https://jira.open-groupe.com/browse/SEPASSRFNT-13
+
+### Factory Reset
+
+A script shall allow to wipe the contents in /data and reboot on a default factory setup.
+
+[Back](toc.md)

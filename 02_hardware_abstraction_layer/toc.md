@@ -1,7 +1,8 @@
 # Hardware Abstraction Layer
 
-- [BSP and EMC Testsuite](SEPASSRFNT-36-BSP-testsuite.md)
-- [EEPROM and VPD](SEPASSRFNT-14-EEPROM-Management.md)
+- [BSP Testsuite](SEPASSRFNT-36-BSP-testsuite.md)
+- [EMC Testsuite](SEPASSRFNT-65-EMC-testsuite.md)
+- [Vital and Runtime Product Data (VPD & Overlays)](SEPASSRFNT-14-vpd-and-overlays.md)
 - [GPIOs](SEPASSRFNT-45-gpio.md)
 - [UARTs](SEPASSRFNT-64-uarts.md)
 - [PMIC Config and Power Management](SEPASSRFNT-99-power.md)

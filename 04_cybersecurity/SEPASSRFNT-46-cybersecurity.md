@@ -126,7 +126,9 @@ The required mitigations are listed here:
 
 ### Mitigation CYBER_MGN1x : Users and Groups management
 
-Users to Create: 
+* Rule 1: remove all users and groups, that are not strictily needed.
+
+* Rule 2 : create statid IDs for User and Groups, all explicit 
 
 | Mitigation ID| User Name |  Type | Description |
 | ---| --- | --- | --- |
@@ -135,6 +137,8 @@ Users to Create:
 | CYBER_MGN1.3 | L3SUPPORT | Human | A developer, such as a tlgate project engineer or prodict owner, providing support or someone acting   |
 | CYBER_MGN1.4 | CONFIGURATOR | Non-Human |  User used by the COnfiguration Application  |
 | CYBER_MGN1.5 | TLGATE | Non-Human |  User running the tlgate, IEC10x and sisgateway applications  |
+
+Implemented with SEPASSRFNT-112 as static IDs in Yocto.
 
 ### Mitigation CYBER_MGN2x : Firewall Rules
 

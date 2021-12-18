@@ -1,6 +1,10 @@
 # Power Management and PMIC Config
 
-NOTE: For further design details, please also refer to [SEPASSRFNT-99](https://jira.open-groupe.com/browse/SEPASSRFNT-99)
+## Feature Status and References
+
+| Technical Notes and Specification | Current [Maturity Grade](../01_developement_methods/SEPASSRFNT-96-developement.md#Maturity Grades)| Comments |
+| :---: | :---: | --- |
+|[SEPASSRFNT-99](https://jira.open-groupe.com/browse/SEPASSRFNT-99) | MG80 (18/12/21) | development complete, qualified, not further test harness or special softwaer configuration. |
 
 ## Requirements
 
