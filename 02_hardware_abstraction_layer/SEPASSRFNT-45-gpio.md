@@ -29,7 +29,7 @@ gpiochip5 [MAX14830] (16 lines)
 gpiochip6 [MAX14830] (16 lines)
 ```
 
-Note: tlgate-app must be adapted, to bind those gpio, using the file API with sysfs (for the leds), or libgpio (for the reduncency GPIOs).
+Note: tlgate-app must be adapted, to bind those gpio, using the file API with sysfs (for the leds), or libgpiod (for the reduncency GPIOs). Read the libgpiod section below.
 
 * specified in SEPASSRFNT-79
 * coded in SEPASSRFNT-80
@@ -65,5 +65,70 @@ echo panic > /sys/class/leds/sys-err/trigger
 ## Testing
 
 BSP level tests are available from the BSP test-suite, or from the EMC test-suite, see related documentation.
+
+
+## libgpiod
+All GPIOs are managed through a library which allows handling names instead of indexes. The benefit is a better hardware abstraction.
+Typically, the tlgate application should be revisited to replace `ioctl()` calls to calls to the library, which itself takes care of `/dev/gpiochipX`.
+
+Here is the typical path to control an output GPIO:
+```
+#include <gpiod.h>
+
+struct gpiod_chip *chip;
+struct gpiod_line *line;
+
+chip = gpiod_chip_open_by_name("pcf8574");
+
+/* find OUT3 pin */
+line = gpiod_chip_find_line(chip, "OUT3");
+
+/* config as output and set a description */
+gpiod_line_request_output(line, "tlgate-app-out3", 0);
+
+/* set value */
+gpiod_line_set_value(line, 1);
+```
+
+To manage a GPIO as input:
+```
+#include <gpiod.h>
+
+struct gpiod_chip *chip;
+struct gpiod_line *line;
+
+chip = gpiod_chip_open_by_name("pcf8574");
+
+/* find IN2 pin */
+line = gpiod_chip_find_line(chip, "IN2");
+
+/* config as input and set a description */
+gpiod_line_request_input(line, "tlgate-app-in2");
+
+/* get value */
+int value = gpiod_line_get_value(line);
+```
+
+If one needs to monitor state changes ("events"), the API functions to use are typically:
+```
+gpiod_line_request_both_edges_events();
+gpiod_line_event_get_fd();
+gpiod_line_event_read_fd_multiple();
+...
+```
+
+The complete documentation for gpiolib can be found here: [http://phwl.org/assets/images/2021/02/libgpiod-ref.pdf]
+
+The main repository for libgpiod is: [https://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git]
+
+**Important Note**
+
+Once someone calls:
+```
+gpiod_line_release(line);
+gpiod_chip_close(chip);
+```
+... then the GPIO lines are set back to their initial values. As a consequence, the application that manages GPIOs should keep control for its whole life time.
+Using the command-line tools such as `gpioinfo`, `gpiofind` and `gpioset` will result in non-persistent changes.
 
 [Back](toc.md)
