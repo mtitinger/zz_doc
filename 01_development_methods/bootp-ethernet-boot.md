@@ -1,6 +1,5 @@
 About using BOOTP for Ethernet boot
 ===================================
-
 ## Introduction and Limitations
 
 Full boot using Ethernet only would be very convenient for production stages, because this can be easily automated.

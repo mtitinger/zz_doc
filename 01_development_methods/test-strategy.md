@@ -138,6 +138,7 @@ The FTP defines:
 * link to the applicable system requirement (omitted in this project)
 * ID og the matching high level feature (HLF) to establish the Tracability Matrix (omitted in this project)
 * Location of the test implementation (link to test documentation)
+
 ### Pre conditions
 
 pre-conditions are defined per test in the test documentation.
@@ -217,14 +218,13 @@ A minimal set of KPIs is as follows:
 | Tlgate.exe firmware update time | none (technical KPI for non-reg) | < 10 minutes | end-to-end firmware update process and progress display | TODO |
 
 
+## Acceptance Test Plan (Manual Tests)
 
+### ATP for v01.10.00
 
+TODO
 
+### ATP for v01.01.00
 
-
-
-
-
-
-
+TODO
 
