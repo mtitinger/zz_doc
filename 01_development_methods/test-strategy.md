@@ -69,6 +69,11 @@ KPIs are specialized ITs, that measure a required performance item.
 
 See section "Key Performance Indicators" in this document.
 
+## Acceptance Tests (AT)
+
+Acceptance Tests are aimed to assess the versions versus the on-field/customer purpose of the product.
+It is not a technical qualification step, but a business/product qualification: is it what the customer initially asked for, and does it make sense for his purpose.
+
 # Applicable Test Process
 
 ## Actors
@@ -76,6 +81,7 @@ See section "Key Performance Indicators" in this document.
 | Actor Name | Description |
 | --- | --- |
 | MAINTAINER | A person, who is in charge of development of a given software component |
+| OPERATOR | A person, who is responsible for the production tests execution, he qualifies a release for Acceptance. |
 | DEVELOPER | A person, who contributes by making any code or documentation change to a given software component |
 | INTEGRATOR | A person,  who makes versioned system changes to release a given software component into the system |
 | PRODUCER | A person, like the Product Owner (agile) or Software Project Manager, who commits with the system version, and produces the formal document bundle of the version |
@@ -96,10 +102,11 @@ Hence, the MAINTAINER must:
 
 ### how and when
 
-| Trigger | scope | Host-based Tests  Execution | Target-based Test Execution |
-| a new commit to "dev" branch | one component | run by DEVELOPPER, optional | DEVELOPER uploads to test target, or calls REST API to post matching test to LAVA instance |
-| a new commit to "master" branch | one component | run by CI, using gitlab | run by CI : calls REST API to post matching test to LAVA instance |
-| nightly **(DEV IMAGE)**| full system image | not applicable | run by CI : CI calls REST API to post matching test to LAVA instance and runs high-level integration test(s) |
+| Trigger | scope | Host-based Tests  Execution | Target-based Test Execution |test types |
+| --- | --- | --- | --- | --- |
+| a new commit to "dev" branch | one component | run by DEVELOPPER, optional | DEVELOPER uploads to test target, or calls REST API to post matching test to LAVA instance | **UT+FT** |
+| a new commit to "master" branch | one component | run by CI, using gitlab | run by CI : calls REST API to post matching test to LAVA instance | **FT** |
+| nightly | full system **(DEV IMAGE)** | not applicable | run by CI : CI calls REST API to post matching test to LAVA instance and runs high-level integration test(s) |**FT+IT**|
 
 ## From MG60 to MG80
 
@@ -115,8 +122,11 @@ Hence the INTEGRATOR must:
 
 ### how and when
 
-| Trigger | scope | Host-based Tests  Execution | Target-based Test Execution |
-| manual **(RELEASE IMAGE)**| full system image | not applicable | run by CI: calls REST API to post matching test to LAVA instance and runs high-level integration test(s) |
+| Trigger | scope | Host-based Tests  Execution | Target-based Test Execution | test types |
+| --- | --- | --- | --- | --- |
+| manual FT | full system **(RELEASE IMAGE)** | not applicable | run by CI: calls REST API to post matching test to LAVA instance and runs high-level integration test(s) | **FT+IT** |
+| manual AT | full system **(RELEASE IMAGE)** | not applicable | run by OPERATOR : manual/monkey "tests" to check that modbus, website, tlgate.exe config and sisgsteway app work nominally | **AT** |
+
 
 # Versionned Test Plans
 
