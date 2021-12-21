@@ -83,6 +83,9 @@ See section "Key Performance Indicators" in this document.
 
 ## From MG40 to MG60
 
+
+This describes Testing during the steps, from Concept to Validation.
+
 ### Who
 
 MG60 is gated OK by the PRODUCER or QA_MANAGER, when the MAINTAINER or a software component can prove that there is a successful FT test report for that component, matching the test plan of the version.
@@ -91,14 +94,29 @@ Hence, the MAINTAINER must:
 * implement the FT
 * upon "DONE" of the implementation tracking JIRA, attach a successful FT test repport
 
-### how
+### how and when
 
-| Trigger | Auto/Manual | scope | Host-based Tests  Execution | Target-based Test Execution |
-| a new commit to "dev" branch | one component | Manual, optional | In DEVELOPER's local build folder | DEVELOPER uploads to test target, or calls REST API to post matching test to LAVA instance |
-| a new commit to "master" branch | one component | Auto, mandatory| CI runner on CI-VM (gitlab) | CI calls REST API to post matching test to LAVA instance |
-| nightly (system image)| full system image | Auto, mandatory | n/a | CI calls REST API to post matching test to LAVA instance |
+| Trigger | scope | Host-based Tests  Execution | Target-based Test Execution |
+| a new commit to "dev" branch | one component | run by DEVELOPPER, optional | DEVELOPER uploads to test target, or calls REST API to post matching test to LAVA instance |
+| a new commit to "master" branch | one component | run by CI, using gitlab | run by CI : calls REST API to post matching test to LAVA instance |
+| nightly **(DEV IMAGE)**| full system image | not applicable | run by CI : CI calls REST API to post matching test to LAVA instance and runs high-level integration test(s) |
+
+## From MG60 to MG80
 
 
+This describes the steps, from Validation to Release.
+
+### Who
+
+MG79 is gated OK by the PRODUCER or QA_MANAGER, when the CI provides a successful Acceptance Test (AT) Report for a given system build.
+Hence the INTEGRATOR must:
+* create the various meta data in recipes and yocto build config files, to pull the tagged sha1
+* tag all the sha1, for the given version
+
+### how and when
+
+| Trigger | scope | Host-based Tests  Execution | Target-based Test Execution |
+| manual **(RELEASE IMAGE)**| full system image | not applicable | run by CI: calls REST API to post matching test to LAVA instance and runs high-level integration test(s) |
 
 # Versionned Test Plans
 
