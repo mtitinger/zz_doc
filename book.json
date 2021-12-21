@@ -1,0 +1,62 @@
+{
+    "title": "SISGateway v6 - Project Documentation",
+    "author": "Copyright (c) Open-Groupe 2021",
+    "description": "THis is the internal reference documentation for the project.",
+    "license": "OpenGroupe",
+    "language": "en",
+    "repo": "ssh://git@git.boost.open.global:443/schneider-electric/passerelle_refonte/Software/bsp/sisgateway-internal-documentation.git",
+    "structure": {
+        "readme": "README.md"
+    },
+    "plugins": [
+        "advanced-emoji",
+        "copy-code-button",
+        "get-book",
+        "embed-pdf",
+        "local-pagefooter",
+        "page-toc",
+        "-lunr", "-search", "search-plus",
+        "hints",
+        "livereload"        
+    ],
+    "pluginsConfig": {
+        "get-book": {
+            "url": "https://schneider-electric.pages.boost.open.global/passerelle_refonte/Software/bsp/sisgateway-internal-documentation/-/jobs/artifacts/master/raw/public/gitbook.pdf?job=pages",
+            "label": "Download PDF version"
+        },
+        "page-toc": {
+            "selector": ".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4",
+            "position": "before-first",
+            "showByDefault": true
+        }, 
+        "local-pagefooter": {
+            "islocal": true,
+            "modify_label": "Open-Groupe - generated on ",
+            "modify_format": "DD-MM-YYYY HH:mm:ss"
+        }
+    },
+    "links": {
+        "sidebar": {
+            "SISGateway v6": "https://schneider-electric.pages.boost.open.global/passerelle_refonte/Software/bsp/sisgateway-internal-documentation/"
+        },
+        "sharing": {
+            "all": ["twitter", "facebook"],
+            "facebook": false,
+            "google": false,
+            "twitter": false
+        }
+    },
+    "pdf": {
+        "margin": {
+            "left": 56,
+            "right": 56,
+            "top": 56,
+            "bottom": 56
+        },
+        "pageNumbers": false,
+        "fontSize": 11,
+        "fontFamily": "Roboto",
+        "paperSize": "a4",
+        "toc": true
+    }
+}
