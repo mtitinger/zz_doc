@@ -20,7 +20,7 @@ The product features are modelled and categorized as follows:
 ### Maturity Grades
 
 * This project defines a very simplified set of QA Gates, called Maturity Grades (MG)
-* Gates are quality checking points, in this simplified process, the software project manager is responsible for checking that each feature can pass either gate, and update its MAtugity Grade.
+* Gates are quality checking points, in this simplified process, **the software project manager is responsible for checking that each feature can pass either gate, and update its MG in the documentation**.
 
 | MG | Name | Description |
 | --- | --- |

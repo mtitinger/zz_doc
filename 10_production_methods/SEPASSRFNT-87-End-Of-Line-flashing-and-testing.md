@@ -1,15 +1,17 @@
 End Of Line Flashing and Testing process
 ======================================================
 
-NOTE: For further design details, please also refer to [SEPASSRFNT-87](https://jira.open-groupe.com/browse/SEPASSRFNT-87)
+## Feature Status and References
 
-This is a draft only, this feature is released in v1.10, this only gives the principles for now.
+| Technical Notes and Specification | Current [Maturity Grade](../01_developement_methods/SEPASSRFNT-96-developement.md)| Comments |
+| :---: | :---: | --- |
+|[SEPASSRFNT-87](https://jira.open-groupe.com/browse/SEPASSRFNT-87) | MG30 (18/12/21) | Specification to review |
+
+## General Principle
 
 recommended preliminary reading:
 * Bootmodes (BM) and JTAG debugging is covered with SEPASSRFNT-63 and [this_doc](SEPASSRFNT-63-JTAG-debug-setup-and-bootmodes.md)
 * DFU flashing for SD and eMMC is covered with SEPASSRFNT-61 and [this_doc](SEPASSRFNT-61-DFU-flashing.md)
-
-## General Principle
 
 Upon first poweron, the board is configured by resistors, so that
 
