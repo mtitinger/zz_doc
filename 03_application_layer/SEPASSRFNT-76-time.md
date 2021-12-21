@@ -1,6 +1,13 @@
 # Time-keeping
 
-NOTE: For further design details, please also refer to [SEPASSRFNT-76](https://jira.open-groupe.com/browse/SEPASSRFNT-76)
+## Feature Status and References
+
+| Technical Notes and Specification | Current [Maturity Grade](../01_development_methods/SEPASSRFNT-96-development.md)| Comments |
+| :---: | :---: | --- |
+|[SEPASSRFNT-99](https://jira.open-groupe.com/browse/SEPASSRFNT-99) | MG80 (18/12/21) | development complete, qualified, not further test harness or special software configuration. |
+
+## Feature Description
+
 
 The system uses NTP to sync time with external servers, through systemd-timesyncd daemon.
 

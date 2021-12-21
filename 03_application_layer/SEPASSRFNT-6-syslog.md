@@ -1,5 +1,13 @@
 # Logging with syslog
 
+## Feature Status and References
+
+| Technical Notes and Specification | Current [Maturity Grade](../01_development_methods/SEPASSRFNT-96-development.md)| Comments |
+| :---: | :---: | --- |
+|[SEPASSRFNT-6](https://jira.open-groupe.com/browse/SEPASSRFNT-6) | MG70 (18/12/21) | feature complete, must be integrated in CI for qualification |
+
+## Feature Description
+
 NOTE: For further design details, please also refer to [SEPASSRFNT-6](https://jira.open-groupe.com/browse/SEPASSRFNT-6)
 
 The system is configured to be a syslog *client*, pushing logs to a syslog *server*.

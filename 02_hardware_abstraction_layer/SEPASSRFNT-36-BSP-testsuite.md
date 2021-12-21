@@ -2,7 +2,7 @@
 
 ## Feature Status and References
 
-| Technical Notes and Specification | Current [Maturity Grade](../01_developement_methods/SEPASSRFNT-96-developement.md#Maturity Grades)| Comments |
+| Technical Notes and Specification | Current [Maturity Grade](../01_development_methods/SEPASSRFNT-96-development.md)| Comments |
 | :---: | :---: | --- |
 |[SEPASSRFNT-36](https://jira.open-groupe.com/browse/SEPASSRFNT-36) | MG60 (18/12/21) | development complete, needs testing and CI integration |
 

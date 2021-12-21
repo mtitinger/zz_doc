@@ -1,8 +1,12 @@
 # Flashing using DFU
 
-NOTE: For further design details, please also refer to [SEPASSRFNT-61](https://jira.open-groupe.com/browse/SEPASSRFNT-61)
+## Feature Status and References
 
-# Using Device Firmware Upload (DFU)
+| Technical Notes and Specification | Current [Maturity Grade](../01_development_methods/SEPASSRFNT-96-development.md)| Comments |
+| :---: | :---: | --- |
+|[SEPASSRFNT-61](https://jira.open-groupe.com/browse/SEPASSRFNT-61) | n/a | Technical Note (howto) |
+
+## Using Device Firmware Upload (DFU)
 Flashing is done through the USB port on the board. It allows loading all successive software parts: SPL, u-boot, then directly write to the eMMC.
 
 Also see the [reference TI document](https://software-dl.ti.com/processor-sdk-linux/esd/AM64X/08_00_00_21/exports/docs/linux/Foundational_Components/U-Boot/UG-Memory.html).
@@ -31,6 +35,7 @@ Now when powering up the board, it enumerates on the USB bus.
 **Note:** You may need to run dfu-util with root privileges to access the device (or better, create udev rules to relax access rights without running the whole procedure as root).
 
 Then, based on the images built by Yocto and available in the `build/arago-tmp-external-arm-glibc/deploy/images/am64xx-tlgate` directory, on the PC:
+
 ```
 $ dfu-util -R -a bootloader -D tiboot3.bin
 $ dfu-util -R -a tispl.bin -D tispl.bin

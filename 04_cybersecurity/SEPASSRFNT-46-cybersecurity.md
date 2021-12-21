@@ -1,6 +1,10 @@
 # Cyber Security Requirements
 
-NOTE: For further design details, please also refer to [SEPASSRFNT-46](https://jira.open-groupe.com/browse/SEPASSRFNT-46)
+## Feature Status and References
+
+| Technical Notes and Specification | Current [Maturity Grade](../01_development_methods/SEPASSRFNT-96-development.md)| Comments |
+| :---: | :---: | --- |
+|[SEPASSRFNT-46](https://jira.open-groupe.com/browse/SEPASSRFNT-46) | MG30 (21/12/21) | Specification draft, review pending |
 
 **This product will undergo Schneider Electric CySec acceptance review, and must be ready to comply to IEC62443 Securiy Level 1 (SL1)**
 

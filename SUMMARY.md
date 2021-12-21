@@ -6,6 +6,7 @@ This is the entry point for the project. It may contain links to other repositor
 There are two documentation directories here:
 - [01 Developement Methods](01_development_methods/toc.md)
 	- [Development guidelines](01_development_methods/SEPASSRFNT-96-development.md)
+	- [Test Strategy and Test Plan](01_development_methods/test-strategy.md)
 	- [Yocto Onetime Setup](01_development_methods/yocto-onetime-setup.md)
 	- [Yocto build](01_development_methods/yocto.md)
 	- [Yocto building the SDK](01_development_methods/yocto-SDK.md)

@@ -1,6 +1,8 @@
 # Development guidelines
 
-NOTE: Software management reports must be maintained in [SEPASSRFNT-96](https://jira.open-groupe.com/browse/SEPASSRFNT-96)
+| Technical Notes and Specification | Current Maturity Grade| Comments |
+| :---: | :---: | --- |
+| Software management reports must be maintained in [SEPASSRFNT-96](https://jira.open-groupe.com/browse/SEPASSRFNT-96) | MG80 (22/12/21) | Document released, Applicable |
 ## Definition of "Features" and "Maturity Grades (MG)"
 
 ### Features and Requirements
@@ -13,9 +15,9 @@ The product features are modelled and categorized as follows:
 | System Requirements (**SRS**) |translation of the product features in Functional and non-functional system blocs and constraints|
 
 | Testable Features | Description | JIRA Ticket Type |
-| --- | --- |
-| High-level Features (**HLF**) |  translation of the SRS into a high level work breakout item, that undergo Functional Testing (FT) and Qualification Testing (QT)  as per Test Strategy and Release Strategy| EPICS |
-| Low-level Features (**LLF**) | breakout of HLF into development items that undergo Unit Testing (UT), and FT as per Test Strategy| Sub-task of an EPIC |
+| --- | --- | --- |
+| High-level Features (**HLF**) |  translation of the SRS into a high level work breakout item, that undergo Functional Testing (FT) and Qualification Testing (QT)  as per Test Strategy and Release Strategy| **EPIC** |
+| Low-level Features (**LLF**) | breakout of HLF into development items that undergo Unit Testing (UT), and FT as per Test Strategy| **Sub-task** (of an EPIC) |
 
 ### Maturity Grades
 
@@ -23,7 +25,7 @@ The product features are modelled and categorized as follows:
 * Gates are quality checking points, in this simplified process, **the software project manager is responsible for checking that each feature can pass either gate, and update its MG in the documentation**.
 
 | MG | Name | Description |
-| --- | --- |
+| --- | --- | --- |
 |0| **Concept** |Product level modelling and conceptual design leading to "GO", done in v5, not addressed here|
 |10| **PRS defined** |PRS are written and reviewed, product is defined for this PRS, done in v5, not addressed here|
 |20| **SRS defined** |System Architecture is defined, SRS are written and reviewed, system constraints and Functional blocs (FB) are defined, done in v5, not addressed here|
@@ -53,8 +55,8 @@ The Software development process is a simple and loosely based on the Agile proc
 * Code writing : see Coding rules chapter
 * Code contribution : see Committing rules
 * Code Review and Static Analysis : see Committing rules
-* Test construction and testing : See Test Strategy
-* Validation and Qualification : See Test Strategy
+* Test construction and testing : See [Test Strategy](test-strategy.md)
+* Validation and Qualification : See [Test Strategy](test-strategy.md)
 * Release of Deliverables and Branching : See Release Strategy
 * Maintenance and Fixes : See Release and Maintenance Strategy
 

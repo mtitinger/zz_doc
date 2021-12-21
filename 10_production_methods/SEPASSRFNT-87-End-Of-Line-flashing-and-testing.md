@@ -3,7 +3,7 @@ End Of Line Flashing and Testing process
 
 ## Feature Status and References
 
-| Technical Notes and Specification | Current [Maturity Grade](../01_developement_methods/SEPASSRFNT-96-developement.md)| Comments |
+| Technical Notes and Specification | Current [Maturity Grade](../01_development_methods/SEPASSRFNT-96-development.md)| Comments |
 | :---: | :---: | --- |
 |[SEPASSRFNT-87](https://jira.open-groupe.com/browse/SEPASSRFNT-87) | MG30 (18/12/21) | Specification to review |
 
