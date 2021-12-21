@@ -2,7 +2,7 @@
 
 - [Development guidelines](SEPASSRFNT-96-development.md)
 - [Test Strategy and Test Plan](test-strategy.md)
-- [Continuous Integration](../10_Production Methods/SEPASSRFNT-41-ci.md)
+- [Continuous Integration](SEPASSRFNT-41-ci.md)
 - [Yocto Onetime Setup](yocto-onetime-setup.md)
 - [Yocto build](yocto.md)
 - [Yocto building the SDK](yocto-SDK.md)

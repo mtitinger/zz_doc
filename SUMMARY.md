@@ -6,6 +6,7 @@ This is the entry point for the project. It may contain links to other repositor
 There are two documentation directories here:
 - [01 Developement Methods](01_development_methods/toc.md)
 	- [Development guidelines](01_development_methods/SEPASSRFNT-96-development.md)
+	- [Continuous Integration](01_development_methods/SEPASSRFNT-41-ci.md)
 	- [Test Strategy and Test Plan](01_development_methods/test-strategy.md)
 	- [Yocto Onetime Setup](01_development_methods/yocto-onetime-setup.md)
 	- [Yocto build](01_development_methods/yocto.md)
@@ -29,7 +30,6 @@ There are two documentation directories here:
 	- [Cybersecurity](04_cybersecurity/SEPASSRFNT-46-cybersecurity.md)
 	- [Diag & Rescue shell](04_cybersecurity/SEPASSRFNT-69-rescue.md)
 - [10_Production Methods](10_production_methods/toc.md)
-	- [Continuous Integration](10_production_methods/SEPASSRFNT-41-ci.md)
 	- [Flashing using DFU](10_production_methods/SEPASSRFNT-61-DFU-flashing.md)
 	- [Flashing for PROD and testing](10_production_methods/SEPASSRFNT-87-End-Of-Line-flashing-and-testing.md)
 
