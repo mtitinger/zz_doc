@@ -7,7 +7,7 @@ Test Strategy and Test Plan
 
 # Domain of Application
 
-* This document is part or the Project's Software Developement Plan, which is the part of the Quality Manual related to Software Developement Processes.
+* This document is part or the Project's Software Development Plan, which is the part of the Quality Manual related to Software Development Processes.
 * It contains:
 	- Definition of applicable test categories
 	- Versioned Test Plans (in this doc for simplicity)
@@ -68,6 +68,37 @@ A minimal implementation of the IT, are FTs for the sub-system.
 KPIs are specialized ITs, that measure a required performance item.
 
 See section "Key Performance Indicators" in this document.
+
+# Applicable Test Process
+
+## Actors
+
+| Actor Name | Description |
+| --- | --- |
+| MAINTAINER | A person, who is in charge of development of a given software component |
+| DEVELOPER | A person, who contributes by making any code or documentation change to a given software component |
+| INTEGRATOR | A person,  who makes versioned system changes to release a given software component into the system |
+| PRODUCER | A person, like the Product Owner (agile) or Software Project Manager, who commits with the system version, and produces the formal document bundle of the version |
+| QA_MANAGER | A person, who is responsible for the application of the Quality Manual, for the process applicable to the project. |
+
+## From MG40 to MG60
+
+### Who
+
+MG60 is gated OK by the PRODUCER or QA_MANAGER, when the MAINTAINER or a software component can prove that there is a successful FT test report for that component, matching the test plan of the version.
+Hence, the MAINTAINER must: 
+* review and update the FTP for his component
+* implement the FT
+* upon "DONE" of the implementation tracking JIRA, attach a successful FT test repport
+
+### how
+
+| Trigger | Auto/Manual | scope | Host-based Tests  Execution | Target-based Test Execution |
+| a new commit to "dev" branch | one component | Manual, optional | In DEVELOPER's local build folder | DEVELOPER uploads to test target, or calls REST API to post matching test to LAVA instance |
+| a new commit to "master" branch | one component | Auto, mandatory| CI runner on CI-VM (gitlab) | CI calls REST API to post matching test to LAVA instance |
+| nightly (system image)| full system image | Auto, mandatory | n/a | CI calls REST API to post matching test to LAVA instance |
+
+
 
 # Versionned Test Plans
 
