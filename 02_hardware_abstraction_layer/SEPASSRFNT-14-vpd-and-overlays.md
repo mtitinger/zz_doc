@@ -33,41 +33,43 @@ Contents are written with option:
 
 * **-B binary-file-path**	write the nvram, using a binary image of 2kiB.
 * **-J json-file-path**		write the nvram, using a json file, of at most 4kiB.
-* **-v**					activate verbose mode.
-* **-h**					display help and check layout version (MAGIC)
-* **-d**					dump of the contents to local files, in /var/run (this is used on runtime mode mainly).
+* **-v**			activate verbose mode.
+* **-h**			display help and check layout version (MAGIC)
+* **-d**			dump of the contents to local files, in /var/run (this is used on runtime mode mainly).
 
 NOTE: It is very important, that in case of changes, you also change the MAGIC version, to insure the expected scheme, the library, and the app are in sync.
 
 ```
 {
-	"__comment": "This is a dummy JSON template for the EEPROM Scheme 1.O",
+	"__comment": "This is a JSON template for the EEPROM Scheme 1.O",
 	"vpd_magic": "0x4F504E06",
-	"vpd_product_type": "0x06241602",
-	"vpd_serial_number": "0x20210101",
-	"vpd_mac_eth0_msw": "0x00001122",
-	"vpd_mac_eth0_lsw": "0x33445560",
-	"vpd_mac_eth1_msw": "0x00001122",
-	"vpd_mac_eth1_lsw": "0x33445561",
+	"vpd_product_type": "0x06241602",  /* v6, 24v, 16channels, 2 Ethernets*/
+	"vpd_serial_number": "0x20210101", /* string as a number : 2021, week 01, number 01*/
+	"vpd_mac_eth0_lsb": "0xC800", /* 00-50-C2-30-C8-00*/
+	"vpd_mac_eth1_lsb": "0xC801", /* 00-50-C2-30-C8-01*/
 	"vpd_hostname": "sisgateway",
 	"vpd_boot_cnt0": 3,
 	"vpd_boot_pri0": 0,
 	"vpd_boot_cnt1": 3,
 	"vpd_boot_pri1": 1,
-	"vpd_bsp_test_report": "Test Start Time: Thu Jan 30 11:06:37 2003
+	"vpd_bsp_test_report": "Test Start Time: Mon Dec 20 17:51:34 2021
 	-----------------------------------------
-	Testcase                       Result     Exit Value
-	--------                       ------     ----------
-	mtest01                        PASS       0
-	mmstress                       PASS       0
-	fork01                         PASS       0
-	chdir01A                       PASS       0
+	Testcase                                           Result     Exit Value
+	--------                                           ------     ----------
+	bsp.rtc                                            PASS       0    
+	bsp.rtc                                            FAIL       1    
+	bsp.uarts                                          PASS       0    
+	bsp.gpio                                           PASS       0    
+	bsp.eeprom                                         PASS       0    
+	bsp.syslog                                         PASS       0    
+	net-2if-test                                       PASS       0    
 	-----------------------------------------------
-	Total Tests: 4
-	Total Failures: 0
-	Kernel Version: 5.10.41
+	Total Tests: 7
+	Total Skipped Tests: 0
+	Total Failures: 1
+	Kernel Version: 5.10.59-gd12187fd9f
 	Machine Architecture: aarch64
-	Hostname: lazy"
+	Hostname: am64xx-tlgate"
 }
 ```
 
@@ -81,6 +83,12 @@ This will create both:
 
 * **/var/run/eeprom.bin**
 * **/var/run/eeprom.json**
+
+some getters are available:
+* **-s**	display the serial number
+* **-h**	display the hostname built from the radix and the last two bytes of MAC0
+
+
 
 ### Systemd and Yocto Integration
 
@@ -140,26 +148,8 @@ marc@marc-virtualbox:~/tlgate-eeprom/lib$ od -x /tmp/eeprom.bin
 tlgate-eeprom -d
 ```
 
-This command will rewrite this same file in this 'simulated' case but also parse the binary, and write a json version:
+This command will rewrite this same file in this 'simulated' case but also parse the binary, and write a json version in /tmp/eeprom.{bin, json}
 
-```
-marc@marc-virtualbox:~/tlgate-eeprom/lib$ cat /tmp/eeprom.json 
-{
-	"vpd_magic" : "0x4f504e06",
-	"vpd_product_type" : "0x00000000",
-	"vpd_serial_number" : "0x20210101",
-	"vpd_mac_eth0_msw" : "0x00000000",
-	"vpd_mac_eth0_lsw" : "0x00000000",
-	"vpd_mac_eth1_msw" : "0x00000000",
-	"vpd_mac_eth1_lsw" : "0x00000000",
-	"vpd_hostname" : "",
-	"vpd_bsp_test_report" : "",
-	"vpd_boot_cnt0" : "0x00000000",
-	"vpd_boot_pri0" : "0x00000000",
-	"vpd_boot_cnt1" : "0x00000000",
-	"vpd_boot_pri1" : "0x00000000",
-}
-```
 ## Tlgate-vpd Library
 ### API
 
@@ -207,12 +197,10 @@ typedef struct __attribute__((packed)) _tlgate_eeprom_v6
     /*0x000*/ uint32_t vpd_magic;                     /**< Takes value 'O','P','N','6' .>*/
     /*0x004*/ tlgate_product_type_t vpd_product_type; /**< see tlgate_product_type_t below.> */
     /*0x008*/ uint32_t vpd_serial_number;             /**< built as 20YYWWNN, where WW is the week, and YY the year of production, and NN the number of devices in the week.>*/
-    /*0x00C*/ uint32_t vpd_mac_eth0_msw;
-    /*0x00C*/ uint32_t vpd_mac_eth0_lsw;               /*MAC in LSB*/
-    /*0x00C*/ uint32_t vpd_mac_eth1_msw;
-    /*0x00C*/ uint32_t vpd_mac_eth1_lsw;              /*MAC in LSB*/
-    /*0x01C*/ char vpd_hostname[TLGATE_VPD_HOSTNAME_SZ];
-    /*0x05C*/ uint8_t vpd_reserved1[0x100 - 0x1C - TLGATE_VPD_HOSTNAME_SZ];
+    /*0x00C*/ uint16_t vpd_mac_eth0_lsb;              /**< last two bytes of the MAC for ETH0, the rest of the address is fixed.>.*/
+    /*0x00E*/ uint16_t vpd_mac_eth1_lsb;              /**< last two bytes of the MAC for ETH1, the rest of the address is fixed.>.*/
+    /*0x010*/ char vpd_hostname[TLGATE_VPD_HOSTNAME_SZ];
+    /*0x050*/ uint8_t vpd_reserved1[0x100 - 0x10 - TLGATE_VPD_HOSTNAME_SZ];
 
     /*0x100*/ char vpd_bsp_test_report[TLGATE_VPD_REPORT_SZ];
     /*0x500*/ uint8_t vpd_reserved2[0x7F0 - 0x100 -TLGATE_VPD_REPORT_SZ];
