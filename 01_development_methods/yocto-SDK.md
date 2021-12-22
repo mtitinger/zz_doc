@@ -1,7 +1,7 @@
 # TLGATE Yocto : building the SDK
 
 ## Introduction
-The SDK is useful mainly for debugging, and gettings backtraces in gdb, but should not be used mainly for
+The SDK is useful mainly for debugging, and getting backtraces in gdb, but should not be used mainly for
 coding and compiling, use devtool modify instead.
 
 ## Creation of the SDK installer
@@ -12,7 +12,7 @@ It can be build based on the dev image, with:
 bitbake opengrp-gateway-img-dev -c populate_sdk
 ```
 
-However _libatomic-dev_ must be removed froom the SDK packagegroup, by adding this to the conf/local.conf
+However _libatomic-dev_ must be removed from the SDK packagegroup, by adding this to the conf/local.conf
 
 ```
 # In order to built the SDK

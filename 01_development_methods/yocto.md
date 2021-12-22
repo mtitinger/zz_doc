@@ -2,25 +2,43 @@
 
 ## Sources Setup
 
-### Developement Image
+### Releases and Baselines
+
+Know releases as of Decembre 22 2021 are:
+
+* tlgate-v0.99	:	Released 21/12/2021
+* tlgate-v1.00	:	In developement, see [JIRA Release Page](https://jira.open-groupe.com/projects/SEPASSRFNT?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page)
+* tlgate-v1.01	:	In developement
+* tlgate-v1.10	:	In developement
+
+To build a specific release, you need to set the matching TLGATE_BASELINE.
+This is done by selecting the matching config file.
+
+### Tlgate config files (baselines selection)
+
+* the default working baseline is 'develop', this is the "bleeding edge" of the project sources.
 
 ```
-./oe-layertool-setup.sh -f configs/opengrp-gateway-DEV.txt
-cd build
-. conf/setenv
-bitbake opengrp-gateway-img-dev
+./oe-layertool-setup.sh -f configs/opengrp-gateway-develop.txt
 ```
 
-### Building a release
-
-Realeases will be build by checking out a tagged version for all repositories,
-this is done as follows:
+* protected (released) versions will be in the form 'tlgate-vMM.mm'
 
 ```
- ./oe-layertool-setup.sh -f configs/opengrp-gateway-vMM.nn.bb.txt
-
- bitbake opengrp-gateway-img-release
+./oe-layertool-setup.sh -f configs/opengrp-gateway-tlgate-v0.99.txt
 ```
+
+### Developement Images
+
+- `opengrp-gateway-img-dev`: application rootfs and boot folder (kernel+dtb) that addes dev packages and setup to the "release" image, use this for dev and [FT/IT tests](test-strategy.md)
+
+### Specialized Images
+
+- `opengrp-gateway-img-emc`: image for EMC test sessions
+- `opengrp-gateway-img-maint`: image for the **maintenance** rootfs and dedicated kernel+dtb. This is used for fallback and production.
+
+### Release Image
+- `opengrp-gateway-img-release`: **Release Image**, application rootfs + boot folder (kernel+dtb), use this for [AT tests](test-strategy.md)
 
 ## Yocto meta-layers
 There are 3 layers specific to the project:
@@ -31,28 +49,18 @@ There are 3 layers specific to the project:
 NOTE: synchronise your repositories regularily, doing a rebase if necessary.
 NOTE: the script **sync-tlgate** will try to pull from the origin repository for the project specific meta-layers
 
-## Images and packages
-
-### main images
-The available images are the following. Those images are defined in the meta-tlgate layer.
-- `bitbake opengrp-gateway-img-release`: production image
-- `bitbake opengrp-gateway-img-dev`: same as opengrp-gateway-img-release with the addition of debug tools, no root password, ...
-
-### production and maintenance image (TODO)
-
-
-### main Open-groupe packages
+## Main Open-groupe packages
 
 The application package is called "tlgate-app"
 
-- `bitbake tlgate`: build a given package (only, but including its dependencies)
-- `devtool modify tlgate`: checkout a package to make changes
+- `bitbake tlgate-app`: build a given package (only, but including its dependencies)
+- `devtool modify tlgate-app`: checkout a package to make changes
 
 It is integrated through a packagegroup file, located in: 
 
 *meta-tlgate/recipes-core/packagegroups/packagegroup-open-gateway.bb*
 
-tlgate-app has the following recipes layourt in meta-tlgate/recipes-modbus:
+* tlgate-app has the following recipes layourt in meta-tlgate/recipes-modbus:
 
 ```
 .
@@ -72,20 +80,21 @@ tlgate-app has the following recipes layourt in meta-tlgate/recipes-modbus:
 * tmwscl* ar ethe Triangle Microworks libraries in 2004 (iec101) and 2008 (iec104) versions
 * tlgate-agn is a common library, for things ike logs, and parsing the config
 * tlgate-iec10* is the public library, for client apps that are launched by tlgate-app. Those client apps implement modbus masters or slaves. 
+* sisgateway is recipe name, to build the sisgateway application in repo appgateway
+* web-cgi is the recipe to build the cgi-bin applets, and deploy the www contents for the http server (lighttpd)
 
 ## The am64xx-tlgate MACHINE
 
 The machine used for the project is "forked" from am64xx-evm. Both MACHINEs can be built, one should:
 
-* build with `MACHINE=am64xx-evm` for running on the *evaluation board*
 * build with `MACHINE=am64xx-tlgate` for running on the *tlgate board* a.k.a RUN1 and later RUN2.
+* build with `MACHINE=am64xx-evm` for running on the *evaluation board*
 
 Since the device tree for tlgate has no support for sd-card, you won't be able to boot the tlgate software on the evaluation board.
 
 You can switch machines in conf/local.conf, any time: some parts of the build are common, some are specific. In any case, you will get build artifacts either in
 
-* `build/arago-tmp-external-arm-glibc/deploy/images/am64xx-evm`		for devkit flashing procedure, is dd'ing to and external SDCard.
-* `build/arago-tmp-external-arm-glibc/deploy/images/am64xx-tlgate`	for RUNx (flashing procedure To Be Documented)
+`build/arago-tmp-external-arm-glibc/deploy/images/am64xx-tlgate`	for RUNx, see [DFU flashing procedure](../10_production_methods/SEPASSRFNT-61-DFU-flashing.md)
 
 ### The need for overrides for u-boot and ti-sci-fw
 We have .bbappend files for those recipes, which are just copy-pasted from the TI recipes in order to provide the variables and functions with the proper machine override (i.e. the _am64xx-tlgate suffix).
