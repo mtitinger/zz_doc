@@ -136,17 +136,40 @@ git commit -sm "SEPASSRFNT-123: demonstrate how to write a brief"
 
 Dans le cas d'un commit necessitant plus d'explications qu'un brief, on peut sauter une ligne, et donner plus de detail avec la command 'git commit' sans options
 
-## Regles de branching
+## Branching Rules
 
-* Nous conservons "master" comme branch d'integration, cible des Pull Request.
-* ON NE COMMIT PAS DIRECTEMENT SUR MASTER
-* chaque contribution doit etre justifiee, specifiee, decrite par un JIRA, en general l'EPIC, pour contribuer ses modif, il faut donc creer une branche àartir de laquelle la PR est faire.
-* une branche de pre-integration est nommee de la facon suivante:
+### Code Contribution
+* the branch names **"develop"** is the branch that **you must create pull requests to**, in order to integrate your changes
+* unless you really know what you are doing, and there is no risk of conflict or regression, **never push directly onto develop**, but create a PR.
+* all pushed commit must match a JIRA ticket, which is used as prefix for your development branch name, for instance:
 
 ```
-git branch feature/SEPASSRFNT-456_le_topic_ma_modif
+git branch feature/SEPASSRFNT-456_my_new_feature
 ```
 
-* on a donc le numero du JIRA et une courte description de ce que cette branch apporte.
+```
+git branch bugfix/SEPASSRFNT-456_do-this-to-fix-this
+```
+
+### Releases and Baselines
+
+The project uses a TLGATE_BASELINE yocto variable, so that we can build for a  given released version, or for *develop*.
+* When TLGATE_BASELINE is used, the meta-layers, and all project repositories are checked out, using branch "develop" and HEAD. 
+* When using a specific version, for instance "tlgate-v0.99", the branches with the same name are used.
+
+FOr now, in tlgate-v0.99, SRCREV is AUTOREV, but with actual/contractual version, recipes should use:
+
+```
+SRC_URI="ssh://git....;branch=$[TLGATE_BASELINE}"
+SRCREV="a fixed sha1"
+```
+### Release Process
+
+When a version is released, the system integrator (or user called "PRODUCER" in the test-strategy doc) must:
+
+* create a branch with the version name e.g. "tlgate-v1.00", "tlgate-v1.01", "tlgate-v1.10" for all project repositories
+* in gitlab, this branch must be protected, so that no-one can push or delete from it, unless the PRODUCER needs a hotfix added.
+* a configuration file in the [yocto setup repository](https://gitlab.boost.open.global/schneider-electric/passerelle_refonte/Software/bsp/opengrp-gateway-sdk/-/tree/develop/configs) must be created, e.g. "opengrp-gateway-tlgate-v1.00.txt", with the matching TLGATE_BASELINE value.
+
 
 [Back](toc.md)
