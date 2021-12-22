@@ -18,7 +18,7 @@ test:
   only:
     - branches # this job will affect every branch except 'master'
   except:
-    - master
+    - develop
     
 # the 'pages' job will deploy and build your site to the 'public' path
 pages:
