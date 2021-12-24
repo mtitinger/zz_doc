@@ -24,7 +24,7 @@ It **must be reliable and secured over several years**, because it is the main t
 
 **A Software release is essentially the formal bundling and storing of a "good" nightly build, that also passes Acceptance Tests (AT).**
 
-## CI Infrastrute Functions
+## CI Infrastructure Functions
 
 * A "Build Plan" is a series of Steps, leading to the execution of any combinaation of the functions described in the following Sections.
 * A "Trigger" is a "reasons" or event leading to the execution of a Build Plan.
@@ -34,7 +34,7 @@ The CI Infra must allow:
 * Manual triggers : Build Plan start when user requests it
 * Cross Repository triggers : Build Plan starts whenever changes occur on a different repo in a specified branch.
 
-### Build
+### FUNCTION : Build
 #### Images and Deliverables
 
 | Image | Description | Triggers |
@@ -54,13 +54,55 @@ trigger: any change to branch master, or manually if user wants to run UT/FT/IT 
 repo under https://gitlab.boost.open.global/schneider-electric/passerelle_refonte/Software/bsp/sisgateway-internal-documentation
 trigger: any change to branch master, or manually if user wants to run UT/FT/IT tests, or upon release.
 
-### Deploy/Store Artifacts
+### FUNCTION : Deploy/Store Artifacts
 
-### Schedule Tests
+Artifacts to be stored are:
+* nightly reports (stored as test results in Boots)
+* FT and IT reports **for all releases**
+* Firmware Update Bundles (for **releases and last nightly only**)
+* Flashables (wic(s), tiboot3, tispl, uboot) **for all releases)**
+TBD (Sharepoint?)
 
-### Collect Results
+### FUNCTION : Schedule Tests
 
-### Dispatch Tests
+* FT will be scheduled nightly, or based on commit or manual triggers, and run as "native" (PC-host) software
+* IT tests (on target) are pushed as 'Jobs' by Boots (or Jenkins) onto LAVA, using a REST API, see LAVA documentation for examples.
+
+### FUNCTION : Collect Results
+
+* FT test results are parsed and collected by Boots (or Jenkins).
+* The CI is able to vote up or down for a Pull Requests, based on the test result.
+
+### FUNCTION : Dispatch Tests
+
+* IT are dispatched on a physical target by the LAVA Dispatcher.
+
+## CI Infrastructure Workflows
+
+### Software Package Contribution Validation
+
+Each developer, once he is "happy" with a consistent contribution block, i.e. one or more correctly formed commits, is meant to create a PR to contribute his work.
+The PR will trigger a native build of the contribution branch, and run the Functional Test (fT) suite for this component. If the FT fails, the PR should not be merged.
+If the build and the FT succeed, the contributor must merge his work to "develop", and remove the contribution branch.
+
+![image](../images/ci-package.drawio.png)
+
+### Software Integration Quality Monitoring
+
+Every night, all contributions are tested as an integrated system : IT are run.
+The tells is the current global state of the "develop" baseline, is suitable for branching to a release baseline "tlgate-vMM.mm".
+
+![image](../images/ci-nightly.drawio.png)
+
+### Release Production and Qualificationn
+
+A release baseline, can be created and customer-qualified by running the Acceptance Tests (AT).
+Release Candidate (rc) baselines are created, by branching a good nightly build into a protected "tlgate-vMM.mm-rcx" branch.
+Release Candidates are transformed into Releases, if Acceptance Tests pass.
+AT are run by a human operator, using real Modbus hardware slaves, and SCADA-like tools (modpoll).
+
+![image](../images/ci-release.drawio.png)
+
 
 
 
