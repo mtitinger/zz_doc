@@ -107,7 +107,9 @@ We re-use a TLGate-v6 machine to run a LAVA instance, and host simuslave, DHCP (
 
 ![image](../images/ci-lava-setup.drawio.png)
 
+The Test/Production server is connected to the DUT thanks to the Test/Production tool, a small PCB with the required connectors, and an control header.
 
+![image](../images/ci-production.drawio.png)
 
 
 
