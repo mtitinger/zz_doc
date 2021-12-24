@@ -24,7 +24,7 @@ It **must be reliable and secured over several years**, because it is the main t
 
 **A Software release is essentially the formal bundling and storing of a "good" nightly build, that also passes Acceptance Tests (AT).**
 
-## CI Infrastructure Functions
+## CI Infrastructure Functions Definitions
 
 * A "Build Plan" is a series of Steps, leading to the execution of any combinaation of the functions described in the following Sections.
 * A "Trigger" is a "reasons" or event leading to the execution of a Build Plan.
@@ -103,6 +103,9 @@ AT are run by a human operator, using real Modbus hardware slaves, and SCADA-lik
 
 ![image](../images/ci-release.drawio.png)
 
+We re-use a TLGate-v6 machine to run a LAVA instance, and host simuslave, DHCP (non-authoritative, only on ETH0) and iPerf server.
+
+![image](../images/ci-lava-setup.drawio.png)
 
 
 
