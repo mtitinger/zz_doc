@@ -111,3 +111,5 @@ To Be Defined: storage location should be suitable for long-term/secured storage
 | DELIVERABLE | Release Note | TBD | .pdf |
 | DELIVERABLE | AT test report | TBD | .pdf |
 | DELIVERABLE | User Manual | TBD | .pdf |
+
+A template is provided in [SEPASSRFNT-40](https://jira.open-groupe.com/browse/SEPASSRFNT-40)
