@@ -57,8 +57,8 @@ The Software development process is a simple and loosely based on the Agile proc
 * Code Review and Static Analysis : see Committing rules
 * Test construction and testing : See [Test Strategy](test-strategy.md)
 * Validation and Qualification : See [Test Strategy](test-strategy.md)
-* Release of Deliverables and Branching : See Release Strategy
-* Maintenance and Fixes : See Release and Maintenance Strategy
+* Release of Deliverables and Branching :  See [Release Strategy](../10_production_methods/release-strategy.md)
+* Maintenance and Fixes :  See [Release Strategy](../10_production_methods/release-strategy.md)
 
 ## Coding Rules
 
@@ -135,41 +135,25 @@ git commit -sm "SEPASSRFNT-123: demonstrate how to write a brief"
 * notez que l'on peut repousser sur sa branch, mais pas une fois que le merge sur master a ete fait, donc les commits doivent etre clean avant la pullrequest.
 
 Dans le cas d'un commit necessitant plus d'explications qu'un brief, on peut sauter une ligne, et donner plus de detail avec la command 'git commit' sans options
+## Submission and Merging
 
-## Branching Rules
-
-### Code Contribution
-* the branch names **"develop"** is the branch that **you must create pull requests to**, in order to integrate your changes
+* the branch named **"develop"** is the branch that **you must create pull requests to**, in order to integrate your changes
 * unless you really know what you are doing, and there is no risk of conflict or regression, **never push directly onto develop**, but create a PR.
 * all pushed commit must match a JIRA ticket, which is used as prefix for your development branch name, for instance:
 
+
+new stuff:
 ```
 git branch feature/SEPASSRFNT-456_my_new_feature
 ```
 
+bug fix:
 ```
 git branch bugfix/SEPASSRFNT-456_do-this-to-fix-this
 ```
 
-### Releases and Baselines
+## Branching Rules
 
-The project uses a TLGATE_BASELINE yocto variable, so that we can build for a  given released version, or for *develop*.
-* When TLGATE_BASELINE is used, the meta-layers, and all project repositories are checked out, using branch "develop" and HEAD. 
-* When using a specific version, for instance "tlgate-v0.99", the branches with the same name are used.
-
-FOr now, in tlgate-v0.99, SRCREV is AUTOREV, but with actual/contractual version, recipes should use:
-
-```
-SRC_URI="ssh://git....;branch=$[TLGATE_BASELINE}"
-SRCREV="a fixed sha1"
-```
-### Release Process
-
-When a version is released, the system integrator (or user called "PRODUCER" in the test-strategy doc) must:
-
-* create a branch with the version name e.g. "tlgate-v1.00", "tlgate-v1.01", "tlgate-v1.10" for all project repositories
-* in gitlab, this branch must be protected, so that no-one can push or delete from it, unless the PRODUCER needs a hotfix added.
-* a configuration file in the [yocto setup repository](https://gitlab.boost.open.global/schneider-electric/passerelle_refonte/Software/bsp/opengrp-gateway-sdk/-/tree/develop/configs) must be created, e.g. "opengrp-gateway-tlgate-v1.00.txt", with the matching TLGATE_BASELINE value.
-
+Please read [Release Strategy](../10_production_methods/release-strategy.md)
 
 [Back](toc.md)
