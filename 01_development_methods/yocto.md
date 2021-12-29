@@ -135,7 +135,14 @@ index 10ecf8ea..73b14430 100644
 +#addtask create_srcipk after do_configure before do_compile
 ```
 
-### Create a bootable SD-card
+### Flashing or Updating RUN1 or RUN2
+
+* ŵhen you are handed a new/blank prototype, you first need to flash the early bootloader software using DFU, this is described in this document: [DFU flashing procedure](../10_production_methods/SEPASSRFNT-61-DFU-flashing.md).
+* once you have a working u-boot, you can interrupt boot in the u-boot prompt, and switch it to dfu loadind/flashing, with the "dfu 0 mmc0" command.
+* once firmware-update is available, see the firmware update procedure, to upload the update bundle onto /data/fw-update on the target, and run the updater.
+
+During development phases, it is ok to use a package manager like dpkg or opkg to install consistent package updated from the yocto tmp/deploy/deb forlder for instance. However, the file /etc/systel must reflect a unique and consistent version on the target, and *no .deb or .ipk should ever be released to the customer, or used on-field, create a valid update bundle instead*.
+### Create a bootable SD-card (for eval board)
 First identify your block device using lsblk for instance, to prevent to alter the wrong filesystem.
 
 ```json
