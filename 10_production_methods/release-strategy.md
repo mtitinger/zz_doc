@@ -61,6 +61,8 @@ SRCREV="a fixed sha1"
 
 Release Candidates are transformed into Releases, if Acceptance Tests pass, by branching.
 
+![features branches](../images/branching-release-branches.drawio.png)
+
 ## Release
 
 A release consists into:
@@ -81,6 +83,8 @@ When a version is released, the system integrator (or user called "PRODUCER" in 
 * a configuration file in the [yocto setup repository](https://gitlab.boost.open.global/schneider-electric/passerelle_refonte/Software/bsp/opengrp-gateway-sdk/-/tree/develop/configs) must be created, e.g. "opengrp-gateway-tlgate-v1.00.txt", with the matching TLGATE_BASELINE value.
 
 Hot-fixes can be done to accommodate the customer or end-user, in case a complete version upgrade is considered risky, in the case, a bugfix commit can be back ported from the "bleeding edge" in "develop", to another baseline.
+
+![features branches](../images/branching-hot-fixes.drawio.png)
 
 ### Artifacts and Deliverables
 

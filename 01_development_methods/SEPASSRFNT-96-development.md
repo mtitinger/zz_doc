@@ -152,6 +152,8 @@ bug fix:
 git branch bugfix/SEPASSRFNT-456_do-this-to-fix-this
 ```
 
+![features branches](../images/branching-feature-branches.drawio.png)
+
 ## Branching Rules
 
 Please read [Release Strategy](../10_production_methods/release-strategy.md)
