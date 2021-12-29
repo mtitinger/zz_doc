@@ -79,7 +79,7 @@ TBD (Sharepoint?)
 
 ## CI Infrastructure Workflows
 
-### Software Package Contribution Validation
+### FLOW: Software Package Contribution Validation
 
 Each developer, once he is "happy" with a consistent contribution block, i.e. one or more correctly formed commits, is meant to create a PR to contribute his work.
 The PR will trigger a native build of the contribution branch, and run the Functional Test (fT) suite for this component. If the FT fails, the PR should not be merged.
@@ -87,18 +87,21 @@ If the build and the FT succeed, the contributor must merge his work to "develop
 
 ![image](../images/ci-package.drawio.png)
 
-### Software Integration Quality Monitoring
+### FLOW: Software Integration Quality Monitoring
 
 Every night, all contributions are tested as an integrated system : IT are run.
 The tells is the current global state of the "develop" baseline, is suitable for branching to a release baseline "tlgate-vMM.mm".
 
 ![image](../images/ci-nightly.drawio.png)
 
-### Release Production and Qualificationn
+### FLOW: Release and Qualification
 
-A release baseline, can be created and customer-qualified by running the Acceptance Tests (AT).
-Release Candidate (rc) baselines are created, by branching a good nightly build into a protected "tlgate-vMM.mm-rcx" branch.
-Release Candidates are transformed into Releases, if Acceptance Tests pass.
+Please make sure you've read the [Release Strategy (Q/A document)](../10_production_methods/release-strategy.md) first.
+
+In a nutshell:
+* when the software from a given baseline can be successfully built and tested for Integration Tests (IT), it can be tagged as a Release Candidate (RC).
+* A Release requires a RC to be customer-qualified by running the Acceptance Tests (AT).
+
 AT are run by a human operator, using real Modbus hardware slaves, and SCADA-like tools (modpoll).
 
 ![image](../images/ci-release.drawio.png)

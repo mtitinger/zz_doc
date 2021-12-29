@@ -43,15 +43,15 @@ NOTE : As a developer contributing to a HLF/LLF, you should at least check that 
 ### General Quality and Progress Management Culture
 The Software development process is a simple and loosely based on the Agile processes, but officially advertised as a V-cycle, meaning that: 
 
-* we loosely define a sprint as being one week, with a weekly backlog meeting.
-* we define Releases matching macroscopic technical milestones, in order to prioritize tasks
+* we loosely define a sprint as being one week, with a weekly backlog meeting, the report is located [here](https://jira.open-groupe.com/browse/SEPASSRFNT-96)
+* we define Releases matching macroscopic technical milestones, in order to prioritize tasks. Releases are located [here](https://jira.open-groupe.com/projects/SEPASSRFNT?selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=unreleased)
 * High-level features (HLF), meaning those features that are the technical breakout of the System Requirements (SRS) are managed as Epics. HLF are tracked in their status using a Maturity Grade (MG) criteria.
 * HLF are analyzed so as to break them into Low-Level Features (LLF), tracked as Sub-tasks (stories as per Scrum, sub-tasks as per JIRA)
 
 ### Software Development Process Activities
 
-* Architecture : we write Architecture and High-LEvel specification in the HLF Jira Ticket
-* Detailed Specification : detailed implementation notes, usage and testing note in the LLF tickets
+* Architecture : we write Architecture and High-LEvel specification in the HLF Jira Ticket (Epics)
+* Detailed Specification : detailed implementation notes, usage and testing note in the LLF tickets (sub-tasks)
 * Code writing : see Coding rules chapter
 * Code contribution : see Committing rules
 * Code Review and Static Analysis : see Committing rules

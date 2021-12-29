@@ -30,6 +30,7 @@ There are two documentation directories here:
 	- [Cybersecurity](04_cybersecurity/SEPASSRFNT-46-cybersecurity.md)
 	- [Diag & Rescue shell](04_cybersecurity/SEPASSRFNT-69-rescue.md)
 - [10_Production Methods](10_production_methods/toc.md)
+	- [Release Strategy](10_production_methods/release-strategy.md)
 	- [Flashing using DFU](10_production_methods/SEPASSRFNT-61-DFU-flashing.md)
 	- [Flashing for PROD and testing](10_production_methods/SEPASSRFNT-87-End-Of-Line-flashing-and-testing.md)
 
