@@ -7,7 +7,7 @@
 
 In a nutshell, this is a rework for stantard replacement of the now obsolete v5, hence the V5 documentation as for the system requirement also applies.
 
-![Product context in a nutshell](images/product-nutshell.png)
+![Product context in a nutshell](images/overview-product-nutshell.drawio.png)
 
 ## Welcome
 
