@@ -82,7 +82,11 @@ When a version is released, the system integrator (or user called "PRODUCER" in 
 * in gitlab, this branch must be protected, so that no-one can push or delete from it, unless the PRODUCER needs a hotfix added.
 * a configuration file in the [yocto setup repository](https://gitlab.boost.open.global/schneider-electric/passerelle_refonte/Software/bsp/opengrp-gateway-sdk/-/tree/develop/configs) must be created, e.g. "opengrp-gateway-tlgate-v1.00.txt", with the matching TLGATE_BASELINE value.
 
-Hot-fixes can be done to accommodate the customer or end-user, in case a complete version upgrade is considered risky, in the case, a bugfix commit can be back ported from the "bleeding edge" in "develop", to another baseline.
+![features branches](../images/branching-normal-fixes.drawio.png)
+
+### Hot-fixes
+
+Hot fixes can be done to accommodate the customer or end-user, in case a complete version upgrade is considered risky, in the case, a bugfix commit can be back ported from the "bleeding edge" in "develop", to another baseline. But it should remain exceptional.
 
 ![features branches](../images/branching-hot-fixes.drawio.png)
 
