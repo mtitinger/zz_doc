@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-02-09T16:07:06.058Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.82 Safari/537.36" etag="DXn7mW6Mp4t9OwUAPJIS" version="16.5.4" type="github">
+<mxfile host="app.diagrams.net" modified="2022-02-09T16:33:30.487Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.82 Safari/537.36" etag="H41blrj2TA6YNydFB-ao" version="16.5.4" type="github">
   <diagram name="Page-1" id="2c0d36ab-eaac-3732-788b-9136903baeff">
-    <mxGraphModel dx="4526" dy="1688" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1.5" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
+    <mxGraphModel dx="2172" dy="960" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1.5" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -23,7 +23,7 @@
           <mxGeometry x="960" y="940" width="320" height="200" as="geometry" />
         </mxCell>
         <mxCell id="29" value="MCO-audio-app" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontFamily=Tahoma;fontSize=14;labelBackgroundColor=none;align=center;verticalAlign=top;" parent="1" vertex="1">
-          <mxGeometry x="930" y="285" width="790" height="255" as="geometry" />
+          <mxGeometry x="970" y="285" width="750" height="255" as="geometry" />
         </mxCell>
         <mxCell id="36HzXRvJtUE0cEunPF5f-161" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;fontColor=default;exitX=0.25;exitY=0;exitDx=0;exitDy=0;fillColor=default;startArrow=block;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" target="36HzXRvJtUE0cEunPF5f-156" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -36,7 +36,7 @@
             <mxPoint x="1" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="36HzXRvJtUE0cEunPF5f-169" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;fontColor=default;exitX=0.25;exitY=0;exitDx=0;exitDy=0;fillColor=default;startArrow=block;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" edge="1">
+        <mxCell id="36HzXRvJtUE0cEunPF5f-169" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;fontColor=default;exitX=0.25;exitY=0;exitDx=0;exitDy=0;fillColor=default;startArrow=block;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" parent="1" edge="1" target="36HzXRvJtUE0cEunPF5f-151">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="1210" y="937.75" as="sourcePoint" />
             <mxPoint x="1213.25" y="487.75" as="targetPoint" />
@@ -101,8 +101,8 @@
             <mxPoint x="1642" y="160" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="36HzXRvJtUE0cEunPF5f-154" value="USB" style="rounded=1;fillColor=#245D48;gradientColor=none;strokeColor=none;fontColor=#FFFFFF;fontStyle=1;fontFamily=Tahoma;fontSize=14" parent="1" vertex="1">
-          <mxGeometry x="1593.5" y="220" width="100" height="50" as="geometry" />
+        <mxCell id="36HzXRvJtUE0cEunPF5f-154" value="/dev/ttyGS0 (USB)" style="rounded=1;fillColor=#245D48;gradientColor=none;strokeColor=none;fontColor=#FFFFFF;fontStyle=1;fontFamily=Tahoma;fontSize=14" parent="1" vertex="1">
+          <mxGeometry x="1593.5" y="220" width="156.5" height="50" as="geometry" />
         </mxCell>
         <mxCell id="36HzXRvJtUE0cEunPF5f-155" value="firmware&#xa;Upgrade  (STM)" style="rounded=1;fillColor=#5D4226;gradientColor=none;strokeColor=none;fontColor=#FFFFFF;fontStyle=1;fontFamily=Tahoma;fontSize=14" parent="1" vertex="1">
           <mxGeometry x="980" y="320" width="126.5" height="50" as="geometry" />
@@ -123,19 +123,19 @@
           <mxGeometry x="14.23" y="40" width="91.54" height="36.67" as="geometry" />
         </mxCell>
         <mxCell id="36HzXRvJtUE0cEunPF5f-160" value="" style="group;verticalAlign=bottom;" parent="1" vertex="1" connectable="0">
-          <mxGeometry x="1150" y="320" width="400" height="180" as="geometry" />
+          <mxGeometry x="1200" y="320" width="350" height="180" as="geometry" />
         </mxCell>
         <mxCell id="36HzXRvJtUE0cEunPF5f-158" value="AudioApp" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontSize=15;fontColor=default;strokeColor=#926DB3;fillColor=none;dashed=1;verticalAlign=bottom;" parent="36HzXRvJtUE0cEunPF5f-160" vertex="1">
-          <mxGeometry width="400.00000000000006" height="180" as="geometry" />
+          <mxGeometry width="350.00000000000006" height="180" as="geometry" />
         </mxCell>
         <mxCell id="36HzXRvJtUE0cEunPF5f-144" value="AudioFromVokkero" style="rounded=1;fillColor=#23445D;gradientColor=none;strokeColor=none;fontColor=#FFFFFF;fontStyle=1;fontFamily=Tahoma;fontSize=14" parent="36HzXRvJtUE0cEunPF5f-160" vertex="1">
-          <mxGeometry x="247.92" y="90" width="143.4" height="81" as="geometry" />
+          <mxGeometry x="216.92999999999998" y="90" width="125.47500000000001" height="81" as="geometry" />
         </mxCell>
         <mxCell id="10" value="SPLib" style="rounded=1;fillColor=#23445D;gradientColor=none;strokeColor=none;fontColor=#FFFFFF;fontStyle=1;fontFamily=Tahoma;fontSize=14" parent="36HzXRvJtUE0cEunPF5f-160" vertex="1">
-          <mxGeometry x="264.62" y="30" width="110" height="45" as="geometry" />
+          <mxGeometry x="231.54250000000002" y="30" width="96.25" height="45" as="geometry" />
         </mxCell>
         <mxCell id="36HzXRvJtUE0cEunPF5f-151" value="AudioToVokkero" style="rounded=1;fillColor=#23445D;gradientColor=none;strokeColor=none;fontColor=#FFFFFF;fontStyle=1;fontFamily=Tahoma;fontSize=14" parent="36HzXRvJtUE0cEunPF5f-160" vertex="1">
-          <mxGeometry x="49.99999999999977" y="12.5" width="190" height="80" as="geometry" />
+          <mxGeometry x="87.5" y="12.5" width="122.5" height="80" as="geometry" />
         </mxCell>
         <mxCell id="36HzXRvJtUE0cEunPF5f-166" value="/sys/class/leds" style="rounded=1;fillColor=#5D4226;gradientColor=none;strokeColor=none;fontColor=#FFFFFF;fontStyle=1;fontFamily=Tahoma;fontSize=14" parent="1" vertex="1">
           <mxGeometry x="1660" y="605.5" width="126.5" height="50" as="geometry" />
@@ -147,7 +147,7 @@
           <mxGeometry x="1320" y="970" width="600" height="70" as="geometry" />
         </mxCell>
         <mxCell id="0WuZlEnzJ-5e1mdfW7h4-124" value="Front-end (run in Browser)&#xa;" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;fontFamily=Tahoma;fontSize=14;labelBackgroundColor=none;align=center;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="2020" y="950" width="330" height="180" as="geometry" />
+          <mxGeometry x="2020" y="950" width="270" height="60" as="geometry" />
         </mxCell>
         <mxCell id="0WuZlEnzJ-5e1mdfW7h4-123" value="Back-End" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;fontFamily=Tahoma;fontSize=14;labelBackgroundColor=none;align=center;verticalAlign=top;" vertex="1" parent="1">
           <mxGeometry x="1885" y="330" width="210" height="60" as="geometry" />
