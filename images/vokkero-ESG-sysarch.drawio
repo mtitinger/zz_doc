@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-02-09T16:06:11.000Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.82 Safari/537.36" etag="n9Uvn9cJhf0a_SXK3RFE" version="16.5.4" type="github">
+<mxfile host="app.diagrams.net" modified="2022-02-09T16:07:06.058Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.82 Safari/537.36" etag="DXn7mW6Mp4t9OwUAPJIS" version="16.5.4" type="github">
   <diagram name="Page-1" id="2c0d36ab-eaac-3732-788b-9136903baeff">
     <mxGraphModel dx="4526" dy="1688" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1.5" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
       <root>
@@ -147,7 +147,7 @@
           <mxGeometry x="1320" y="970" width="600" height="70" as="geometry" />
         </mxCell>
         <mxCell id="0WuZlEnzJ-5e1mdfW7h4-124" value="Front-end (run in Browser)&#xa;" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;fontFamily=Tahoma;fontSize=14;labelBackgroundColor=none;align=center;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="2020" y="900" width="330" height="240" as="geometry" />
+          <mxGeometry x="2020" y="950" width="330" height="180" as="geometry" />
         </mxCell>
         <mxCell id="0WuZlEnzJ-5e1mdfW7h4-123" value="Back-End" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;fontFamily=Tahoma;fontSize=14;labelBackgroundColor=none;align=center;verticalAlign=top;" vertex="1" parent="1">
           <mxGeometry x="1885" y="330" width="210" height="60" as="geometry" />
@@ -174,7 +174,7 @@
         <mxCell id="0WuZlEnzJ-5e1mdfW7h4-137" value="nginx&lt;br&gt;(reverse proxy)" style="rounded=1;whiteSpace=wrap;html=1;horizontal=1;align=center;verticalAlign=top;fontStyle=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
           <mxGeometry x="1980" y="480" width="140" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="0WuZlEnzJ-5e1mdfW7h4-140" value="UART" style="endArrow=classic;startArrow=none;html=1;rounded=0;strokeWidth=5;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="0WuZlEnzJ-5e1mdfW7h4-125" target="0WuZlEnzJ-5e1mdfW7h4-123">
+        <mxCell id="0WuZlEnzJ-5e1mdfW7h4-140" value="TST UART" style="endArrow=classic;startArrow=none;html=1;rounded=0;strokeWidth=5;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="0WuZlEnzJ-5e1mdfW7h4-125" target="0WuZlEnzJ-5e1mdfW7h4-123">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="1630" y="980" as="sourcePoint" />
             <mxPoint x="1650" y="470" as="targetPoint" />
