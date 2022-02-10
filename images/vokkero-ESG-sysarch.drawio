@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-02-10T13:57:05.093Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.82 Safari/537.36" etag="t7FpKINzxoAeIrFiyCyy" version="16.5.5" type="github">
+<mxfile host="app.diagrams.net" modified="2022-02-10T13:57:57.110Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.82 Safari/537.36" etag="zKNB81pPt5oHvsNFa-C0" version="16.5.5" type="github">
   <diagram name="Page-1" id="2c0d36ab-eaac-3732-788b-9136903baeff">
-    <mxGraphModel dx="2966" dy="1654" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1.5" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
+    <mxGraphModel dx="2076" dy="1158" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1.5" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -181,7 +181,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="0WuZlEnzJ-5e1mdfW7h4-137" value="nginx&lt;br&gt;(http, reverse proxy)" style="rounded=1;whiteSpace=wrap;html=1;horizontal=1;align=center;verticalAlign=top;fontStyle=1;fillColor=#FFFFFF;" parent="1" vertex="1">
-          <mxGeometry x="1980" y="480" width="140" height="70" as="geometry" />
+          <mxGeometry x="1979" y="480" width="140" height="70" as="geometry" />
         </mxCell>
         <mxCell id="0WuZlEnzJ-5e1mdfW7h4-140" value="TST UART" style="endArrow=classic;startArrow=none;html=1;rounded=0;strokeWidth=5;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="0WuZlEnzJ-5e1mdfW7h4-125" target="0WuZlEnzJ-5e1mdfW7h4-123" edge="1">
           <mxGeometry x="-0.6874" y="5" width="50" height="50" relative="1" as="geometry">
@@ -340,6 +340,12 @@
         </mxCell>
         <mxCell id="117" value="AxC-VOGO" style="fillColor=#F2931E;strokeColor=none;opacity=30;align=center;verticalAlign=top;fontStyle=1;fontSize=26;" parent="1" vertex="1">
           <mxGeometry x="920" y="820" width="1476.75" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="yJEXvZF4Z7p5Rb5Mh50w-182" value="swupdate" style="rounded=1;whiteSpace=wrap;html=1;horizontal=1;align=center;verticalAlign=top;fontStyle=1;fillColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="2230" y="520" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="yJEXvZF4Z7p5Rb5Mh50w-183" value="dropbear (sshd)" style="rounded=1;whiteSpace=wrap;html=1;horizontal=1;align=center;verticalAlign=top;fontStyle=1;fillColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="2230" y="470" width="140" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
