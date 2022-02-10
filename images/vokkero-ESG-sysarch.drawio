@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-02-10T14:08:14.275Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.82 Safari/537.36" etag="1tPG0Y2IE58kVVaQCqVb" version="16.5.5" type="github">
+<mxfile host="app.diagrams.net" modified="2022-02-10T14:09:47.557Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.82 Safari/537.36" etag="4jPDVKzP17J7VLa_J-vf" version="16.5.5" type="github">
   <diagram name="Page-1" id="2c0d36ab-eaac-3732-788b-9136903baeff">
     <mxGraphModel dx="2437" dy="2513.5" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1.5" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
       <root>
@@ -114,7 +114,7 @@
         <mxCell id="36HzXRvJtUE0cEunPF5f-155" value="firmware&#xa;Upgrade  (STM)" style="rounded=1;fillColor=#5D4226;gradientColor=none;strokeColor=none;fontColor=#FFFFFF;fontStyle=1;fontFamily=Tahoma;fontSize=14" parent="1" vertex="1">
           <mxGeometry x="980" y="320" width="126.5" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="36HzXRvJtUE0cEunPF5f-156" value="rackAuvitran" style="rounded=1;fillColor=#5D4226;gradientColor=none;strokeColor=none;fontColor=#FFFFFF;fontStyle=1;fontFamily=Tahoma;fontSize=14" parent="1" vertex="1">
+        <mxCell id="36HzXRvJtUE0cEunPF5f-156" value="rackAuvitran" style="rounded=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontStyle=1;fontFamily=Tahoma;fontSize=14" parent="1" vertex="1">
           <mxGeometry x="980" y="440" width="126.5" height="50" as="geometry" />
         </mxCell>
         <mxCell id="36HzXRvJtUE0cEunPF5f-159" value="" style="group;verticalAlign=bottom;" parent="1" vertex="1" connectable="0">
