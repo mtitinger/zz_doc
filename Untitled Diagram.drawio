@@ -1,5 +1,5 @@
-<mxfile host="app.diagrams.net" modified="2022-02-16T09:12:35.541Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.82 Safari/537.36" etag="jAEs1rNvN1HxCjGSlW9Z" version="16.5.6" type="github">
-  <diagram name="Page-1" id="c7558073-3199-34d8-9f00-42111426c3f3">
+<mxfile host="app.diagrams.net" modified="2022-02-16T09:16:38.251Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.82 Safari/537.36" etag="MA43IwWJ8qqO6o2EKS4V" version="16.5.6" type="github">
+  <diagram name="Soft Arch ESG" id="c7558073-3199-34d8-9f00-42111426c3f3">
     <mxGraphModel dx="2254" dy="2012" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="826" pageHeight="1169" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -44,7 +44,10 @@
             <Array as="points" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="82" value="Quic Configuration&#xa;Test Protocol (UART)" style="text;spacingTop=-5;align=center" parent="1" vertex="1">
+        <mxCell id="mA5Ws1sRBqbvNsp3ltHB-173" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;shadow=0;dashed=1;fontColor=#000000;startArrow=diamond;startFill=1;endArrow=diamond;endFill=1;strokeColor=#C47676;strokeWidth=3;opacity=50;elbow=vertical;" edge="1" parent="1" source="82" target="12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="82" value="Quick Configuration&#xa;Test Protocol (UART)" style="text;spacingTop=-5;align=center" parent="1" vertex="1">
           <mxGeometry x="698" y="645" width="30" height="40" as="geometry" />
         </mxCell>
         <mxCell id="mA5Ws1sRBqbvNsp3ltHB-96" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;strong&gt;dbus-daemon&lt;br&gt;&lt;/strong&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;messaging&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;and signaling&lt;/p&gt;" style="verticalAlign=middle;align=center;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;fontStyle=1;strokeWidth=3;fillColor=#4C0099;fontColor=#FFFFFF;sketch=0;glass=0;shadow=0;" vertex="1" parent="1">
