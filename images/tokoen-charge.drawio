@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-02-26T09:33:03.846Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" etag="s4akvucUUkKONEIrbeeN" version="16.0.3" type="github">
+<mxfile host="app.diagrams.net" modified="2022-02-26T09:34:46.182Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" etag="GDWvCuGfipvxsxLRG-gA" version="16.0.3" type="github">
   <diagram name="Page-1" id="aaaa8250-4180-3840-79b5-4cada1eebb92">
     <mxGraphModel dx="2030" dy="1137" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0">
       <root>
@@ -298,12 +298,6 @@
         <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-145" value="Actor : Gardien" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;rounded=1;shadow=0;glass=0;sketch=0;fontSize=13;fontColor=#000000;strokeColor=default;strokeWidth=1;fillColor=#EBEBEB;gradientColor=none;gradientDirection=west;labelBackgroundColor=none;fontStyle=1" vertex="1" parent="1">
           <mxGeometry x="1975" y="190" width="30" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-147" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn2.iconfinder.com/data/icons/social-hand-drawn-icons/64/social_5-128.png;rounded=1;shadow=0;glass=0;sketch=0;fontSize=13;fontColor=#25A10C;strokeColor=default;strokeWidth=1;fillColor=#EBEBEB;gradientColor=none;gradientDirection=west;" vertex="1" parent="1">
-          <mxGeometry x="2060" y="195" width="50" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-148" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn0.iconfinder.com/data/icons/heroicons-ui/24/icon-desktop-128.png;rounded=1;shadow=0;glass=0;sketch=0;fontSize=13;fontColor=#25A10C;strokeColor=default;strokeWidth=1;fillColor=#EBEBEB;gradientColor=none;gradientDirection=west;" vertex="1" parent="1">
-          <mxGeometry x="2050" y="334.5" width="63" height="63" as="geometry" />
-        </mxCell>
         <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-149" value="Actor : Syndic" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;rounded=1;shadow=0;glass=0;sketch=0;fontSize=13;fontColor=#000000;strokeColor=default;strokeWidth=1;fillColor=#EBEBEB;gradientColor=none;gradientDirection=west;labelBackgroundColor=none;fontStyle=1" vertex="1" parent="1">
           <mxGeometry x="1975" y="307" width="30" height="60" as="geometry" />
         </mxCell>
@@ -409,6 +403,35 @@
         </mxCell>
         <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-198" value="&lt;font color=&quot;#8a0000&quot;&gt;&lt;br&gt;Rationel et principe général : à moins de refaire l&#39;installation electrique des 8 millions de foyers en co-propriété, il va se poser le problèmes suivant: &quot;un nombre supérieur de véhicules ayant besoin de recharger, que ce que la puissance electrique garantie à un instant T rend possible&quot;. Il faudra donc du temps partagé. Si les utilisateurts ne jouent pas le jeu du temps partagé, il faudra sans cesse ré-enclancher les disjoncteurs, et les charges n&#39;auront pas lieu, ce qui sera rapidement une grosse incitation au respect des affectations temporelles. Dans une logique &quot;low-cost&quot; permettre à un syndic, un particulier, ou un gardien de configurer, installer, maintenir ce moyen de partage est un atout, il faut ne pas modifier l&#39;installation electrique. On administre des jetons temporels via un protocole radio, une IHM simple à base d&#39;un bouton et de sémaphores visuels ou audio, et une webapp (SaaS ou self hosted) permettent un ensemble d&#39;intéraction, d&#39;affectations, de transactions simple de jeton (&quot;renoncer&quot;, &quot;mendier&quot;) et un système de facturation individualisée.&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=0;glass=0;labelBackgroundColor=none;sketch=0;fontSize=13;fontColor=#26B0FF;" vertex="1" parent="1">
           <mxGeometry x="1130" y="950" width="1210" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-199" value="" style="endArrow=classic;html=1;rounded=0;fontSize=13;fontColor=#000000;endSize=6;strokeColor=#26B0FF;strokeWidth=1;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.4;entryY=0.1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="ZeBQX1oqdIYX9gZX3-Ay-149" target="ZeBQX1oqdIYX9gZX3-Ay-170">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2012.62" y="345.45" as="sourcePoint" />
+            <mxPoint x="2167.3" y="418.49999999999994" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-200" value="" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;rounded=1;shadow=0;glass=0;labelBackgroundColor=none;sketch=0;fontSize=13;fontColor=#000000;strokeColor=default;strokeWidth=1;fillColor=#EBEBEB;gradientColor=none;gradientDirection=west;" connectable="0" vertex="1" parent="ZeBQX1oqdIYX9gZX3-Ay-199">
+          <mxGeometry x="-1" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-202" value="" style="endArrow=classic;html=1;rounded=0;fontSize=13;fontColor=#000000;endSize=6;strokeColor=#26B0FF;strokeWidth=1;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.55;entryY=0.95;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="ZeBQX1oqdIYX9gZX3-Ay-145" target="ZeBQX1oqdIYX9gZX3-Ay-172">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2050" y="254.83000000000004" as="sourcePoint" />
+            <mxPoint x="2188.63" y="259.17999999999995" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-203" value="" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;rounded=1;shadow=0;glass=0;labelBackgroundColor=none;sketch=0;fontSize=13;fontColor=#000000;strokeColor=default;strokeWidth=1;fillColor=#EBEBEB;gradientColor=none;gradientDirection=west;" connectable="0" vertex="1" parent="ZeBQX1oqdIYX9gZX3-Ay-202">
+          <mxGeometry x="-1" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-204" value="Actions via WebApp" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=13;fontColor=#26B0FF;fontStyle=1" vertex="1" connectable="0" parent="ZeBQX1oqdIYX9gZX3-Ay-202">
+          <mxGeometry x="-0.3044" y="-4" relative="1" as="geometry">
+            <mxPoint x="184" y="63" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-147" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn2.iconfinder.com/data/icons/social-hand-drawn-icons/64/social_5-128.png;rounded=1;shadow=0;glass=0;sketch=0;fontSize=13;fontColor=#25A10C;strokeColor=default;strokeWidth=1;fillColor=#EBEBEB;gradientColor=none;gradientDirection=west;imageBackground=default;" vertex="1" parent="1">
+          <mxGeometry x="2060" y="195" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-148" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn0.iconfinder.com/data/icons/heroicons-ui/24/icon-desktop-128.png;rounded=1;shadow=0;glass=0;sketch=0;fontSize=13;fontColor=#25A10C;strokeColor=default;strokeWidth=1;fillColor=#EBEBEB;gradientColor=none;gradientDirection=west;imageBackground=default;" vertex="1" parent="1">
+          <mxGeometry x="2067" y="290" width="63" height="63" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
