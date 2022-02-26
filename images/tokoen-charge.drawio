@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-02-26T09:34:46.182Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" etag="GDWvCuGfipvxsxLRG-gA" version="16.0.3" type="github">
+<mxfile host="app.diagrams.net" modified="2022-02-26T09:39:47.473Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" etag="fhXW8RWrDJHup1YWQRoT" version="16.0.3" type="github">
   <diagram name="Page-1" id="aaaa8250-4180-3840-79b5-4cada1eebb92">
     <mxGraphModel dx="2030" dy="1137" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0">
       <root>
@@ -301,11 +301,11 @@
         <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-149" value="Actor : Syndic" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;rounded=1;shadow=0;glass=0;sketch=0;fontSize=13;fontColor=#000000;strokeColor=default;strokeWidth=1;fillColor=#EBEBEB;gradientColor=none;gradientDirection=west;labelBackgroundColor=none;fontStyle=1" vertex="1" parent="1">
           <mxGeometry x="1975" y="307" width="30" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-151" value="&lt;b&gt;&lt;br&gt;TokenCharge &lt;br&gt;Gateway&lt;br&gt;( option : DIN Rail)&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;shadow=1;glass=0;sketch=0;fillColor=#e1d5e7;size=10.000000000000455;arcSize=23;strokeColor=#9673a6;" vertex="1" parent="1">
+        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-151" value="&lt;b&gt;&lt;br&gt;TokenCharge&lt;br&gt;GateWay&lt;br&gt;&lt;/b&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;shadow=1;glass=0;sketch=0;fillColor=#e1d5e7;size=10.000000000000455;arcSize=23;strokeColor=#9673a6;" vertex="1" parent="1">
           <mxGeometry x="1020" y="443.5" width="130" height="160" as="geometry" />
         </mxCell>
-        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-160" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/vecico-connectivity/288/radio-128.png;rounded=1;shadow=0;glass=0;sketch=0;fontSize=13;fontColor=#25A10C;strokeColor=default;strokeWidth=1;fillColor=#EBEBEB;gradientColor=none;gradientDirection=west;rotation=0;" vertex="1" parent="1">
-          <mxGeometry x="1064" y="401.5" width="42" height="42" as="geometry" />
+        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-160" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px&quot;&gt;RADIO : LoRa ou Propriétaire&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#ff3333&quot; size=&quot;1&quot;&gt;&lt;b style=&quot;font-size: 14px&quot;&gt;Pas de CPL&lt;br&gt;pas de besoin de qualif de l&#39;installation electrique&lt;br&gt;pas de &quot;métier de l&#39;electricien&quot;&lt;br&gt;Posable et administrable par Gardien ou Syndic&lt;br&gt;&lt;/b&gt;&lt;/font&gt;" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/vecico-connectivity/288/radio-128.png;rounded=1;shadow=0;glass=0;sketch=0;fontSize=13;fontColor=#25A10C;strokeColor=default;strokeWidth=1;fillColor=#EBEBEB;gradientColor=none;gradientDirection=west;rotation=0;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="631.25" width="105" height="105" as="geometry" />
         </mxCell>
         <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-161" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/vecico-connectivity/288/radio-128.png;rounded=1;shadow=0;glass=0;sketch=0;fontSize=13;fontColor=#25A10C;strokeColor=default;strokeWidth=1;fillColor=#EBEBEB;gradientColor=none;gradientDirection=west;" vertex="1" parent="1">
           <mxGeometry x="1298" y="550" width="42" height="42" as="geometry" />
@@ -315,9 +315,6 @@
         </mxCell>
         <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-163" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/vecico-connectivity/288/radio-128.png;rounded=1;shadow=0;glass=0;sketch=0;fontSize=13;fontColor=#25A10C;strokeColor=default;strokeWidth=1;fillColor=#EBEBEB;gradientColor=none;gradientDirection=west;" vertex="1" parent="1">
           <mxGeometry x="1898" y="550" width="42" height="42" as="geometry" />
-        </mxCell>
-        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-165" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px&quot;&gt;RADIO : LoRa ou Propriétaire&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#ff3333&quot; size=&quot;1&quot;&gt;&lt;b style=&quot;font-size: 14px&quot;&gt;Pas de CPL&lt;br&gt;pas de besoin de qualif de l&#39;installation electrique&lt;br&gt;pas de &quot;métier de l&#39;electricien&quot;&lt;br&gt;Posable et administrable par Gardien ou Syndic&lt;br&gt;&lt;/b&gt;&lt;/font&gt;" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn1.iconfinder.com/data/icons/ios-11-glyphs/30/radio_waves-128.png;rounded=1;shadow=0;glass=0;sketch=0;fontSize=13;fontColor=#25A10C;strokeColor=default;strokeWidth=1;fillColor=#EBEBEB;gradientColor=none;gradientDirection=west;align=left;" vertex="1" parent="1">
-          <mxGeometry x="892" y="640" width="128" height="128" as="geometry" />
         </mxCell>
         <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-168" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/vecico-connectivity/288/radio-128.png;rounded=1;shadow=0;glass=0;sketch=0;fontSize=13;fontColor=#25A10C;strokeColor=default;strokeWidth=1;fillColor=#EBEBEB;gradientColor=none;gradientDirection=west;" vertex="1" parent="1">
           <mxGeometry x="1324" y="265" width="42" height="42" as="geometry" />
@@ -432,6 +429,15 @@
         </mxCell>
         <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-148" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn0.iconfinder.com/data/icons/heroicons-ui/24/icon-desktop-128.png;rounded=1;shadow=0;glass=0;sketch=0;fontSize=13;fontColor=#25A10C;strokeColor=default;strokeWidth=1;fillColor=#EBEBEB;gradientColor=none;gradientDirection=west;imageBackground=default;" vertex="1" parent="1">
           <mxGeometry x="2067" y="290" width="63" height="63" as="geometry" />
+        </mxCell>
+        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-208" value="Si routeur ou box" style="whiteSpace=wrap;html=1;aspect=fixed;verticalAlign=bottom;rounded=1;sketch=1;" vertex="1" parent="1">
+          <mxGeometry x="1840" y="290" width="90" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-209" value="" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.wi_fi;rounded=1;glass=0;labelBackgroundColor=none;fontSize=13;fontColor=#8A0000;rotation=-90;" vertex="1" parent="1">
+          <mxGeometry x="1866.5" y="303" width="31.5" height="31.5" as="geometry" />
+        </mxCell>
+        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-210" value="" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.wi_fi;rounded=1;glass=0;labelBackgroundColor=none;fontSize=13;fontColor=#8A0000;rotation=-90;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="450" width="31.5" height="31.5" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
