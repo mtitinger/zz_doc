@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-02-26T09:45:46.296Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" etag="MMgHnuthhFmGXMnPNvZZ" version="16.0.3" type="github">
+<mxfile host="app.diagrams.net" modified="2022-02-26T09:46:49.636Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" etag="IiSIWfGt3daeMLpPOt49" version="16.0.3" type="github">
   <diagram name="Page-1" id="aaaa8250-4180-3840-79b5-4cada1eebb92">
     <mxGraphModel dx="2030" dy="1137" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0">
       <root>
@@ -404,7 +404,7 @@
         <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-200" value="" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;rounded=1;shadow=0;glass=0;labelBackgroundColor=none;sketch=0;fontSize=13;fontColor=#000000;strokeColor=default;strokeWidth=1;fillColor=#EBEBEB;gradientColor=none;gradientDirection=west;" connectable="0" vertex="1" parent="ZeBQX1oqdIYX9gZX3-Ay-199">
           <mxGeometry x="-1" relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-202" value="" style="endArrow=classic;html=1;rounded=0;fontSize=13;fontColor=#000000;endSize=6;strokeColor=#26B0FF;strokeWidth=1;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.55;entryY=0.95;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="ZeBQX1oqdIYX9gZX3-Ay-145" target="ZeBQX1oqdIYX9gZX3-Ay-172">
+        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-202" value="" style="endArrow=classic;html=1;rounded=0;fontSize=13;fontColor=#000000;endSize=6;strokeColor=#26B0FF;strokeWidth=1;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.073;entryY=0.46;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="ZeBQX1oqdIYX9gZX3-Ay-145" target="ZeBQX1oqdIYX9gZX3-Ay-172">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="2050" y="254.83000000000004" as="sourcePoint" />
             <mxPoint x="2188.63" y="259.17999999999995" as="targetPoint" />
@@ -430,7 +430,7 @@
         <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-213" value="" style="group" vertex="1" connectable="0" parent="1">
           <mxGeometry x="2055" y="260" width="70" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-208" value="Si routeur ou box" style="whiteSpace=wrap;html=1;aspect=fixed;verticalAlign=bottom;rounded=1;sketch=1;" vertex="1" parent="ZeBQX1oqdIYX9gZX3-Ay-213">
+        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-208" value="Si Wifi" style="whiteSpace=wrap;html=1;aspect=fixed;verticalAlign=bottom;rounded=1;sketch=1;" vertex="1" parent="ZeBQX1oqdIYX9gZX3-Ay-213">
           <mxGeometry width="70" height="70" as="geometry" />
         </mxCell>
         <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-209" value="" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.wi_fi;rounded=1;glass=0;labelBackgroundColor=none;fontSize=13;fontColor=#8A0000;rotation=-90;" vertex="1" parent="ZeBQX1oqdIYX9gZX3-Ay-213">
@@ -439,7 +439,7 @@
         <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-214" value="" style="group" vertex="1" connectable="0" parent="1">
           <mxGeometry x="940" y="450" width="70" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-215" value="Si routeur ou box" style="whiteSpace=wrap;html=1;aspect=fixed;verticalAlign=bottom;rounded=1;sketch=1;" vertex="1" parent="ZeBQX1oqdIYX9gZX3-Ay-214">
+        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-215" value="Si WiFi" style="whiteSpace=wrap;html=1;aspect=fixed;verticalAlign=bottom;rounded=1;sketch=1;" vertex="1" parent="ZeBQX1oqdIYX9gZX3-Ay-214">
           <mxGeometry width="70" height="70" as="geometry" />
         </mxCell>
         <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-216" value="" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.wi_fi;rounded=1;glass=0;labelBackgroundColor=none;fontSize=13;fontColor=#8A0000;rotation=-90;" vertex="1" parent="ZeBQX1oqdIYX9gZX3-Ay-214">
