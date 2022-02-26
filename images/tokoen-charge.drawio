@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-02-26T08:59:31.187Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" etag="_4ItooYKwYs7uB8Dv3Of" version="16.0.3" type="github">
+<mxfile host="app.diagrams.net" modified="2022-02-26T09:12:35.663Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" etag="ZY6YYAjwttmJhFiEsRYf" version="16.0.3" type="github">
   <diagram name="Page-1" id="aaaa8250-4180-3840-79b5-4cada1eebb92">
     <mxGraphModel dx="2182" dy="1197" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0">
       <root>
@@ -322,23 +322,20 @@
             <mxPoint x="2003" y="515" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-143" value="Actor : Habitant Utilisatuer" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;rounded=1;shadow=0;glass=0;sketch=0;fontSize=13;fontColor=#25A10C;strokeColor=default;strokeWidth=1;fillColor=#EBEBEB;gradientColor=none;gradientDirection=west;" vertex="1" parent="1">
-          <mxGeometry x="1706" y="120" width="30" height="60" as="geometry" />
+        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-143" value="Actor : Habitant Enregistré" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;rounded=1;shadow=0;glass=0;sketch=0;fontSize=13;fontColor=#000000;strokeColor=default;strokeWidth=1;fillColor=#EBEBEB;gradientColor=none;gradientDirection=west;labelBackgroundColor=none;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1972.62" y="750.75" width="30" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-144" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/online-marketing-hand-drawn-vol-3/52/mobile__wifi__signals__device__tablet__connection__wireless-128.png;rounded=1;shadow=0;glass=0;sketch=0;fontSize=13;fontColor=#25A10C;strokeColor=default;strokeWidth=1;fillColor=#EBEBEB;gradientColor=none;gradientDirection=west;" vertex="1" parent="1">
-          <mxGeometry x="1750" y="30" width="128" height="128" as="geometry" />
-        </mxCell>
-        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-145" value="Actor : Gardien" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;rounded=1;shadow=0;glass=0;sketch=0;fontSize=13;fontColor=#25A10C;strokeColor=default;strokeWidth=1;fillColor=#EBEBEB;gradientColor=none;gradientDirection=west;" vertex="1" parent="1">
-          <mxGeometry x="2140" y="80" width="30" height="60" as="geometry" />
+        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-145" value="Actor : Gardien" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;rounded=1;shadow=0;glass=0;sketch=0;fontSize=13;fontColor=#000000;strokeColor=default;strokeWidth=1;fillColor=#EBEBEB;gradientColor=none;gradientDirection=west;labelBackgroundColor=none;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1975" y="190" width="30" height="60" as="geometry" />
         </mxCell>
         <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-147" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn2.iconfinder.com/data/icons/social-hand-drawn-icons/64/social_5-128.png;rounded=1;shadow=0;glass=0;sketch=0;fontSize=13;fontColor=#25A10C;strokeColor=default;strokeWidth=1;fillColor=#EBEBEB;gradientColor=none;gradientDirection=west;" vertex="1" parent="1">
-          <mxGeometry x="2200" y="40" width="128" height="128" as="geometry" />
+          <mxGeometry x="2060" y="195" width="50" height="50" as="geometry" />
         </mxCell>
         <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-148" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn0.iconfinder.com/data/icons/heroicons-ui/24/icon-desktop-128.png;rounded=1;shadow=0;glass=0;sketch=0;fontSize=13;fontColor=#25A10C;strokeColor=default;strokeWidth=1;fillColor=#EBEBEB;gradientColor=none;gradientDirection=west;" vertex="1" parent="1">
-          <mxGeometry x="2210" y="220" width="128" height="128" as="geometry" />
+          <mxGeometry x="2050" y="334.5" width="63" height="63" as="geometry" />
         </mxCell>
-        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-149" value="Actor : Syndic" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;rounded=1;shadow=0;glass=0;sketch=0;fontSize=13;fontColor=#25A10C;strokeColor=default;strokeWidth=1;fillColor=#EBEBEB;gradientColor=none;gradientDirection=west;" vertex="1" parent="1">
-          <mxGeometry x="2140" y="234" width="30" height="60" as="geometry" />
+        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-149" value="Actor : Syndic" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;rounded=1;shadow=0;glass=0;sketch=0;fontSize=13;fontColor=#000000;strokeColor=default;strokeWidth=1;fillColor=#EBEBEB;gradientColor=none;gradientDirection=west;labelBackgroundColor=none;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1975" y="307" width="30" height="60" as="geometry" />
         </mxCell>
         <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-151" value="&lt;br&gt;TokenCharge &lt;br&gt;Gateway&lt;br&gt;( option : DIN Rail)" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;shadow=1;glass=0;sketch=0;fillColor=none;size=10.000000000000455;arcSize=23;" vertex="1" parent="1">
           <mxGeometry x="1020" y="443.5" width="130" height="160" as="geometry" />
@@ -363,6 +360,52 @@
         </mxCell>
         <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-169" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/vecico-connectivity/288/radio-128.png;rounded=1;shadow=0;glass=0;sketch=0;fontSize=13;fontColor=#25A10C;strokeColor=default;strokeWidth=1;fillColor=#EBEBEB;gradientColor=none;gradientDirection=west;" vertex="1" parent="1">
           <mxGeometry x="1624.25" y="263" width="42" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-170" value="&lt;ul&gt;&lt;li&gt;&lt;font color=&quot;#000000&quot;&gt;Facturation&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font color=&quot;#000000&quot;&gt;messagerie&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;rounded=1;shadow=0;glass=0;sketch=0;fontSize=14;fontColor=#FF3333;strokeColor=default;strokeWidth=1;fillColor=#EBEBEB;gradientColor=none;gradientDirection=west;" vertex="1" parent="1">
+          <mxGeometry x="2125" y="304" width="195" height="114.5" as="geometry" />
+        </mxCell>
+        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-172" value="&lt;blockquote style=&quot;margin: 0 0 0 40px ; border: none ; padding: 0px&quot;&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px ; border: none ; padding: 0px&quot;&gt;&lt;ul&gt;&lt;li&gt;&lt;span&gt;&lt;font color=&quot;#000000&quot;&gt;Enregistrement des Users&lt;/font&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;font color=&quot;#000000&quot;&gt;Support L1&lt;/font&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;font color=&quot;#000000&quot;&gt;Configuration&lt;/font&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/blockquote&gt;&lt;/blockquote&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;rounded=1;shadow=0;glass=0;sketch=0;fontSize=14;fontColor=#FF3333;strokeColor=default;strokeWidth=1;fillColor=#EBEBEB;gradientColor=none;gradientDirection=west;align=left;" vertex="1" parent="1">
+          <mxGeometry x="2130" y="157.75" width="354.75" height="124.5" as="geometry" />
+        </mxCell>
+        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-173" value="&lt;blockquote style=&quot;margin: 0 0 0 40px ; border: none ; padding: 0px&quot;&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px ; border: none ; padding: 0px&quot;&gt;&lt;ul&gt;&lt;li&gt;&lt;font color=&quot;#000000&quot;&gt;Statistiques User&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font color=&quot;#000000&quot;&gt;Configuration (choix de slot)&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font color=&quot;#000000&quot;&gt;Messagerie et requetes&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font color=&quot;#000000&quot;&gt;paiement ? Factures ?&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/blockquote&gt;&lt;/blockquote&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;rounded=1;shadow=0;glass=0;sketch=0;fontSize=14;fontColor=#FF3333;strokeColor=default;strokeWidth=1;fillColor=#EBEBEB;gradientColor=none;gradientDirection=west;align=left;" vertex="1" parent="1">
+          <mxGeometry x="2130" y="794" width="354.75" height="124.5" as="geometry" />
+        </mxCell>
+        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-179" value="Actor : Visiteur" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;rounded=1;shadow=0;glass=0;sketch=0;fontSize=13;fontColor=#000000;strokeColor=default;strokeWidth=1;fillColor=#EBEBEB;gradientColor=none;gradientDirection=west;labelBackgroundColor=none;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1238.75" y="110" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-183" value="" style="endArrow=classic;html=1;rounded=0;fontSize=13;fontColor=#000000;endSize=6;strokeColor=#26B0FF;strokeWidth=1;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.07;entryY=0.4;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="ZeBQX1oqdIYX9gZX3-Ay-143" target="ZeBQX1oqdIYX9gZX3-Ay-173">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="840" y="410" as="sourcePoint" />
+            <mxPoint x="1000" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-185" value="" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;rounded=1;shadow=0;glass=0;labelBackgroundColor=none;sketch=0;fontSize=13;fontColor=#000000;strokeColor=default;strokeWidth=1;fillColor=#EBEBEB;gradientColor=none;gradientDirection=west;" connectable="0" vertex="1" parent="ZeBQX1oqdIYX9gZX3-Ay-183">
+          <mxGeometry x="-1" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-186" value="Actions via WebApp" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=13;fontColor=#26B0FF;fontStyle=1" vertex="1" connectable="0" parent="ZeBQX1oqdIYX9gZX3-Ay-183">
+          <mxGeometry x="-0.3044" y="-4" relative="1" as="geometry">
+            <mxPoint x="136" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-144" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/online-marketing-hand-drawn-vol-3/52/mobile__wifi__signals__device__tablet__connection__wireless-128.png;rounded=1;shadow=0;glass=0;sketch=0;fontSize=13;fontColor=#25A10C;strokeColor=default;strokeWidth=1;fillColor=#EBEBEB;gradientColor=none;gradientDirection=west;imageBackground=default;" vertex="1" parent="1">
+          <mxGeometry x="2080" y="810.75" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-194" value="&lt;blockquote style=&quot;margin: 0 0 0 40px ; border: none ; padding: 0px&quot;&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px ; border: none ; padding: 0px&quot;&gt;&lt;ul&gt;&lt;li&gt;&lt;font color=&quot;#000000&quot;&gt;renoncer a son prochain slot&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font color=&quot;#000000&quot;&gt;demander un slot en urgence&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/blockquote&gt;&lt;/blockquote&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;rounded=1;shadow=0;glass=0;sketch=0;fontSize=14;fontColor=#FF3333;strokeColor=default;strokeWidth=1;fillColor=#EBEBEB;gradientColor=none;gradientDirection=west;align=left;" vertex="1" parent="1">
+          <mxGeometry x="2002.62" y="621.5" width="354.75" height="124.5" as="geometry" />
+        </mxCell>
+        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-191" value="" style="endArrow=classic;html=1;rounded=0;fontSize=13;fontColor=#000000;endSize=6;strokeColor=#26B0FF;strokeWidth=1;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="ZeBQX1oqdIYX9gZX3-Ay-143" target="ZeBQX1oqdIYX9gZX3-Ay-66">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2012.62" y="717.75" as="sourcePoint" />
+            <mxPoint x="2164.8324999999995" y="790.8" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-192" value="" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;rounded=1;shadow=0;glass=0;labelBackgroundColor=none;sketch=0;fontSize=13;fontColor=#000000;strokeColor=default;strokeWidth=1;fillColor=#EBEBEB;gradientColor=none;gradientDirection=west;" connectable="0" vertex="1" parent="ZeBQX1oqdIYX9gZX3-Ay-191">
+          <mxGeometry x="-1" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZeBQX1oqdIYX9gZX3-Ay-193" value="Actions via Bouton" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=13;fontColor=#26B0FF;labelBackgroundColor=default;fontStyle=1" vertex="1" connectable="0" parent="ZeBQX1oqdIYX9gZX3-Ay-191">
+          <mxGeometry x="-0.3044" y="-4" relative="1" as="geometry">
+            <mxPoint x="48" y="-59" as="offset" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
